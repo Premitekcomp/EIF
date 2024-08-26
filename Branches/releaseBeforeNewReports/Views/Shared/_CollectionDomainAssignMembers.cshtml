@@ -1,0 +1,105 @@
+﻿<input type="hidden" name="IDs" id="InsertIDs" value="" />
+<input type="hidden" name="IDs" id="DeleteIDs" value="" />
+<div id="msg"></div>
+<div class="scrollmenu">
+    <table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+        <thead>
+            <tr>
+                <th>
+                    <label class="cr-styled">
+                        <input type="checkbox" class="ng-pristine ng-untouched ng-valid" id="checkAll" name="checkAll">
+                        <i class="fa"></i>
+                    </label>
+                    <span class="done-true"><b>All</b></span>
+                </th>
+                <th>Supervisor</th>
+                <th>Leader</th>
+                <th>Collector</th>
+                @{
+                IEnumerable<EIF.Models.Dom_DomainColumnsAlias> alias = ViewBag.alias;
+                foreach (var Col in alias)
+                {
+                <th>@Col.AliasName</th>
+                }}
+                <th> Payment Amount</th>
+                <th>Payment Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+            if (ViewBag.Tbl!=null)
+            {
+                List<Dictionary<string, object>> Model = ViewBag.Tbl;
+            foreach (var row in Model)
+            {
+            <tr>
+
+                @foreach (var column in row)
+                    {
+                        if (column.Key == "RecordSerial")
+                        {
+                    <td>
+                        <label class="cr-styled">
+                            <input type="checkbox" data-ng-model="todo.done" class="ng-pristine ng-untouched ng-valid" name="checkonce" id="checkonce" value="@column.Value">
+                            <i class="fa"></i>
+                        </label>
+                    </td>
+                        }
+                    }
+
+
+                @foreach (var column in row)
+                    {
+                        if (column.Key != "RecordSerial" && column.Key != "RecordSerial1" && column.Key != "PaymentValue")
+                        {
+                                     <td>@column.Value</td>
+                        }
+                        else if (column.Key == "PaymentValue")
+                        {
+                             <td>@string.Format("{0:N0}", column.Value)</td>
+                        }
+                    }
+            </tr>
+            }
+            }
+            }
+        </tbody>
+
+
+    </table>
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+<script src="~/Scripts/Custom/checkall.js"></script>
+<link href="~/Content/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/DT_bootstrap.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables-conf.js"></script>
+<script>
+    $('#tbl3').dataTable({
+        "pageLength": 10,
+    });
+</script>
+<style>
+    div.scrollmenu {
+       
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+        div.scrollmenu a {
+            display: inline-block;            
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>

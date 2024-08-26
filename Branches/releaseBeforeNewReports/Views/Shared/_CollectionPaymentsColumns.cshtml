@@ -1,0 +1,36 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+@{EIF.Models.Dom_DomainList data = ViewBag.data;}
+
+@{
+
+    if (ViewBag.Columns != null)
+    {
+              <div class="col-lg-4">
+                  <label class="control-label">Choose Domain Primary Key Field</label>
+                    <input type="hidden" id="DomainID" name="DomainID" value="@ViewBag.DomainID" />
+                    @Html.DropDownList("PK", get.AliasList(Convert.ToInt64(ViewBag.DomainID)) as SelectList, "Choose", new
+               {
+                   @class = "form-control",
+               })
+                </div>
+
+        <div class="col-lg-4">
+            <label class="control-label">Choose Excel Primary Key Field</label>
+            @Html.DropDownList("PKColumn", ViewBag.Columns as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+
+        </div>
+     <div class="col-lg-4">
+            <label class="control-label">Choose Payment Field</label>
+            @Html.DropDownList("PaymentColumn", ViewBag.Columns as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+
+        </div>
+
+    }
+    }
+

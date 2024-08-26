@@ -1,0 +1,60 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<div class="warper container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading"> Master Domain  </div>
+        <div class="panel-body">
+
+
+            @using (Ajax.BeginForm("GetMasterDomain", "collection",
+                                     new AjaxOptions
+                                     {
+                                         HttpMethod = "POST",
+                                         UpdateTargetId = "result",
+                                         InsertionMode = InsertionMode.Replace,
+                                         OnBegin = "ShowProgress();",
+                                         OnComplete = "HideProgress();"
+                                     }))
+            {
+                <div class="row">
+                    <div class="col-lg-2">Filter by </div>
+                    <div class="col-lg-3">
+                        @Html.DropDownList("FilterKey", get.MasterDomainFilter() as SelectList, new
+               {
+                   @class = "form-control  chosen-select",
+                   @onchange = "$('#FilterVal').val('');"
+               })
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" name="FilterVal" id="FilterVal" />
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="submit" class="btn btn-primary">Get</button>
+                    </div>
+                </div>
+            }
+
+            <br /><br />
+            <div class="row form-group">
+                <div class="col-lg-12"><div id="result"></div></div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    
+
+    
+
+
+
+</div>
+

@@ -1,0 +1,20 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+
+<div class="row form-group">
+    <div class="col-lg-3">
+        <label>Choose Filed</label>
+        @{IEnumerable<EIF.Models.Dom_DomainColumnsAlias> elias = ViewBag.alias;
+          string Count = Convert.ToString(ViewBag.Count);
+          }
+
+        @Html.DropDownList("ColID-" + Count, get.EliasColList(elias) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+    </div>
+    <div class="col-lg-6">
+        <br />
+        <input type="text" class="form-control" name="FilterVal-@ViewBag.Count" id="FilterVal-@ViewBag.Count" />
+    </div>
+    <div class="col-lg-3"><br /><button class="btn btn-default font-plus" onclick="AddPartial()"> +</button></div>
+</div>

@@ -1,0 +1,117 @@
+﻿<div>@Html.Partial("_Result")</div>
+<div role="alert" id="del-box" class="alert alert-danger fade in hide">
+    <h4>Confirm delete</h4>
+    <p>Domain with DCR data Will Not Be Deleted</p>
+    <p>Confirm deleting this recored?</p>
+    <p>
+        <input type="hidden" id="del" />
+        <button class="btn btn-danger" type="button" onclick="DeleteDomain();">Yes</button>
+        <button class="btn btn-default" type="button" onclick="Cancel();">No</button>
+    </p>
+</div>
+
+<table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+    <thead>
+        <tr>
+            <th>Domain Title</th>
+            <th>Branch</th>
+            <th>Bank</th>
+            <th>Month</th>
+            <th>Payment Amount</th>
+            <th>Payment Count</th>
+            <th>Status</th>
+            <th>Version</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (ViewBag.data != null)
+            {
+                IEnumerable<EIF.Models.DomainsPerUserScope> data = ViewBag.data;
+                foreach (var R in data)
+                {
+                    <tr>
+                        <td>@R.DomainTitle</td>
+                        <td>@R.BranchTitle</td>
+                        <td>@R.AgencyTitle</td>
+                        <td>@R.MonthYear</td>
+                        <td>@string.Format("{0:N0}",R.DomainPayment)</td>
+                        <td>@R.PaymentCount</td>
+                        <td>@R.StatusName</td>
+                        <td>@R.VersionNumber</td>
+
+                        <td>
+                          <a target="_blank" href="@Url.Action("DomainsDetails", "collection", new { id = R.DomainID })" class="btn btn-default tooltip-btn"> View</a>
+                            @{
+                                if (ViewBag.AccessRightEdit != null && ViewBag.AccessRightEdit)
+                                {
+                                    if (@R.StatusID == 50)
+                                    {
+                                        <button class="btn btn-default tooltip-btn" onclick="OpenDomain(@R.DomainID)">Open</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-default tooltip-btn" onclick="CloseDomain(@R.DomainID)">Close</button>
+                                    }
+                                }  
+                             }
+                            @if (ViewBag.AccessRightDelete != null && ViewBag.AccessRightDelete)
+                            {
+                                <button class="btn btn-default tooltip-btn" onclick="ConfirmRemove(@R.DomainID);">Delete</button>
+                            }
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                    Actions <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    @if (ViewBag.AccessRightAdd != null && ViewBag.AccessRightAdd)
+                                    {
+                                         <li>
+                                            <a href="@Url.Action("NewReferer", "collection", new { id = R.DomainID })" target="_blank">New Referer</a>
+                                        </li>
+                                    }
+                                    @if (ViewBag.AccessRightEdit != null && ViewBag.AccessRightEdit)
+                                    {
+                                         <li>
+                                           <a href="@Url.Action("UpdateDomain", "collection", new { id = R.DomainID })" target="_blank">Update Domain</a>
+                                         </li>
+                                    }
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="DownloadXls(@R.DomainID);">Export Xls</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }}
+    </tbody>
+
+
+</table>
+
+
+
+
+<link href="~/Content/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/DT_bootstrap.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables-conf.js"></script>
+<script>
+    $('#tbl3').dataTable({
+        "pageLength": 10,
+        "paging": true
+    });
+</script>
+<style>
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>

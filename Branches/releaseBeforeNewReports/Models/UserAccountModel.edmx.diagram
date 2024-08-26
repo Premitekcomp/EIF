@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de70eed77b84485ba44dfb510a9907f4" Name="Diagram1" ZoomLevel="81" >
+        <EntityTypeShape EntityType="EIFCRMModel.Config_AgencyBranches" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Config_AgencyList" Width="1.5" PointX="0.75" PointY="33" />
+        <EntityTypeShape EntityType="EIFCRMModel.Config_MembersList" Width="1.5" PointX="6" PointY="24" />
+        <EntityTypeShape EntityType="EIFCRMModel.Config_TeamList" Width="1.5" PointX="3" PointY="28.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Config_TeamMembers" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_AssignDomainToMembers" Width="1.5" PointX="8.25" PointY="24.625" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainBasic" Width="1.5" PointX="6" PointY="28" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainColumnsAlias" Width="1.5" PointX="8.25" PointY="29" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainsDataExtra" Width="1.5" PointX="11.25" PointY="14.5" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainStatus" Width="1.5" PointX="3.75" PointY="32" />
+        <EntityTypeShape EntityType="EIFCRMModel.Lup_BranchList" Width="1.5" PointX="0.75" PointY="28.25" />
+        <EntityTypeShape EntityType="EIFCRMModel.Lup_Comments" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Lup_MonthYear" Width="1.5" PointX="3.75" PointY="34.375" />
+        <EntityTypeShape EntityType="EIFCRMModel.Lup_TeamRole" Width="1.5" PointX="6" PointY="21.625" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_ConnectionResult" Width="1.5" PointX="11.25" PointY="11.875" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_ConnectionType" Width="1.5" PointX="11.25" PointY="57.25" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_PTPType" Width="1.5" PointX="11.25" PointY="59.5" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_Actions" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_BranchesPermissions" Width="1.5" PointX="3" PointY="26" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_Config" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_FormActions" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_FormList" Width="1.5" PointX="0.75" PointY="15" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_GroupPermissions" Width="1.5" PointX="9" PointY="13" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_Groups" Width="1.5" PointX="3.75" PointY="12.5" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_GroupsMembers" Width="1.5" PointX="6" PointY="17.5" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_ModuleForms" Width="1.5" PointX="6" PointY="13.375" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_Section" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_SectionPermissions" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_SystemModules" Width="1.5" PointX="3.75" PointY="8.375" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_Trans_Log" Width="1.5" PointX="3" PointY="17.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_Users" Width="1.5" PointX="0.75" PointY="22.875" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_UserStatus" Width="1.5" PointX="3" PointY="22.625" />
+        <EntityTypeShape EntityType="EIFCRMModel.Sch_Columns" Width="1.5" PointX="3" PointY="36.875" />
+        <EntityTypeShape EntityType="EIFCRMModel.Sch_SchemaColumns" Width="1.5" PointX="5.25" PointY="39.875" />
+        <EntityTypeShape EntityType="EIFCRMModel.Sch_Schemas" Width="1.5" PointX="3" PointY="39.875" />
+        <EntityTypeShape EntityType="EIFCRMModel.Chrt_Contacts" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Config_AgencyBranchList" Width="1.5" PointX="5.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Config_TeamMembersList" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Config_TeamMembersRoleList" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_DCRHistoryWithAccountsToImport" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_MemberDCRSummary" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_SummaryForCharts" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainDetailsAllVersionsList" Width="1.5" PointX="17.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainDetailsList" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainDetailsListPrev" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainList" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_MasterDomain" Width="1.5" PointX="23.75" PointY="5.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_BrunchesList" Width="1.5" PointX="25.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_SectionsList" Width="1.5" PointX="25.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_UsersSections" Width="1.5" PointX="7.75" PointY="10.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Sch_SchemaColList" Width="1.5" PointX="25.75" PointY="16.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Sch_SchemaList" Width="1.5" PointX="25.75" PointY="20.75" />
+        <AssociationConnector Association="EIFCRMModel.FK_Config_TeamList_Config_AgencyList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainBasic_Config_AgencyList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_AssignDomainToMembers_Config_MembersList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Config_TeamList_Lup_BranchList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_AssignDomainToMembers_Config_TeamList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_AssignDomainToMembers_Dom_DomainsDataExtra" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_AssignDomainToMembers_Lup_TeamRole" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainBasic_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainBasic_Dom_DomainStatus" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainBasic_Lup_BranchList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainBasic_Lup_MonthYear" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainColumnsAlias_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainsDataExtra_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_DomainsDataExtra_Sch_Schemas" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_BranchesPermissions_Lup_BranchList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Sch_Schemas_Lup_BranchList" />
+        <AssociationConnector Association="EIFCRMModel.FK_GroupPermissions_Actions" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_Trans_Log_Pre_Actions" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_BranchesPermissions_Pre_Users" />
+        <AssociationConnector Association="EIFCRMModel.FK_GroupPermissions_FormList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_ModuleForms_Pre_FormList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_Trans_Log_Pre_Lup_FormList" />
+        <AssociationConnector Association="EIFCRMModel.FK_GroupPermissions_Groups" />
+        <AssociationConnector Association="EIFCRMModel.FK_UsersGroups_Groups" />
+        <AssociationConnector Association="EIFCRMModel.FK_UsersGroups_Users" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_ModuleForms_Pre_SystemModules" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_Trans_Log_Pre_Users" />
+        <AssociationConnector Association="EIFCRMModel.FK_Pre_UserStatus_Pre_Users" />
+        <AssociationConnector Association="EIFCRMModel.FK_Sch_SchemaColumns_Sch_Columns" />
+        <AssociationConnector Association="EIFCRMModel.FK_Sch_SchemaColumns_Sch_Schemas" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_PCRHistory" Width="1.5" PointX="13.5" PointY="32.75" />
+        <AssociationConnector Association="EIFCRMModel.FK_PCR_PCRHistory_Config_MembersList" />
+        <AssociationConnector Association="EIFCRMModel.FK_PCR_PCRHistory_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_PCR_PCRHistory_Dom_DomainsDataExtra" />
+        <AssociationConnector Association="EIFCRMModel.FK_PCR_PCRHistory_PCR_ConnectionResult" />
+        <AssociationConnector Association="EIFCRMModel.FK_PCR_PCRHistory_PCR_ConnectionType" />
+        <AssociationConnector Association="EIFCRMModel.FK_PCR_PCRHistory_PCR_PTPType" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_PCRHistoryList" Width="1.5" PointX="26.375" PointY="23.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_Code2" Width="1.5" PointX="8.375" PointY="17.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.AccessRight" Width="1.5" PointX="11.375" PointY="20.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.AdminPermission_Functions" Width="1.5" PointX="33.875" PointY="1.5" />
+        <EntityTypeShape EntityType="EIFCRMModel.Adminpermission" Width="1.5" PointX="31.625" PointY="1" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_AccountsPayments" Width="1.5" PointX="16.5" PointY="30.25" />
+        <EntityTypeShape EntityType="EIFCRMModel.DomainType" Width="1.5" PointX="29.375" PointY="1.375" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_Reached" Width="1.5" PointX="31.375" PointY="4.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_ReachedComments" Width="1.5" PointX="31.375" PointY="7.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.PCR_UnReachedComments" Width="1.5" PointX="31.375" PointY="10.75" />
+        <AssociationConnector Association="EIFCRMModel.FK_AdminPermission_Functions_Adminpermissions" />
+        <AssociationConnector Association="EIFCRMModel.FK_Adminpermissions_Adminpermissions" />
+        <AssociationConnector Association="EIFCRMModel.FK_Adminpermissions_DomainType" />
+        <AssociationConnector Association="EIFCRMModel.FK_Dom_AccountsPayments_Dom_DomainsDataExtra" />
+        <EntityTypeShape EntityType="EIFCRMModel.ExceptionLog" Width="1.5" PointX="8.375" PointY="20.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Design_MenuBasic" Width="1.5" PointX="28.375" PointY="14.25" />
+        <EntityTypeShape EntityType="EIFCRMModel.Design_MenuItems" Width="1.5" PointX="30.625" PointY="14" />
+        <AssociationConnector Association="EIFCRMModel.FK_Design_MenuItems_Design_MenuBasic" />
+        <EntityTypeShape EntityType="EIFCRMModel.LicensedFunction" Width="1.5" PointX="10" PointY="62.5" />
+        <AssociationConnector Association="EIFCRMModel.FK_AdminPermission_Functions_LicensedFunctions" />
+        <AssociationConnector Association="EIFCRMModel.FK_LicensedFunctions_Pre_Section" />
+        <EntityTypeShape EntityType="EIFCRMModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Type" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Region" Width="1.5" PointX="26.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_AssignDomainToMembersList" Width="1.5" PointX="28.375" PointY="3.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainDetailsToBankAssignList" Width="1.5" PointX="28.375" PointY="19.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Dom_DomainDetailsToInternalAssignList" Width="1.5" PointX="30.375" PointY="19.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.DomainsWithPayment" Width="1.5" PointX="8.375" PointY="32.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Pre_UsersView" Width="1.5" PointX="28.375" PointY="7.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.City" Width="1.5" PointX="28.375" PointY="15.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_Column_Alias" Width="1.5" PointX="8.25" PointY="41.875" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_Domain_Data" Width="1.5" PointX="20.25" PointY="46.625" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_DomainList" Width="1.5" PointX="32.375" PointY="26.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_Schema" Width="1.5" PointX="3" PointY="46.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_Schema_ColumnsList" Width="1.5" PointX="3" PointY="50.375" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_Schema_Details" Width="1.5" PointX="5.25" PointY="46.375" />
+        <EntityTypeShape EntityType="EIFCRMModel.Domain_DomainType" Width="1.5" PointX="11.25" PointY="1.25" />
+        <EntityTypeShape EntityType="EIFCRMModel.Domain_Product" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.Domain_Region" Width="1.5" PointX="32.625" PointY="22.75" />
+        <EntityTypeShape EntityType="EIFCRMModel.UserDataScope" Width="1.5" PointX="6" PointY="38.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.DCR_Schema_VIEW" Width="1.5" PointX="32.375" PointY="29.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.Domain_DataScope" Width="1.5" PointX="32.375" PointY="33.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.DomainsPerUserScope" Width="1.5" PointX="33.375" PointY="8.125" />
+        <EntityTypeShape EntityType="EIFCRMModel.PaymentDateVIEW" Width="1.5" PointX="33.375" PointY="13.125" />
+        <AssociationConnector Association="EIFCRMModel.FK_UserDataScope_Config_AgencyList" />
+        <AssociationConnector Association="EIFCRMModel.FK_DCR_Column_Alias_DCR_Schema" />
+        <AssociationConnector Association="EIFCRMModel.FK_DCR_Column_Alias_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_DCR_Domain_Data_DCR_Schema" />
+        <AssociationConnector Association="EIFCRMModel.FK_DCR_Domain_Data_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_DCR_Schema_DCR_Schema" />
+        <AssociationConnector Association="EIFCRMModel.FK_DCR_Schema_Details_DCR_Schema" />
+        <AssociationConnector Association="EIFCRMModel.FK_DCR_Schema_Details_DCR_Schema_ColumnsList" />
+        <AssociationConnector Association="EIFCRMModel.FK_Domain_DomainType_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_Domain_Product_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_Domain_Region_Dom_DomainBasic" />
+        <AssociationConnector Association="EIFCRMModel.FK_Domain_DomainType_DomainType" />
+        <AssociationConnector Association="EIFCRMModel.FK_Domain_Product_Products" />
+        <AssociationConnector Association="EIFCRMModel.FK_Domain_Region_Region" />
+        <AssociationConnector Association="EIFCRMModel.FK_UserDataScope_Pre_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

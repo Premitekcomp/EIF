@@ -1,0 +1,91 @@
+﻿
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Domains List
+        </div>
+        <div class="panel-body">
+
+            <div id="container">
+                <div></div>
+                <table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+                    <thead>
+                        <tr>
+                            <th>Domain Title</th>
+                            <th>Branch</th>
+                            <th>Bank</th>
+                            <th>Month</th>
+                            <th>Payment Amount</th>
+                            <th>Payment Count</th>
+                            <th>Status</th>
+                            <th>Version</th>
+                      @if (ViewBag.AccessRightAdd != null && ViewBag.AccessRightAdd == true)
+                      {
+                          <th></th>
+                      }       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (ViewBag.data != null)
+                            {
+                                IEnumerable<EIF.Models.DomainsPerUserScope> data = ViewBag.data;
+                                foreach (var R in data)
+                                {
+                                    <tr>
+                                        <td>@R.DomainTitle</td>
+                                        <td>@R.BranchTitle</td>
+                                        <td>@R.AgencyTitle</td>
+                                        <td>@R.MonthYear</td>
+                                        <td>@string.Format("{0:N0}",R.DomainPayment)</td>
+                                        <td>@R.PaymentCount</td>
+                                        <td>@R.StatusName</td>
+                                        <td>@R.VersionNumber</td>
+                                      @if (ViewBag.AccessRightAdd != null && ViewBag.AccessRightAdd == true)
+                                            {
+                                        <td>
+                                           
+                                                 <a target="_blank" href="@Url.Action("NewReferer", "collection", new { id = R.DomainID })" class="btn btn-default tooltip-btn"> New Referer</a>
+                                                
+                                        </td>
+                                     }
+                                    </tr>
+                                }
+                            }}
+                    </tbody>
+
+
+                </table>
+
+
+
+
+                <link href="~/Content/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+                <script src="~/Scripts/jquery-1.10.2.js"></script>
+                <script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.js"></script>
+                <script src="~/Content/assets/js/plugins/datatables/DT_bootstrap.js"></script>
+                <script src="~/Content/assets/js/plugins/datatables/jquery.dataTables-conf.js"></script>
+                <script>
+                    $('#tbl3').dataTable({
+                        "pageLength": 10,
+                        "paging": true
+                    });
+                </script>
+                <style>
+                    .col-sm-2 {
+                        width: 100px !important;
+                    }
+
+                    .col-sm-3 {
+                        width: 200px !important;
+                    }
+                </style>              
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>

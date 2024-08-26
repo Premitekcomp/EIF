@@ -1,0 +1,25 @@
+﻿@{EIF.Models.Config_TeamList data = ViewBag.Data;}
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+           @data.TeamName Team Members
+            
+        </div>
+        <div class="panel-body">
+
+            
+            <input type="hidden" id="TeamID" name="TeamID" value="@data.TeamID" />
+            <input type="hidden" name="InsertIDs" id="InsertIDs" value="" />
+            <input type="hidden" name="DeleteIDs" id="DeleteIDs" value="" />
+
+            <div id="container">
+
+                @Html.Partial("_AdminTeamMembers")
+            </div>
+            <input type="button" value="save" class="btn btn-primary" onclick="AddMembers();" />
+                </div>
+    </div>
+</div>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Admin.js"></script>

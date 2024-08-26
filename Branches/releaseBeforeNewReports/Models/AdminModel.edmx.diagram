@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d54d2312795047fbb52f8fea12c1c0de" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="AdminModel.Config_AgencyBranches" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.Config_AgencyList" Width="1.5" PointX="0.75" PointY="25" />
+        <EntityTypeShape EntityType="AdminModel.Config_TeamList" Width="1.5" PointX="3" PointY="25.75" />
+        <EntityTypeShape EntityType="AdminModel.Config_TeamMembers" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_AssignDomainToMembers" Width="1.5" PointX="5.25" PointY="23.625" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainBasic" Width="1.5" PointX="6" PointY="28" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainColumnsAlias" Width="1.5" PointX="8.25" PointY="70.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainsDataExtra" Width="1.5" PointX="8.25" PointY="14.5" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainStatus" Width="1.5" PointX="3.75" PointY="32" />
+        <EntityTypeShape EntityType="AdminModel.Lup_BranchList" Width="1.5" PointX="0.75" PointY="28.25" />
+        <EntityTypeShape EntityType="AdminModel.Lup_Comments" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AdminModel.Lup_MonthYear" Width="1.5" PointX="3.75" PointY="34.375" />
+        <EntityTypeShape EntityType="AdminModel.Lup_TeamRole" Width="1.5" PointX="3" PointY="20.625" />
+        <EntityTypeShape EntityType="AdminModel.PCR_ConnectionResult" Width="1.5" PointX="8.25" PointY="59.5" />
+        <EntityTypeShape EntityType="AdminModel.PCR_ConnectionType" Width="1.5" PointX="8.25" PointY="57.25" />
+        <EntityTypeShape EntityType="AdminModel.PCR_PTPType" Width="1.5" PointX="8.25" PointY="11.875" />
+        <EntityTypeShape EntityType="AdminModel.Pre_Actions" Width="1.5" PointX="8.75" PointY="7" />
+        <EntityTypeShape EntityType="AdminModel.Pre_BranchesPermissions" Width="1.5" PointX="3" PointY="29" />
+        <EntityTypeShape EntityType="AdminModel.Pre_Config" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_FormActions" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_FormList" Width="1.5" PointX="8.75" PointY="2" />
+        <EntityTypeShape EntityType="AdminModel.Pre_GroupPermissions" Width="1.5" PointX="11" PointY="22" />
+        <EntityTypeShape EntityType="AdminModel.Pre_Groups" Width="1.5" PointX="3.75" PointY="46.5" />
+        <EntityTypeShape EntityType="AdminModel.Pre_GroupsMembers" Width="1.5" PointX="6" PointY="33.5" />
+        <EntityTypeShape EntityType="AdminModel.Pre_ModuleForms" Width="1.5" PointX="11" PointY="2.5" />
+        <EntityTypeShape EntityType="AdminModel.Pre_Section" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_SectionPermissions" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_SystemModules" Width="1.5" PointX="8.75" PointY="62.5" />
+        <EntityTypeShape EntityType="AdminModel.Pre_Trans_Log" Width="1.5" PointX="11" PointY="27.125" />
+        <EntityTypeShape EntityType="AdminModel.Pre_Users" Width="1.5" PointX="0.75" PointY="32.875" />
+        <EntityTypeShape EntityType="AdminModel.Pre_UserStatus" Width="1.5" PointX="3" PointY="43.625" />
+        <EntityTypeShape EntityType="AdminModel.Sch_Columns" Width="1.5" PointX="3" PointY="36.875" />
+        <EntityTypeShape EntityType="AdminModel.Sch_SchemaColumns" Width="1.5" PointX="5.25" PointY="39.875" />
+        <EntityTypeShape EntityType="AdminModel.Sch_Schemas" Width="1.5" PointX="3" PointY="39.875" />
+        <EntityTypeShape EntityType="AdminModel.Chrt_Contacts" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AdminModel.Config_AgencyBranchList" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="AdminModel.Config_TeamMembersList" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AdminModel.Config_TeamMembersRoleList" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AdminModel.DCR_DCRHistoryWithAccountsToImport" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.DCR_MemberDCRSummary" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AdminModel.DCR_SummaryForCharts" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainDetailsAllVersionsList" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainDetailsList" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainDetailsListPrev" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainList" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_MasterDomain" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_BrunchesList" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_SectionsList" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_UsersSections" Width="1.5" PointX="4.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AdminModel.Sch_SchemaColList" Width="1.5" PointX="23.75" PointY="10.75" />
+        <EntityTypeShape EntityType="AdminModel.Sch_SchemaList" Width="1.5" PointX="23.75" PointY="14.75" />
+        <AssociationConnector Association="AdminModel.FK_Config_TeamList_Config_AgencyList" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainBasic_Config_AgencyList" />
+        <AssociationConnector Association="AdminModel.FK_Config_TeamList_Lup_BranchList" />
+        <AssociationConnector Association="AdminModel.FK_Dom_AssignDomainToMembers_Config_TeamList" />
+        <AssociationConnector Association="AdminModel.FK_Dom_AssignDomainToMembers_Dom_DomainsDataExtra" />
+        <AssociationConnector Association="AdminModel.FK_Dom_AssignDomainToMembers_Lup_TeamRole" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainBasic_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainBasic_Dom_DomainStatus" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainBasic_Lup_BranchList" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainBasic_Lup_MonthYear" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainColumnsAlias_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainsDataExtra_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_Dom_DomainsDataExtra_Sch_Schemas" />
+        <AssociationConnector Association="AdminModel.FK_Pre_BranchesPermissions_Lup_BranchList" />
+        <AssociationConnector Association="AdminModel.FK_Sch_Schemas_Lup_BranchList" />
+        <AssociationConnector Association="AdminModel.FK_GroupPermissions_Actions" />
+        <AssociationConnector Association="AdminModel.FK_Pre_Trans_Log_Pre_Actions" />
+        <AssociationConnector Association="AdminModel.FK_Pre_BranchesPermissions_Pre_Users" />
+        <AssociationConnector Association="AdminModel.FK_GroupPermissions_FormList" />
+        <AssociationConnector Association="AdminModel.FK_Pre_ModuleForms_Pre_FormList" />
+        <AssociationConnector Association="AdminModel.FK_Pre_Trans_Log_Pre_Lup_FormList" />
+        <AssociationConnector Association="AdminModel.FK_GroupPermissions_Groups" />
+        <AssociationConnector Association="AdminModel.FK_UsersGroups_Groups" />
+        <AssociationConnector Association="AdminModel.FK_UsersGroups_Users" />
+        <AssociationConnector Association="AdminModel.FK_Pre_ModuleForms_Pre_SystemModules" />
+        <AssociationConnector Association="AdminModel.FK_Pre_Trans_Log_Pre_Users" />
+        <AssociationConnector Association="AdminModel.FK_Pre_UserStatus_Pre_Users" />
+        <AssociationConnector Association="AdminModel.FK_Sch_SchemaColumns_Sch_Columns" />
+        <AssociationConnector Association="AdminModel.FK_Sch_SchemaColumns_Sch_Schemas" />
+        <EntityTypeShape EntityType="AdminModel.PCR_PCRHistory" Width="1.5" PointX="10.5" PointY="32.75" />
+        <AssociationConnector Association="AdminModel.FK_PCR_PCRHistory_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_PCR_PCRHistory_Dom_DomainsDataExtra" />
+        <AssociationConnector Association="AdminModel.FK_PCR_PCRHistory_PCR_ConnectionResult" />
+        <AssociationConnector Association="AdminModel.FK_PCR_PCRHistory_PCR_ConnectionType" />
+        <AssociationConnector Association="AdminModel.FK_PCR_PCRHistory_PCR_PTPType" />
+        <EntityTypeShape EntityType="AdminModel.PCR_PCRHistoryList" Width="1.5" PointX="24.375" PointY="17.75" />
+        <EntityTypeShape EntityType="AdminModel.PCR_Code2" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_AccountsPayments" Width="1.5" PointX="10.5" PointY="42.25" />
+        <EntityTypeShape EntityType="AdminModel.DomainType" Width="1.5" PointX="5.375" PointY="20.75" />
+        <EntityTypeShape EntityType="AdminModel.PCR_Reached" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.PCR_ReachedComments" Width="1.5" PointX="24.375" PointY="3.75" />
+        <EntityTypeShape EntityType="AdminModel.PCR_UnReachedComments" Width="1.5" PointX="26.375" PointY="0.75" />
+        <AssociationConnector Association="AdminModel.FK_Dom_AccountsPayments_Dom_DomainsDataExtra" />
+        <EntityTypeShape EntityType="AdminModel.Adminpermission" Width="1.5" PointX="7.625" PointY="67.375" />
+        <AssociationConnector Association="AdminModel.FK_Adminpermissions_Adminpermissions" />
+        <AssociationConnector Association="AdminModel.FK_Adminpermissions_DomainType" />
+        <EntityTypeShape EntityType="AdminModel.AccessRight" Width="1.5" PointX="26.375" PointY="3.75" />
+        <EntityTypeShape EntityType="AdminModel.AdminPermission_Functions" Width="1.5" PointX="9.875" PointY="67.5" />
+        <AssociationConnector Association="AdminModel.FK_AdminPermission_Functions_Adminpermissions" />
+        <EntityTypeShape EntityType="AdminModel.ExceptionLog" Width="1.5" PointX="26.375" PointY="6.75" />
+        <EntityTypeShape EntityType="AdminModel.Design_MenuBasic" Width="1.5" PointX="26.375" PointY="10.25" />
+        <EntityTypeShape EntityType="AdminModel.Design_MenuItems" Width="1.5" PointX="28.625" PointY="10" />
+        <AssociationConnector Association="AdminModel.FK_Design_MenuItems_Design_MenuBasic" />
+        <EntityTypeShape EntityType="AdminModel.LicensedFunction" Width="1.5" PointX="3" PointY="3.5" />
+        <AssociationConnector Association="AdminModel.FK_AdminPermission_Functions_LicensedFunctions" />
+        <AssociationConnector Association="AdminModel.FK_LicensedFunctions_Pre_Section" />
+        <EntityTypeShape EntityType="AdminModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.Region" Width="1.5" PointX="26.375" PointY="15.75" />
+        <EntityTypeShape EntityType="AdminModel.Type" Width="1.5" PointX="26.375" PointY="18.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_AssignDomainToMembersList" Width="1.5" PointX="26.375" PointY="21.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainDetailsToBankAssignList" Width="1.5" PointX="24.375" PointY="26.75" />
+        <EntityTypeShape EntityType="AdminModel.Dom_DomainDetailsToInternalAssignList" Width="1.5" PointX="26.375" PointY="25.75" />
+        <EntityTypeShape EntityType="AdminModel.Pre_UsersView" Width="1.5" PointX="28.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.UserDataScope" Width="1.5" PointX="28.625" PointY="18" />
+        <AssociationConnector Association="AdminModel.FK_UserDataScope_Config_AgencyList" />
+        <AssociationConnector Association="AdminModel.FK_UserDataScope_Pre_Users" />
+        <AssociationConnector Association="AdminModel.FK_UserDataScope_Products" />
+        <AssociationConnector Association="AdminModel.FK_UserDataScope_Type" />
+        <EntityTypeShape EntityType="AdminModel.DomainsWithPayment" Width="1.5" PointX="28.375" PointY="4.75" />
+        <EntityTypeShape EntityType="AdminModel.Config_MembersList" Width="1.5" PointX="28.375" PointY="21.875" />
+        <AssociationConnector Association="AdminModel.FK_Dom_AssignDomainToMembers_Config_MembersList" />
+        <AssociationConnector Association="AdminModel.FK_PCR_PCRHistory_Config_MembersList" />
+        <EntityTypeShape EntityType="AdminModel.City" Width="1.5" PointX="28.375" PointY="17.125" />
+        <EntityTypeShape EntityType="AdminModel.DCR_Column_Alias" Width="1.5" PointX="13.25" PointY="45.875" />
+        <EntityTypeShape EntityType="AdminModel.DCR_Domain_Data" Width="1.5" PointX="16.25" PointY="44.625" />
+        <EntityTypeShape EntityType="AdminModel.DCR_DomainList" Width="1.5" PointX="30.375" PointY="2.125" />
+        <EntityTypeShape EntityType="AdminModel.DCR_Schema" Width="1.5" PointX="3" PointY="52.125" />
+        <EntityTypeShape EntityType="AdminModel.DCR_Schema_ColumnsList" Width="1.5" PointX="3" PointY="56.375" />
+        <EntityTypeShape EntityType="AdminModel.DCR_Schema_Details" Width="1.5" PointX="5.25" PointY="52.375" />
+        <EntityTypeShape EntityType="AdminModel.Domain_DomainType" Width="1.5" PointX="28.625" PointY="29.75" />
+        <EntityTypeShape EntityType="AdminModel.Domain_Product" Width="1.5" PointX="11.25" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminModel.Domain_Region" Width="1.5" PointX="28.625" PointY="26.25" />
+        <EntityTypeShape EntityType="AdminModel.DCR_Schema_VIEW" Width="1.5" PointX="30.375" PointY="5.125" />
+        <EntityTypeShape EntityType="AdminModel.Domain_DataScope" Width="1.5" PointX="31.375" PointY="9.125" />
+        <EntityTypeShape EntityType="AdminModel.DomainsPerUserScope" Width="1.5" PointX="31.375" PointY="14.125" />
+        <EntityTypeShape EntityType="AdminModel.PaymentDateVIEW" Width="1.5" PointX="30.375" PointY="23.125" />
+        <AssociationConnector Association="AdminModel.FK_DCR_Column_Alias_DCR_Schema" />
+        <AssociationConnector Association="AdminModel.FK_DCR_Column_Alias_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_DCR_Domain_Data_DCR_Schema" />
+        <AssociationConnector Association="AdminModel.FK_DCR_Domain_Data_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_DCR_Schema_DCR_Schema" />
+        <AssociationConnector Association="AdminModel.FK_DCR_Schema_Details_DCR_Schema" />
+        <AssociationConnector Association="AdminModel.FK_DCR_Schema_Details_DCR_Schema_ColumnsList" />
+        <AssociationConnector Association="AdminModel.FK_Domain_DomainType_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_Domain_Product_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_Domain_Region_Dom_DomainBasic" />
+        <AssociationConnector Association="AdminModel.FK_Domain_DomainType_DomainType" />
+        <AssociationConnector Association="AdminModel.FK_Domain_Product_Products" />
+        <AssociationConnector Association="AdminModel.FK_Domain_Region_Region" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

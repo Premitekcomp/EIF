@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2018d5a4cfb2491ba6f3272eea06b260" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="CollectionModel.Config_AgencyBranches" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Config_AgencyList" Width="1.5" PointX="0.75" PointY="33" />
+        <EntityTypeShape EntityType="CollectionModel.Config_MembersList" Width="1.5" PointX="6" PointY="21.625" />
+        <EntityTypeShape EntityType="CollectionModel.Config_TeamList" Width="1.5" PointX="3" PointY="28.75" />
+        <EntityTypeShape EntityType="CollectionModel.Config_TeamMembers" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_AssignDomainToMembers" Width="1.5" PointX="8.25" PointY="24.625" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainBasic" Width="1.5" PointX="6" PointY="28" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainColumnsAlias" Width="1.5" PointX="8.25" PointY="29" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainsDataExtra" Width="1.5" PointX="11.25" PointY="14.5" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainStatus" Width="1.5" PointX="3.75" PointY="32" />
+        <EntityTypeShape EntityType="CollectionModel.Lup_BranchList" Width="1.5" PointX="0.75" PointY="28.25" />
+        <EntityTypeShape EntityType="CollectionModel.Lup_Comments" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CollectionModel.Lup_MonthYear" Width="1.5" PointX="3.75" PointY="34.375" />
+        <EntityTypeShape EntityType="CollectionModel.Lup_TeamRole" Width="1.5" PointX="6" PointY="24.125" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_ConnectionResult" Width="1.5" PointX="11.25" PointY="11.875" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_ConnectionType" Width="1.5" PointX="11.25" PointY="57.25" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_PTPType" Width="1.5" PointX="11.25" PointY="59.5" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_Actions" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_BranchesPermissions" Width="1.5" PointX="3" PointY="26" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_Config" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_FormActions" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_FormList" Width="1.5" PointX="0.75" PointY="15" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_GroupPermissions" Width="1.5" PointX="9" PointY="13" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_Groups" Width="1.5" PointX="3.75" PointY="12.5" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_GroupsMembers" Width="1.5" PointX="6" PointY="17.5" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_ModuleForms" Width="1.5" PointX="6" PointY="13.375" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_Section" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_SectionPermissions" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_SystemModules" Width="1.5" PointX="3.75" PointY="8.375" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_Trans_Log" Width="1.5" PointX="3" PointY="17.125" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_Users" Width="1.5" PointX="0.75" PointY="22.875" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_UserStatus" Width="1.5" PointX="3" PointY="22.625" />
+        <EntityTypeShape EntityType="CollectionModel.Sch_Columns" Width="1.5" PointX="3" PointY="36.875" />
+        <EntityTypeShape EntityType="CollectionModel.Sch_SchemaColumns" Width="1.5" PointX="5.25" PointY="39.875" />
+        <EntityTypeShape EntityType="CollectionModel.Sch_Schemas" Width="1.5" PointX="3" PointY="39.875" />
+        <EntityTypeShape EntityType="CollectionModel.Chrt_Contacts" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CollectionModel.Config_AgencyBranchList" Width="1.5" PointX="5.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CollectionModel.Config_TeamMembersList" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CollectionModel.Config_TeamMembersRoleList" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_DCRHistoryWithAccountsToImport" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_MemberDCRSummary" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_SummaryForCharts" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainDetailsAllVersionsList" Width="1.5" PointX="17.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainDetailsList" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainDetailsListPrev" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainList" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_MasterDomain" Width="1.5" PointX="23.75" PointY="5.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_BrunchesList" Width="1.5" PointX="25.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_SectionsList" Width="1.5" PointX="25.75" PointY="9.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_UsersSections" Width="1.5" PointX="7.75" PointY="10.75" />
+        <EntityTypeShape EntityType="CollectionModel.Sch_SchemaColList" Width="1.5" PointX="25.75" PointY="16.75" />
+        <EntityTypeShape EntityType="CollectionModel.Sch_SchemaList" Width="1.5" PointX="25.75" PointY="20.75" />
+        <AssociationConnector Association="CollectionModel.FK_Config_TeamList_Config_AgencyList" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainBasic_Config_AgencyList" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_AssignDomainToMembers_Config_MembersList" />
+        <AssociationConnector Association="CollectionModel.FK_Config_TeamList_Lup_BranchList" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_AssignDomainToMembers_Config_TeamList" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_AssignDomainToMembers_Dom_DomainsDataExtra" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_AssignDomainToMembers_Lup_TeamRole" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainBasic_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainBasic_Dom_DomainStatus" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainBasic_Lup_BranchList" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainBasic_Lup_MonthYear" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainColumnsAlias_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainsDataExtra_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_DomainsDataExtra_Sch_Schemas" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_BranchesPermissions_Lup_BranchList" />
+        <AssociationConnector Association="CollectionModel.FK_Sch_Schemas_Lup_BranchList" />
+        <AssociationConnector Association="CollectionModel.FK_GroupPermissions_Actions" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_Trans_Log_Pre_Actions" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_BranchesPermissions_Pre_Users" />
+        <AssociationConnector Association="CollectionModel.FK_GroupPermissions_FormList" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_ModuleForms_Pre_FormList" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_Trans_Log_Pre_Lup_FormList" />
+        <AssociationConnector Association="CollectionModel.FK_GroupPermissions_Groups" />
+        <AssociationConnector Association="CollectionModel.FK_UsersGroups_Groups" />
+        <AssociationConnector Association="CollectionModel.FK_UsersGroups_Users" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_ModuleForms_Pre_SystemModules" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_Trans_Log_Pre_Users" />
+        <AssociationConnector Association="CollectionModel.FK_Pre_UserStatus_Pre_Users" />
+        <AssociationConnector Association="CollectionModel.FK_Sch_SchemaColumns_Sch_Columns" />
+        <AssociationConnector Association="CollectionModel.FK_Sch_SchemaColumns_Sch_Schemas" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_PCRHistoryList" Width="1.5" PointX="26.375" PointY="23.75" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_PCRHistory" Width="1.5" PointX="13.5" PointY="32.75" />
+        <AssociationConnector Association="CollectionModel.FK_PCR_PCRHistory_Config_MembersList" />
+        <AssociationConnector Association="CollectionModel.FK_PCR_PCRHistory_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_PCR_PCRHistory_Dom_DomainsDataExtra" />
+        <AssociationConnector Association="CollectionModel.FK_PCR_PCRHistory_PCR_ConnectionResult" />
+        <AssociationConnector Association="CollectionModel.FK_PCR_PCRHistory_PCR_ConnectionType" />
+        <AssociationConnector Association="CollectionModel.FK_PCR_PCRHistory_PCR_PTPType" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_Code2" Width="1.5" PointX="8.375" PointY="17.75" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_Reached" Width="1.5" PointX="8.375" PointY="20.75" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_ReachedComments" Width="1.5" PointX="26.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.PCR_UnReachedComments" Width="1.5" PointX="26.375" PointY="3.75" />
+        <EntityTypeShape EntityType="CollectionModel.AccessRight" Width="1.5" PointX="31.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CollectionModel.AdminPermission_Functions" Width="1.5" PointX="35.875" PointY="1.5" />
+        <EntityTypeShape EntityType="CollectionModel.Adminpermission" Width="1.5" PointX="33.625" PointY="1" />
+        <EntityTypeShape EntityType="CollectionModel.DomainType" Width="1.5" PointX="31.375" PointY="1.375" />
+        <EntityTypeShape EntityType="CollectionModel.ExceptionLog" Width="1.5" PointX="31.375" PointY="7.75" />
+        <AssociationConnector Association="CollectionModel.FK_AdminPermission_Functions_Adminpermissions" />
+        <AssociationConnector Association="CollectionModel.FK_Adminpermissions_Adminpermissions" />
+        <AssociationConnector Association="CollectionModel.FK_Adminpermissions_DomainType" />
+        <EntityTypeShape EntityType="CollectionModel.Design_MenuBasic" Width="1.5" PointX="28.375" PointY="11.25" />
+        <EntityTypeShape EntityType="CollectionModel.Design_MenuItems" Width="1.5" PointX="30.625" PointY="11" />
+        <AssociationConnector Association="CollectionModel.FK_Design_MenuItems_Design_MenuBasic" />
+        <EntityTypeShape EntityType="CollectionModel.LicensedFunction" Width="1.5" PointX="10" PointY="62.5" />
+        <AssociationConnector Association="CollectionModel.FK_AdminPermission_Functions_LicensedFunctions" />
+        <AssociationConnector Association="CollectionModel.FK_LicensedFunctions_Pre_Section" />
+        <EntityTypeShape EntityType="CollectionModel.Product" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Region" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Type" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_AssignDomainToMembersList" Width="1.5" PointX="28.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainDetailsToBankAssignList" Width="1.5" PointX="28.375" PointY="16.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_DomainDetailsToInternalAssignList" Width="1.5" PointX="30.375" PointY="16.75" />
+        <EntityTypeShape EntityType="CollectionModel.Pre_UsersView" Width="1.5" PointX="28.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CollectionModel.Dom_AccountsPayments" Width="1.5" PointX="13.5" PointY="29.125" />
+        <AssociationConnector Association="CollectionModel.FK_Dom_AccountsPayments_Dom_DomainsDataExtra" />
+        <EntityTypeShape EntityType="CollectionModel.DomainsWithPayment" Width="1.5" PointX="8.375" PointY="32.75" />
+        <EntityTypeShape EntityType="CollectionModel.PaymentDateVIEW" Width="1.5" PointX="28.375" PointY="8.75" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_Column_Alias" Width="1.5" PointX="8.25" PointY="38.375" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_Domain_Data" Width="1.5" PointX="20.25" PointY="43.125" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_Schema" Width="1.5" PointX="3" PointY="42.875" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_Schema_ColumnsList" Width="1.5" PointX="3" PointY="47" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_Schema_Details" Width="1.5" PointX="5.25" PointY="43" />
+        <AssociationConnector Association="CollectionModel.FK_DCR_Column_Alias_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_DCR_Domain_Data_DCR_Schema" />
+        <AssociationConnector Association="CollectionModel.FK_DCR_Domain_Data_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_DCR_Schema_DCR_Schema" />
+        <AssociationConnector Association="CollectionModel.FK_DCR_Schema_Details_DCR_Schema" />
+        <AssociationConnector Association="CollectionModel.FK_DCR_Schema_Details_DCR_Schema_ColumnsList" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_Schema_VIEW" Width="1.5" PointX="32.375" PointY="16.75" />
+        <AssociationConnector Association="CollectionModel.FK_DCR_Column_Alias_DCR_Schema" />
+        <EntityTypeShape EntityType="CollectionModel.DCR_DomainList" Width="1.5" PointX="32.375" PointY="20.75" />
+        <EntityTypeShape EntityType="CollectionModel.Domain_DomainType" Width="1.5" PointX="14.25" PointY="1.25" />
+        <EntityTypeShape EntityType="CollectionModel.Domain_Region" Width="1.5" PointX="11.25" PointY="0.75" />
+        <AssociationConnector Association="CollectionModel.FK_Domain_DomainType_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_Domain_Region_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_Domain_DomainType_DomainType" />
+        <AssociationConnector Association="CollectionModel.FK_Domain_Region_Region" />
+        <EntityTypeShape EntityType="CollectionModel.Domain_Product" Width="1.5" PointX="8.25" PointY="0.75" />
+        <AssociationConnector Association="CollectionModel.FK_Domain_Product_Dom_DomainBasic" />
+        <AssociationConnector Association="CollectionModel.FK_Domain_Product_Products" />
+        <EntityTypeShape EntityType="CollectionModel.DomainsPerUserScope" Width="1.5" PointX="32.375" PointY="29.75" />
+        <EntityTypeShape EntityType="CollectionModel.Domain_DataScope" Width="1.5" PointX="32.375" PointY="23.75" />
+        <EntityTypeShape EntityType="CollectionModel.City" Width="1.5" PointX="33.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CollectionModel.UserDataScope" Width="1.5" PointX="6" PointY="35.625" />
+        <AssociationConnector Association="CollectionModel.FK_UserDataScope_Config_AgencyList" />
+        <AssociationConnector Association="CollectionModel.FK_UserDataScope_Pre_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
