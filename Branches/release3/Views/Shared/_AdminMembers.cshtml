@@ -1,0 +1,99 @@
+﻿@{EIF.Helper.Get get = new EIF.Helper.Get();}
+@model List<EIF.Helper.EmployeeData>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+
+<table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+    <thead>
+        <tr>
+            <th >Code</th>
+            <th >Name</th>
+            
+            <th >Office</th>
+            <th>Job Title</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            //if (ViewBag.data != null)
+            {
+                //IEnumerable < EIF.Helper.EmployeeData > data = ViewBag.data;
+                foreach (var item in Model)
+                {
+                    <tr id="row_@item.Code">
+                        <td><input type="text" class="form-control" name="Code-@item.Code" id="Code-@item.Code" value="@item.Code" /> </td>
+                        <td><input type="text" class="form-control" name="Name-@item.Name" id="Name-@item.Name" value="@item.Name" /> </td>
+                      <td>  @Html.DropDownListFor(x=>item.OfficeId, get.OfficesList(item.OfficeId, item.OfficeId) as SelectList, new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                })
+                          </td>
+                        <td>
+                            @Html.DropDownList("GroupID", get.GroupsList(item.GroupID, item.GroupID) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                })
+                        </td>   
+                                         
+                       <td>
+                          
+                         
+                            <a  id ="@item.Code" onclick="DeleteMember('@item.Code');" class="btn btn-default tooltip-btn"><i class="fa fa-trash-o"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+            }}
+    </tbody>
+    <tfoot style="background: #ccc;">
+        <tr>
+            <td><input type="text" id="Code" class="form-control" name="Code" /></td>
+            <td><input type="text" id="Name" class="form-control" name="Name" /></td>
+            <td>
+                @Html.DropDownList("OfficeId", get.OfficesList(0, null) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                    
+                                                    
+                                                })
+            </td>
+            <td>
+                @Html.DropDownList("GroupID", get.GroupsList(0, null) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                })
+            </td>  
+            @*<td>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <input type="text" id="Code" class="form-control" name="Code" />
+                        </div>
+                        <div class="col-lg-9">
+                            
+                        </div>
+                    </div>
+                </div>
+            </td>*@
+
+
+            <td><a href="javascript:void(0);" onclick="NewMember();" class="btn btn-default tooltip-btn"><i class="fa fa-save"></i> Save</a></td>
+
+        </tr>
+    </tfoot>
+
+</table>
+
+
+
+<style>
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>
+

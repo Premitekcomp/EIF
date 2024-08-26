@@ -1,0 +1,100 @@
+﻿<span> Select Filter</span>
+<select id="filterType1">
+    <option value="1">Details</option>
+    <option value="2">Bank Summarry</option>
+</select>
+
+<select id="filterType">
+    <option value="Year">By Year</option>
+    <option value="Month">By Month</option>
+</select>
+
+<span id="monthFilter" hidden>
+
+    <span>Select Year </span>
+
+    <select id="YearsLists" name="YearsLists" class="YearsLists">
+        <option value=null>
+            --Select--
+        </option>
+
+        @if (ViewBag.YearsList != null)
+            {
+                foreach (var item in ViewBag.YearsList)
+                {
+                    if (item.Text != null)
+                    {
+                        <option value="@item.Value">
+                            @item.Text
+                        </option>
+                    }
+                }
+            }
+            
+    </select>
+
+    <span> Select Month </span>
+    @Html.DropDownList("MonthsLists", ViewBag.MonthsLists as List<SelectListItem>, new { multiple = "multiple", @class = "MonthsLists" })
+</span>
+
+<span id="year-filter">
+    <span>Select Year </span>
+
+    <select class="YearsList" id="YearsList" name="YearsList" multiple="multiple">
+
+        @if (ViewBag.YearsList != null)
+            {
+
+                foreach (var item in ViewBag.YearsList)
+                {
+                    if (item.Text != null)
+                    {
+                        <option value="@item.Value">
+                            @item.Text
+                        </option>
+                    }
+                }
+            }
+            
+    </select>
+</span>
+
+<span> <button id="Apply-btn">Apply</button></span>
+<span> <button id="export-btn" style="display:none;" onclick="fnExcelReport('')">Export Excel</button></span>
+<div id="result"></div>
+
+<script src="~/Scripts/Custom/Collection.js"></script>
+<script src="~/Scripts/Custom/ExportExcel.js"></script>
+<script>
+
+    $(function () {
+
+        $('#YearsList').multiselect({
+            includeSelectAllOption: true,
+            maxHeight: 200
+        })
+
+        $('#MonthsLists').multiselect({
+            includeSelectAllOption: true,
+            maxHeight: 200
+        })
+
+        $("#filterType").on('change', function () {
+            if ($("#filterType").val() == 'Month') {
+                $("#monthFilter").show();
+                $("#year-filter").hide();
+            }
+
+            else {
+                $("#monthFilter").hide();
+                $("#year-filter").show()
+            }
+        })
+    })
+</script>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/MultiSelect/bootstrap-multiselect.min.css" rel="stylesheet" />
+<script src="~/Scripts/MultiSelect/bootstrap-multiselect.min.js"></script>

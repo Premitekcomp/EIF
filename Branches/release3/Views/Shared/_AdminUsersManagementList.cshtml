@@ -1,0 +1,100 @@
+﻿
+@{
+    IEnumerable<EIF.Models.Pre_Users> Accounts = ViewBag.Accounts;
+    string sideurl = EIF.PublicConfig.sideurl;
+
+}
+
+@*<div role="alert" class="alert alert-danger fade in hide">
+    <h4>Confirm delete</h4>
+    <p>Confirm deleting this recored</p>
+    <p>
+        <input type="hidden" id="del" />
+        <button class="btn btn-danger" type="button" onclick="Delete();">Yes</button>
+        <button class="btn btn-default" type="button" onclick="Cancel();">No</button>
+    </p>
+</div>*@
+<div class="form-group">
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="@sideurl/Admin/NewUser" class="btn btn-default tooltip-btn" data-toggle="tooltip" data-placement="top" title="New">New User</a>
+        </div>
+    </div>
+</div>
+@{if (ViewBag.Accounts != null)
+{
+    <table cellpadding="0" border="0" class="table table-striped table-bordered" id="basic-datatable1">
+        <thead>
+            <tr>
+                <th>Display name</th>
+                <th>User Name</th>
+                <th></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{foreach (var item in Accounts)
+            {
+                <tr>
+                    <td>@item.DisplayName</td>
+                    <td>@item.UserName</td>                    
+                    <td>
+                        @{if (item.IsActive == true)
+                        {
+                               <label class="cr-styled">
+                                   <input type="checkbox" name="Active-@item.UserID" id="IsShow-@item.UserID" onclick="Activate(@item.UserID,'0');" checked>
+
+                            <i class="fa"></i>
+                        </label>
+                                 <span>Active</span> 
+                        }
+                        else
+                        {
+                                <label class="cr-styled">
+                                    <input type="checkbox" name="Active-@item.UserID" id="IsShow-@item.UserID" onclick="Activate(@item.UserID,'1');">
+                            <i class="fa"></i>
+                        </label>
+                                <span>Block</span> 
+
+                        }}
+                       
+                    </td>
+                    <td>
+                        <a href="@sideurl/Admin/EditUser/@item.UserID" class="btn btn-default tooltip-btn"><i class="fa fa-edit"></i> Edit</a>
+                        @*<button type="button" id="btn-delete-@item.UserID" class="btn btn-default tooltip-btn" data-toggle="tooltip" data-placement="top" title="Delete" onclick="ConfirmDelete(@item.UserID)"><i class="fa fa-trash"></i></button>*@
+                        <a href="@sideurl/Admin/ResetPassword/@item.UserID" class="btn btn-default tooltip-btn">Reset password</a>
+                        <a href="@sideurl/Admin/AddDataScope/@item.UserID" class="btn btn-default tooltip-btn"> Data Scope</a>
+
+                    </td>
+                </tr>
+
+            }
+            }
+        </tbody>
+
+    </table>
+}}
+
+<link href="~/Content/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<!-- Data Table -->
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/DT_bootstrap.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables-conf.js"></script>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Admin.js"></script>
+<style>
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>
+<script>
+    $('#basic-datatable1').dataTable();
+
+</script>

@@ -1,0 +1,20 @@
+﻿@model List<EIF.Helper.EmployeeData>
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Employees List
+        </div>
+        <div class="panel-body">
+
+            <div id="msg"></div>
+            <div id="container">
+
+                @Html.Partial("_AdminMembers")
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Admin.js"></script>

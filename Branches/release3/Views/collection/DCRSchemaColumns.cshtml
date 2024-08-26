@@ -1,0 +1,23 @@
+﻿@{EIF.Models.DCR_Schema data = ViewBag.Data;}
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @data.DCR_Schema_Name Columns
+
+        </div>
+        <div class="panel-body">
+
+
+            <input type="hidden" id="SchemaID" name="SchemaID" value="@data.DCR_Schema_ID" />
+
+            <div id="container">
+
+                @Html.Partial("_CollectionDCRSchemaCols")
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>

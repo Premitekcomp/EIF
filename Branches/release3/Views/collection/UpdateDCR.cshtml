@@ -1,0 +1,541 @@
+﻿
+@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();
+  EIF.Models.PCR_PCRHistoryList data = ViewBag.Data;
+  }
+
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div id="container">
+            @using (Ajax.BeginForm("UpdateDCR", "collection",
+                                     new AjaxOptions
+                                     {
+                                         //AllowCache = false,
+                                         HttpMethod = "POST",
+                                         UpdateTargetId = "msg",
+                                         InsertionMode = InsertionMode.Replace,
+                                         OnBegin = "ShowProgress();",
+                                         OnComplete = "HideProgress();"
+                                     }))
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Update DCR
+                    </div>
+                    <div class="panel-body">
+
+                        <div id="container">
+                            <div class="col-lg-12">
+                                <div id="msg"></div>
+                                
+
+                                <input type="hidden" name="AccountID" value="@data.AccountID" />
+                                <input type="hidden" name="DomainID2" id="DomainID2" value="@data.DomainID" />
+                                <input type="hidden" name="DCRID" id="DCRID" value="@data.PCRID" />
+                                <div class="row form-group">
+                                    <div class="col-lg-3">
+                                        <label>Connection Date </label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        @{if (data.ConnectionDate != null)
+                                        {
+
+                                            <div class='input-group date' id="ConnectionDate">
+                                                <input type='text' class="form-control" name="ConnectionDateVal" id="ConnectionDateVal" value="@Convert.ToDateTime(data.ConnectionDate).ToString("dd/MM/yyyy")" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class='input-group date' id="ConnectionDate">
+                                                <input type='text' class="form-control" name="ConnectionDateVal" id="ConnectionDateVal" value="@Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy")" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>}}
+
+                                    </div>
+                                    <div class="col-lg-6"></div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-lg-3">
+                                        <label>Action Maker </label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        @Html.DropDownList("MembersID", get.MembersList(Convert.ToInt16(data.MemberID), Convert.ToInt16(data.AccountID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+                                    <div class="col-lg-6"></div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-lg-3">
+                                        <label>Connection Type</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        @Html.DropDownList("ConnectionTypeID", get.ConnectionTypeList(Convert.ToInt16(data.ConnectionTypeID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-lg-3">
+                                        <label>Connection Result</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        @Html.DropDownList("ConnectionResultID", get.ConnectionResultList(Convert.ToInt16(data.ConnectionResultID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <label>Code 2</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        @Html.DropDownList("Code2ID", get.Code2List(Convert.ToInt16(data.Code2ID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+                                    <div class="col-lg-6"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-lg-1">
+                                        <label>Reached</label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        @Html.DropDownList("ReachedID", get.ReachedList(Convert.ToInt16(data.ReachedID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label>Reached comments</label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        @Html.DropDownList("ReachedCommentsID", get.ReachedCommentsList(Convert.ToInt16(data.ReachedCommentsID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label>UN-Reached comments</label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        @Html.DropDownList("UnReachedCommentsID", get.UnReachedCommentsList(Convert.ToInt16(data.UnReachedCommentsID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-lg-3">
+                                        <label>Customer Phone</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input type='text' class="form-control" name="CustomerPhone" id="CustomerPhone" maxlength="11" value="@data.CustomerPhone" />
+
+                                    </div>
+                                    <div class="col-lg-6"></div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-lg-4">
+                                        <label>PTP Type</label>
+                                        @Html.DropDownList("PTPTypeID", get.PTPTypeList(Convert.ToInt16(data.PTPTypeID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <label>PTP Date</label>
+                                        @{if (data.PTPDate != null)
+                                        {
+                                            <div class='input-group date' id="PTPDate">
+                                                <input type='text' class="form-control" name="PTPDateVal" id="PTPDateVal" value="@Convert.ToDateTime(data.PTPDate).ToString("dd/MM/yyyy")" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class='input-group date' id="PTPDate">
+                                                <input type='text' class="form-control" name="PTPDateVal" id="PTPDateVal" value="@Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy")" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        }}
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>PTP Amount</label>
+                                        <input type="text" class="form-control" name="PTPAmount" id="PTPAmount" value="@data.PTPAmount" />
+                                    </div>
+                                </div>
+
+                                <!--PTP2-->
+                                <div class="row form-group">
+                                    <div class="col-lg-4">
+                                        <label>PTP Type</label>
+                                        @Html.DropDownList("PTPTypeID2", get.PTPTypeList(Convert.ToInt16(data.PTPTypeID2)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <label>PTP Date</label>
+                                        @{if (data.PTPDate2 != null)
+                                        {
+                                            <div class='input-group date' id="PTPDate2">
+                                                <input type='text' class="form-control" name="PTPDate2" id="PTPDate2" value="@Convert.ToDateTime(data.PTPDate2).ToString("dd/MM/yyyy")" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class='input-group date' id="PTPDate2">
+                                                <input type='text' class="form-control" name="PTPDate2" id="PTPDate2" value="@Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy")" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        }}
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>PTP Amount</label>
+                                        <input type="text" class="form-control" name="PTPAmount2" id="PTPAmount2" value="@data.PTPAmount2" />
+                                    </div>
+                                </div>
+                                <!--PTP3-->
+                                <div class="row form-group">
+                                    <div class="col-lg-4">
+                                        <label>PTP Type</label>
+                                        @Html.DropDownList("PTPTypeID3", get.PTPTypeList(Convert.ToInt16(data.PTPTypeID3)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <label>PTP Date</label>
+                                        @{if (data.PTPDate3 != null)
+                                        {
+                                            <div class='input-group date' id="PTPDate3">
+                                                <input type='text' class="form-control" name="PTPDate3" id="PTPDate3" value="@Convert.ToDateTime(data.PTPDate3).ToString("dd/MM/yyyy")" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                        <div class='input-group date' id="PTPDate3">
+                                            <input type='text' class="form-control" name="PTPDate3" id="PTPDate3" value="@Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy")" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        }}
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>PTP Amount</label>
+                                        <input type="text" class="form-control" name="PTPAmount3" id="PTPAmount3" value="@data.PTPAmount3" />
+                                    </div>
+                                </div>
+
+                                <!-- Promise1 -->
+                                <div class="row form-group">
+                                    <div class="col-lg-2"><br /><label></label></div>
+                                    @{if ((bool)data.IsPromiseKept)
+                                      {
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="Promise" value="true" checked id="chk1" />
+                                        Kept
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="Promise" value="false" id="chk0" />
+                                        Brok
+                                    </div>
+                                      }
+                                      else
+                                      {
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="Promise" value="true" id="chk1" />
+                                        Kept
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="Promise" value="false" checked id="chk0" />
+                                        Brok
+                                    </div>
+                                      }}
+
+                                    <div class="col-lg-4">
+                                        <label>Kept Date</label>
+                                        @{if (data.KeptDate != null)
+                                        {
+                                        <div class='input-group date' id="KeptDate">
+                                            <input type='text' class="form-control" name="KeptDate" id="KeptDate" value="@Convert.ToDateTime(data.KeptDate).ToString("dd/MM/yyyy")" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        }
+                                          else
+                                          {
+                                        <div class='input-group date' id="KeptDate">
+                                            <input type='text' class="form-control" name="KeptDate" id="KeptDate" value="@Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy")" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                          }}
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <label>Kept Amount</label>
+                                        <input type="text" class="form-control" name="KeptAmount" value="@data.KeptAmount" />
+                                    </div>
+
+                                </div>
+
+                                <!-- Promise2 -->
+                                <div class="row form-group">
+                                    <div class="col-lg-2"><br /><label></label></div>
+                                    @{if ((bool)data.IsPromiseKept2)
+                                    {
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept2" value="true" checked id="chk1" />
+                                        Kept
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept2" value="false" id="chk0" />
+                                        Brok
+                                    </div>
+                                    }
+                                    else
+                                    {
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept2" value="true" id="chk1" />
+                                        Kept
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept2" value="false" checked id="chk0" />
+                                        Brok
+                                    </div>
+                                    }}
+
+                                    <div class="col-lg-4">
+                                        <label>Kept Date</label>
+                                        @{if (data.KeptDate2 != null)
+                                        {
+                                        <div class='input-group date' id="KeptDate2">
+                                            <input type='text' class="form-control" name="KeptDate2" id="KeptDate2" value="@Convert.ToDateTime(data.KeptDate2).ToString("dd/MM/yyyy")" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        }
+                                        else
+                                        {
+                                        <div class='input-group date' id="KeptDate2">
+                                            <input type='text' class="form-control" name="KeptDate2" id="KeptDate2" value="@Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy")" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        }}
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <label>Kept Amount</label>
+                                        <input type="text" class="form-control" name="KeptAmount2" value="@data.KeptAmount2" />
+                                    </div>
+
+                                </div>
+
+                                <!-- Promise3 -->
+                                <div class="row form-group">
+                                    <div class="col-lg-2"><br /><label></label></div>
+                                    @{if ((bool)data.IsPromiseKept3)
+                                    {
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept3" value="true" checked id="chk1" />
+                                        Kept
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept3" value="false" id="chk0" />
+                                        Brok
+                                    </div>
+                                    }
+                                    else
+                                    {
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept3" value="true" id="chk1" />
+                                        Kept
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <br />
+                                        <input type="radio" name="IsPromiseKept3" value="false" checked id="chk0" />
+                                        Brok
+                                    </div>
+                                    }}
+
+                                    <div class="col-lg-4">
+                                        <label>Kept Date</label>
+                                        @{if (data.KeptDate3 != null)
+                                        {
+                                        <div class='input-group date' id="KeptDate3">
+                                            <input type='text' class="form-control" name="KeptDate3" id="KeptDate3" value="@Convert.ToDateTime(data.KeptDate3).ToString("dd/MM/yyyy")" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                        }
+                                          else
+                                          {
+                                        <div class='input-group date' id="KeptDate3">
+                                            <input type='text' class="form-control" name="KeptDate3" id="KeptDate3" value="@Convert.ToDateTime(DateTime.Now).ToString("dd/MM/yyyy")" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                          }}
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <label>Kept Amount</label>
+                                        <input type="text" class="form-control" name="KeptAmount3" value="@data.KeptAmount3" />
+                                    </div>
+
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-lg-3">
+                                        <label>Comments</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        @Html.DropDownList("CommentID", get.CommentsList(null) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                    @onchange = "GetArabicComment()"
+                                                })
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-lg-6">
+                                        <label>English Comments</label>
+                                        <textarea class="form-control" name="EngComment" id="EngComment">@data.EngComment</textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Arabic Comments</label>
+                                        <textarea class="form-control" name="ArabComment" id="ArabComment">@data.ArabicComment</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+            }
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Time/Date Plugin Dependencies -->
+
+<script src="~/Scripts/Custom/DatePicker/globalize.min.js"></script>
+<script src="~/Scripts/Custom/DatePicker/moment.min.js"></script>
+<script src="~/Scripts/Custom/DatePicker/1.js"></script>
+<script src="~/Scripts/Custom/DatePicker/2.js"></script>
+<script src="~/Scripts/Custom/DatePicker/utility.js"></script>
+<script src="~/Scripts/Custom/DatePicker/demo.js"></script>
+<script src="~/Scripts/Custom/DatePicker/main.js"></script>
+
+<script>
+    $('#ConnectionDate').datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY'
+    });
+    $('#PTPDate').datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY'
+    });
+    $('#PTPDate2').datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY'
+    });
+    $('#PTPDate3').datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY'
+    });
+    $('#KeptDate').datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY'
+    });
+    $('#KeptDate2').datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY'
+    });
+    $('#KeptDate3').datetimepicker({
+        defaultDate: new Date(),
+        format: 'DD/MM/YYYY'
+    });
+
+</script>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>

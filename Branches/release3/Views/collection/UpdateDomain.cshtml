@@ -1,0 +1,55 @@
+﻿<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<div class="warper container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Domain Data
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    @Html.Partial("_CollectionNewRefererDomain")
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="example-basic">
+
+        <h3>Import</h3>
+        <section>
+            <div class="row">
+                <div class="col-lg-12" id="import">
+                    @Html.Partial("_CollectionImoprtUpdateDomain")
+                </div>
+            </div>
+        </section>
+        <h3>Step 3</h3>
+        <section>
+            <p>No Data Available</p>
+        </section>
+    </div>
+
+
+
+</div>
+<script src="~/Scripts/Steps/jquery.steps.js"></script>
+<script src="~/Scripts/Steps/jquery.steps.min.js"></script>
+
+<link href="~/Scripts/Steps/css/normalize.css" rel="stylesheet" />
+<link href="~/Scripts/Steps/css/main.css" rel="stylesheet" />
+<link href="~/Scripts/Steps/css/jquery.steps.css" rel="stylesheet" />
+
+<script>
+    $("#example-basic").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        autoFocus: true,
+        enablePagination: false//hide next and previous buttons
+    });
+</script>

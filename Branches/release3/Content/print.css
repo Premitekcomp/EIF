@@ -1,0 +1,9 @@
+﻿@media print {
+  a:link:after, a:visited:after {
+    content: none !important;
+  }
+  /*table, th, td { font-size: 10px !important; color:red;}*/
+ 
+}
+
+

@@ -1,0 +1,163 @@
+﻿<div class="panel panel-default">
+    <div class="panel-body">
+        
+        @{if (ViewBag.RowsCount!=null)
+          {
+        <p class="text-primary"><span class="fa fa-check-circle text-blue"></span> Number Of Rows : @ViewBag.RowsCount Row</p>
+          }          
+          else if (ViewBag.RowsCountError != null)
+          {
+            <p class="text-danger"><span class="fa fa-times-circle text-red"></span> Number Of Rows : @ViewBag.RowsCountError</p>
+          }
+          if (ViewBag.PastDue != null)
+          {
+          <p class="text-primary"><span class="fa fa-check-circle text-blue"></span> Sum Of Past Due : @string.Format("{0:N0}",ViewBag.PastDue)</p>
+            }
+            else if (ViewBag.PastDueError != null)
+            {
+                <p class="text-danger"><span class="fa fa-times-circle text-red"></span> Sum Of Past Due : @ViewBag.PastDueError</p>
+            }
+            if (ViewBag.Balance != null)
+            {
+        <p class="text-primary"><span class="fa fa-check-circle text-blue"></span> Sum Of Balance : @string.Format("{0:N0}",ViewBag.Balance)</p>
+            }
+            else if (ViewBag.BalanceError != null)
+          {
+           <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Sum Of Balance : @ViewBag.BalanceError</p>
+
+          }
+
+
+            if (ViewBag.Bucket != null)
+            {
+                List<EIF.Helper.BuckectResultLine> Res = ViewBag.Bucket;
+                <table class="table no-margn">
+                              <thead>
+                                <tr>
+                                    <th>Bucket</th>
+                                    <th>Count</th>
+                                    <th>Past Due</th>
+                                    <th>Balance</th>
+
+                                </tr>
+                              </thead>
+                              <tbody>
+                                 @{
+                                      foreach (EIF.Helper.BuckectResultLine R in Res)
+                                      {
+                                            <tr>
+                                                <td>@R.Bucket</td>
+                                                <td>@R.Count</td>
+                                                <td>@R.PastDue</td>
+                                                <td>@R.Balance</td>
+
+                                            </tr>
+                                      }
+                                 }
+                              </tbody>
+                            </table>
+               
+            }
+            else if (ViewBag.BucketError != null)
+          {
+           <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Bucket : @ViewBag.BucketError</p>
+
+          }
+            else if (ViewBag.BucketWarning!=null)
+            {
+                 <p class="text-warning"><span class="fa fa-warning text-yellow"></span>Bucket : @ViewBag.BucketWarning</p>
+            }
+
+            if (ViewBag.Cycle != null)
+            {
+                List<EIF.Helper.CycleResultLine> Res = ViewBag.Cycle;
+                <table class="table no-margn">
+                              <thead>
+                                <tr>
+                                    <th>Cycle</th>
+                                    <th>Count</th>
+                                    <th>Past Due</th>
+                                    <th>Balance</th>
+
+                                </tr>
+                              </thead>
+                              <tbody>
+                                 @{
+                foreach (EIF.Helper.CycleResultLine R in Res)
+                                      {
+                                            <tr>
+                                                <td>@R.Cycle</td>
+                                                <td>@R.Count</td>
+                                                <td>@R.PastDue</td>
+                                                <td>@R.Balance</td>
+
+                                            </tr>
+                                      }
+                                 }
+                              </tbody>
+                            </table>
+               
+            }
+            else if (ViewBag.CycleError != null)
+          {
+           <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Cycle : @ViewBag.CycleError</p>
+
+          }
+            else if (ViewBag.CycleWarning != null)
+            {
+                 <p class="text-warning"><span class="fa fa-warning text-yellow"></span>Cycle : @ViewBag.CycleWarning</p>
+            }
+            if (    ViewBag.error!=null)
+            {
+                 <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Error : @ViewBag.error</p>
+            }
+            if(ViewBag.Domaintype != null)
+            {
+                <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Error : @ViewBag.Domaintype</p>
+            }
+             if(ViewBag.Region != null)
+            {
+                <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Error : @ViewBag.Region</p>
+            }
+             if(ViewBag.Product != null)
+            {
+                <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Error : @ViewBag.Product</p>
+            }
+             if (ViewBag.Collectors != null)
+            {
+                <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Error : @ViewBag.Collectors</p>
+            }
+            if (ViewBag.error == null && ViewBag.CycleError == null && ViewBag.BucketError == null
+                && ViewBag.BalanceError == null && ViewBag.PastDueError == null && ViewBag.RowsCountError == null && ViewBag.Domaintype == null
+                && ViewBag.Region == null && ViewBag.Product == null && ViewBag.Collectors == null)
+            {
+                <br /><br />
+                 <div class="row">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                    <div class="col-lg-8">
+                                        <button type="submit" class="btn btn-primary btn-block">Import</button>
+                                    </div>
+                                <div class="col-lg-2"></div>
+                                </div>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div id="ImportMsg"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>         
+               
+            }
+          }      
+        
+    </div>
+    </div>
+

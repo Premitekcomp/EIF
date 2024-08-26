@@ -1,0 +1,19 @@
+﻿@{EIF.Helper.admin.Get get = new EIF.Helper.admin.Get(); }
+
+@{if (ViewBag.agency!=null)
+  {
+      string AgID=ViewBag.AgID;
+      
+      @Html.DropDownList("AgencyID" + AgID, ViewBag.agency as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+  }
+  else
+  {
+      @Html.DropDownList("AgencyID", get.TeamAgencyList(0,null) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+  }}
+

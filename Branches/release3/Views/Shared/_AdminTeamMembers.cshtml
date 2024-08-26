@@ -1,0 +1,108 @@
+﻿@{IEnumerable<EIF.Models.Config_MembersList> Members = ViewBag.Members;}
+@{EIF.Helper.admin.Get get = new EIF.Helper.admin.Get();}
+
+@{if (Members != null)
+{
+    <div id="msg">@Html.Partial("_Result")</div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Members List</div>
+        <div class="panel-body">
+            <table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="cr-styled">
+                                <input type="checkbox" ng-model="todo.done" class="ng-pristine ng-untouched ng-valid" id="checkAll" name="checkAll">
+                                <i class="fa"></i>
+                            </label>
+                            <span class="done-true"><b>All Members </b></span>
+                        </th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+    if (ViewBag.AssignedMembers!=null)
+    {
+        foreach (var item in Members)
+        {
+            if (ViewBag.AssignedMembers.IndexOf(item.MemberID) != -1)
+            {
+                <tr>
+                    <td>
+                        <label class="cr-styled">
+                            <input type="checkbox" data-ng-model="todo.done" class="ng-pristine ng-untouched ng-valid" name="checkonce" id="checkonce" value="@item.MemberID" checked>
+                            <i class="fa"></i>
+                        </label>
+                        <span>@item.MemberName</span>
+                    </td>
+                    <td>
+                        @Html.DropDownList("RoleID-" + item.MemberID, get.RoleList(null, item.MemberID) as SelectList, new
+                                                {
+                                                    @class = "form-control",// chosen-select
+                                                    @onchange = "UpdateTeamMembersRole("+item.MemberID+")"
+                                                })
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        <label class="cr-styled">
+                            <input type="checkbox" data-ng-model="todo.done" class="ng-pristine ng-untouched ng-valid" name="checkonce" id="checkonce" value="@item.MemberID">
+                            <i class="fa"></i>
+                        </label>
+                        <span>@item.MemberName</span>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            @Html.DropDownList("RoleID-" + item.MemberID, get.RoleList(null, null) as SelectList,"Choose", new
+                                                {
+                                                    @class = "form-control",// chosen-select
+                                                })
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        }
+    }
+    else
+    {
+        foreach (var item in Members)
+        {
+            <tr>
+                <td>
+                    <label class="cr-styled">
+                        <input type="checkbox" data-ng-model="todo.done" class="ng-pristine ng-untouched ng-valid" name="checkonce" id="checkonce" value="@item.MemberID">
+                        <i class="fa"></i>
+                    </label>
+                    <span class="done-true">@item.MemberName</span>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @Html.DropDownList("RoleID-" + item.MemberID, get.RoleList(null, null) as SelectList,"Choose", new
+                                                {
+                                                    @class = "form-control",// chosen-select
+                                                })
+                    </div>
+                </td>
+            </tr>
+        }
+    }
+
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+}
+
+}
+
+<script src="~/Scripts/Custom/checkall.js"></script>
