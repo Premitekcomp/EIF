@@ -1,0 +1,15 @@
+the way to access server
+server anydesk   (erp-342@ad)
+ pass :::           EIF@571i
+
+
+account server : administrator
+password       : P@ssw0rdeif
+
+
+Front Pass :
+admin	
+pass :
+123
+password backend 
+(on code)
