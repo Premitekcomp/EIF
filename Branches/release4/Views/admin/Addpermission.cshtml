@@ -1,0 +1,52 @@
+﻿@model EIF.Models.AddpremissionViewModel
+
+<div class="warper container-fluid">
+
+<div class="panel panel-default">
+    <a href="/admin/index" style="margin-right:2%; margin-top:0.25%; margin-bottom:0.25%" class="btn btn-default tooltip-btn pull-right "> <span class="glyphicon glyphicon-arrow-left"></span> <span>Back</span></a>
+    <div class="panel-heading">
+        Permission
+       
+    </div>
+    <div class="panel-body">
+
+        <div id="msg"></div>
+        <div id="container">
+            @Html.Partial("_Addpermissions")
+        </div>
+
+    </div>
+</div>
+</div>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Admin.js"></script>
+<link href="~/Content/assets/css/plugins/bootstrap-chosen/chosen.css" rel="stylesheet" />
+<script src="~/Content/assets/js/plugins/bootstrap-chosen/chosen.jquery.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", ready);
+    function ready() {
+        debugger;
+        //$(".chosen-select").chosen();
+        $(".chosen-container").css('width', '100%');
+        $(".chosen-container").css('width', '100%');
+    }
+</script>
+<script>
+    function changedomaindata(e) {
+        var index = $(e).attr('id');
+        index = index.split('_')[1];
+        var domaintype = $("#domaintype_" +index).val();
+        if (domaintype == "1") {
+            var str = "";
+            str = '<select id="domaindata_'+index+'" class="form-control  chosen-select"><option value="-1">choose</option> @foreach(var item in Model.Domaindatausers){<option value="@item.Value"> @item.Text </option>} ' + '</select>';
+            $("#domaindatadv_"+index).html(str);
+        }
+        if (domaintype == "2") {
+            var str = "";
+            str = '<select id="domaindata_'+index+'" class="form-control  chosen-select"><option value="-1">choose</option> @foreach(var item in Model.Domaindatagroups){<option value="@item.Value"> @item.Text </option>} ' + '</select>';
+            $("#domaindatadv_" + index).html(str);
+        }
+        $(".chosen-select").chosen();
+    }
+</script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.min.js"></script>

@@ -1,0 +1,43 @@
+﻿
+@{
+
+    if (ViewBag.Sheets != null)
+    {
+        <input type="hidden" name="filePath" id="filePath" value="@ViewBag.pathToExcelFile" />
+        <div class="col-lg-4">
+            <label class="control-label">Sheets</label>
+            @Html.DropDownList("SheetName", ViewBag.Sheets as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                    @onchange = "GetSheetsColumn()"
+                                                })
+
+        </div>
+        <div class="col-lg-8"></div>
+
+    }
+    if (ViewBag.SingleSheets != null)
+    {
+        <input type="hidden" name="filePath" id="filePath" value="@ViewBag.pathToExcelFile" />
+        <div class="col-lg-4">
+            <label class="control-label">Sheets</label>
+            @Html.DropDownList("SheetName", ViewBag.SingleSheets as SelectList, new
+                                                {
+                                                    @class = "form-control",// chosen-select
+
+                                                })
+            <script>
+                GetSheetsColumn();
+            </script>
+
+        </div>
+        <div class="col-lg-8"></div>
+
+    }
+    if (ViewBag.Validation != null)
+    {
+        <input type="hidden" id="filePath" value="@ViewBag.pathToExcelFile" />
+        <div class="col-lg-12">
+            <p><span> </span>@ViewBag.Validation</p>
+        </div>
+    }}

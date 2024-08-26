@@ -1,0 +1,79 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Domain Assign </div>
+
+        <div class="panel-body">
+            <div class="row form-group">
+                <div class="col-lg-3">
+                    <input type="hidden" name="DomainID" id="DomainID" value="@ViewBag.DomainID" />
+                    <input type="hidden" name="VersionNumber" id="VersionNumber" value="@ViewBag.VersionNumber" />
+                    <input type="hidden" name="Count" id="Count" value="2" />
+                    <label>Choose Member</label>
+                    @Html.DropDownList("MembersID", get.AssignMembersList() as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                </div>
+                <div class="col-lg-3">
+                    <br />
+                    <button type="button" class="btn btn-primary" onclick="BankAssignMembers();">Assign</button>
+                </div>
+                
+                <div class="col-lg-3"><br /><button type="button" class="btn btn-primary" id="export" onclick="DownloadBankAssigned();">Export Xls</button></div>
+                <div class="col-lg-3">
+                    <br />
+                    <button type="button" class="btn btn-primary hide" onclick="UnassignBankAssignMembers();">Withdrawn</button>
+                </div>
+            </div>
+            <div id="dynamicPartial">
+                <div class="row form-group">
+                    <div class="col-lg-3">
+                        <label>Choose Filed</label>
+                        @{IEnumerable<EIF.Models.Dom_DomainColumnsAlias> elias = ViewBag.alias;}
+
+                        @Html.DropDownList("ColID-1", get.EliasColList(elias) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                    </div>
+                    <div class="col-lg-6">
+                        <br />
+                        <input type="text" class="form-control" name="FilterVal-1" id="FilterVal-1" />
+                    </div>
+                    <div class="col-lg-3"><br /><button class="btn btn-default font-plus" onclick="AddPartial()"> +</button></div>
+                </div>
+            </div>
+            
+            <div class="row form-group">
+                <div class="col-lg-3">
+                    <button type="button" class="btn btn-primary" onclick="GetMembers(true);">Search</button>
+                </div>
+                <div class="col-lg-9"></div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+                <div class="row form-group">
+                    <div class="col-lg-12">
+                        <div id="container">
+                            @Html.Partial("_CollectionDomainAssignMembers")
+                        </div>
+                    </div>
+
+                </div>
+            </div>                
+    </div>
+</div>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>
+
+<style>
+    .font-plus {
+        font: 20px;
+        font-weight: 900;
+        color: black;
+    }
+</style>
+ 

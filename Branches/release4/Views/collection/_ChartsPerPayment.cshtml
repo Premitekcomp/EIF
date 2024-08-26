@@ -1,0 +1,133 @@
+﻿@{
+    List<EIF.Helper.BankReoprtbyTeamLeader> Reslts = new List<EIF.Helper.BankReoprtbyTeamLeader>();
+    if (ViewBag.BankReport != null)
+    {
+        Reslts = ViewBag.BankReport;
+    }
+}
+
+
+
+ @using (Html.BeginForm("Chart", "collection", FormMethod.Post, new { @id = "frm-chart-data" }))
+{ <input type="hidden" name="hfHTML" value="" />
+  <input type="hidden" name="hfChartData" value="" /> }
+<script src="~/Scripts/jquery.canvasjs.min.js"></script>
+
+<script>
+    var groupBy = function (xs, key) {
+        return xs.reduce(function (rv, x) {
+            (rv[x[key]] = rv[x[key]] || []).push(x);
+            return rv;
+        }, {});
+    };
+    var types = { Payment: 'Payment', PastDue: 'PastDue', Balance: 'Balance' }
+
+    var data = [];
+    var dataPoints = [];
+    data =@Html.Raw(Json.Encode(Reslts.GroupBy(c => c.MonthYear)))
+ da = [];
+    var data2 = [];
+    for (var index in data) {
+        console.log(data)
+        data2 = groupBy(data[index], 'BranchName')
+
+        for (item in types) {
+            var index5 = 0;
+            for (var index2 in data2) {
+                console.log(index2);
+                index5++;
+                var obj1 = {};
+                obj1.Payment = 0.0;
+                obj1.PastDue = 0.0;
+                obj1.Balance = 0.0;
+                obj1.BranchName = '';
+                var arr = data2[index2]
+                
+                for (var index3 in arr) {
+                    console.log(arr[index3].Payment);
+                    obj1.Payment += parseFloat(arr[index3].ActivePayment) + parseFloat(arr[index3].WOPayment);
+                    obj1.PastDue += parseFloat(arr[index3].WOPD) + parseFloat(arr[index3].ActivePD);
+                    obj1.Balance += parseFloat(arr[index3].ActiveOs) + parseFloat(arr[index3].WOOs);
+                    obj1.BranchName = arr[index3].BranchName;
+
+                }
+
+                var value = 0.0;
+                if (item == 'Payment') { value = obj1.Payment; console.log(value);}
+                else if (item == 'PastDue') { value = obj1.PastDue; }
+                else { value = obj1.Balance; }
+                dataPoints.push({
+                    label: obj1.BranchName, y:
+               Number(value), x: index5
+                });
+
+                var options = {
+                    title: {
+                        text: item + "Of " + arr[index3].MonthYear
+                    },
+                    data: [
+                    {
+                        type: "column",
+                        dataPoints: dataPoints
+                    }],
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                display: true
+                            }
+                        }]
+                    }
+                };
+
+            }
+
+            console.log(dataPoints);
+            if (item == 'Payment') {
+                console.log(index)
+                var str = "chartContainerPayment " + index;
+                var chart1 = new CanvasJS.Chart(str, options);
+                chart1.render();
+                //$("#chartContainerPayment").CanvasJSChart(options);
+            }
+            else if (item == 'PastDue') {
+                var str = "chartContainerPastDue " + index;
+                var chart1 = new CanvasJS.Chart(str, options);
+                chart1.render();
+                //$("#chartContainerPastDue").CanvasJSChart(options);
+                console.log(index)
+            }
+            else {
+                var str = "chartContainerBalance " + index;
+                var chart1 = new CanvasJS.Chart(str, options);
+                chart1.render();
+                //$("#chartContainerBalance").CanvasJSChart(options);
+                console.log(index)
+            }
+
+        }
+        dataPoints = [];
+    }
+
+</script>
+@using (Html.BeginForm("Chart", "collection", FormMethod.Post))
+{
+    <input type="hidden" name="hfHTML" value="" />
+    <input type="hidden" name="hfChartData" value="" />
+
+}
+@{
+    var count = Reslts.GroupBy(c => c.MonthYear);
+    for (var indexx = 0; indexx < count.Count(); indexx++)
+    {
+        <div class="row chart-container">
+            <div class="col">
+                <div id="chartContainerPayment @indexx" style=" height:240px;"></div>
+            </div>
+            <div class="col">    <div class="col" id="chartContainerPastDue @indexx" style="height: 240px;"></div></div>
+            <div class="col">   <div class="col" id="chartContainerBalance @indexx" style="height: 240px;"></div></div>
+        </div>
+    }
+}
+
+
+
