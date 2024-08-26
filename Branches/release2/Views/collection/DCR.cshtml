@@ -1,0 +1,57 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+@{
+    bool myinfo = ViewBag.myinfo != null ? ViewBag.myinfo : false;
+}
+<div class="warper container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            DCR
+        </div>
+        <div class="panel-body">
+            
+            
+            @using (Ajax.BeginForm("GetDomainAccounts", "collection",
+                                     new AjaxOptions
+                                     {
+                                         HttpMethod = "POST",
+                                         UpdateTargetId = "result",
+                                         InsertionMode = InsertionMode.Replace,
+                                         OnBegin = "ShowProgress();",
+                                         OnComplete = "HideProgress();"
+                                     }))
+            {
+                @Html.Hidden("myinfo" , myinfo)
+                <div class="row">
+                    <div class="col-lg-4">Domains </div>
+                    <div class="col-lg-4">
+                        @Html.DropDownList("DomainID", get.DomianList(null , Session["id"].ToString() , myinfo) as SelectList, "Choose", new
+               {
+                   @class = "form-control  chosen-select",
+               })
+                    </div>
+                    <div class="col-lg-4">
+                        <button type="submit" id="loaddcr" class="btn btn-primary">Load</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div id="DCRDIV">
+        @Html.Partial("_Collection_DCRImport")
+    </div>
+    <div id="result"></div> 
+
+
+
+    </div>
+<script>
+    $("#loaddcr").click(function () {
+        $("#DCRDIV").hide();
+    })
+</script>

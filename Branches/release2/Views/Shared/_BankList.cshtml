@@ -1,0 +1,256 @@
+﻿<div id="result">
+    @{
+    var totalWoAccount1 = 0;
+    var totalWOpayments1 = 0.0;
+    var totalWOpd1 = 0.0;
+    var totalWOOS1 = 0.0;
+    var totalActiveAccountsNum1 = 0;
+    var totalActivePayment1 = 0.0;
+    var totalActivePd1 = 0.0;
+    var totalActiveOs1 = 0.0;
+    var totalNumAccounts2 = 0;
+    var totalOs2 = 0.0;
+    var totalDepts = 0.0;
+    var totalPayments = 0.0;
+
+    if (ViewBag.BankReport != null)
+    {
+        List<EIF.Helper.BankReoprtbyTeamLeader> result1 = ViewBag.BankReport;
+        var result = result1.OrderByDescending(c => c.BranchName).GroupBy(c => c.BranchName);
+
+        foreach (var item in result)
+        {
+            var totalWoAccount1PerBranch = 0;
+            var totalWOpayments1PerBranch = 0.0;
+            var totalWOpd1PerBranch = 0.0;
+            var totalWOOS1PerBranch = 0.0;
+            var totalActiveAccountsNum1PerBranch = 0;
+            var totalActivePayment1PerBranch = 0.0;
+            var totalActivePd1PerBranch = 0.0;
+            var totalActiveOs1PerBranch = 0.0;
+            var totalNumAccounts1PerBranch = 0;
+
+            var totalOs2PerBranch = 0.0;
+            var totalDeptsPerBranch = 0.0;
+            var totalPaymentsPerBranch = 0.0;
+            var results2 = item.OrderByDescending(c => c.MonthYear).GroupBy(c => c.MonthYear);
+
+            <table id="TittleTable_@item.Key">
+                <thead>
+                    <tr>
+                        <th colspan="6"></th>
+                        <th class="col-xs-offset-4">
+                            <h3>@item.Key </h3>
+
+                        </th>
+                    </tr>
+
+                </thead>
+            </table>
+
+
+            foreach (var item1 in results2)
+            {
+                totalWoAccount1 = 0;
+                totalWOpayments1 = 0.0;
+                totalWOpd1 = 0.0;
+                totalWOOS1 = 0.0;
+                totalActiveAccountsNum1 = 0;
+                totalActivePayment1 = 0.0;
+                totalActivePd1 = 0.0;
+                totalActiveOs1 = 0.0;
+                totalNumAccounts2 = 0;
+                totalOs2 = 0.0;
+                totalDepts = 0.0;
+                totalPayments = 0.0;
+                var y = int.Parse(item1.Key) > 12 ? item1.Key.ToString() : ((enum_Months.eMonths)int.Parse(item1.Key)).ToString();
+
+                    <div style="overflow-x:scroll;">
+                         
+                        <table cellpadding=" 0" border="0" id="BankTable_@item1.Key@item.Key" class="table table-striped table-bordered  collapsed">
+                            <tr>
+                                <th colspan="16"><h3> @y Data </h3></th>
+                            </tr>
+                            <tr>
+                                <th colspan="2"></th>
+                                <th colspan="4" style="text-align:center;"> W/O</th>
+                                <th colspan="4" style="text-align:center;">Active</th>
+                                <th colspan="4" style="text-align:center;">Total</th>
+                                <th colspan="2"></th>
+                            </tr>
+
+                            <tr>
+                                <th>Team Leader</th>
+                                <th>Bank Name </th>
+
+                                <th>NO.Acc</th>
+                                <th>Sum Of OS</th>
+                                <th>Sum Of PD</th>
+                                <th>Payment</th>
+
+                                <th>NO.Acc</th>
+                                <th>Sum Of OS</th>
+                                <th>Sum Of PD</th>
+                                <th>Payment</th>
+
+                                <th>Total Acc</th>
+                                <th>Total OS</th>
+                                <th>Total Depts</th>
+                                <th>Total Payment</th>
+
+                                <th>Active%</th>
+                                <th>W-of%</th>
+
+                            </tr>
+
+
+                            @foreach (var item3 in item1.ToList())
+                            {
+
+                                {
+                                    <tr>
+                                        <td title="Team Leader">@item3.TeamLeaderName</td>
+                                        <td title="Bank Name">@item3.AgencyTitle</td>
+                                        <td title="NO.Acc">@item3.WOAcountsNum</td>
+                                        <td title="Sum Of OS">@item3.WOOs</td>
+                                        <td title="Sum Of PD">@item3.WOPD</td>
+                                        <td title="Payment">@item3.WOPayment</td>
+                                        <td title="NO.Acc">@item3.ActiveAccountsNum</td>
+                                        <td title="Sum Of OS">@item3.ActiveOs</td>
+                                        <td title="Sum Of PD">@item3.ActivePD</td>
+                                        <td title="Payment">@item3.ActivePayment</td>
+                                        <td title="Total Acc">@{var totalNumAccounts = item3.WOAcountsNum + item3.ActiveAccountsNum;}@totalNumAccounts</td>
+                                        <td title="Total OS">@{var totalOs = double.Parse(item3.WOOs) + double.Parse(item3.ActiveOs);}@totalOs</td>
+                                        <td title="Total Depts">@{var depts = double.Parse(item3.ActivePD) + double.Parse(item3.WOOs);}@depts</td>
+                                        <td title="Total Payment">@{var payments = double.Parse(item3.ActivePayment) + double.Parse(item3.WOPayment); }@payments</td>
+                                        <td title="Active%">@{var activePercent = double.Parse(item3.ActivePayment) / double.Parse(item3.ActivePD); activePercent = Math.Round(activePercent * 100, 2);} @activePercent%</td>
+                                        <td title="W-of%">@{ var woPercent = double.Parse(item3.WOPayment) / double.Parse(item3.WOOs); woPercent = Math.Round(woPercent * 100);} @woPercent%</td>
+
+
+
+                                        @{
+                                         totalWoAccount1 += item3.WOAcountsNum;
+                                         totalWOpayments1 += double.Parse(item3.WOPayment);
+                                         totalWOpd1 += double.Parse(item3.WOPD);
+                                         totalWOOS1 += double.Parse(item3.WOOs);
+
+                                         totalActiveAccountsNum1 += item3.ActiveAccountsNum;
+                                         totalActivePayment1 += double.Parse(item3.ActivePayment);
+                                         totalActivePd1 += double.Parse(item3.ActivePD);
+                                         totalActiveOs1 += double.Parse(item3.ActiveOs);
+                                         totalNumAccounts2 += totalNumAccounts;
+                                         totalOs2 += totalOs;
+                                         totalDepts += depts;
+                                         totalPayments += payments;
+                                        }
+
+                                    </tr>
+                                }
+                            }
+                            <tr>
+                                <th colspan="2">Total of @y </th>
+                                <td title="NO.Acc">@totalWoAccount1</td>
+                                <td title="Sum Of OS">@totalWOOS1</td>
+                                <td title="Sum Of PD">@totalWOpd1</td>
+                                <td title="Payment">@totalWOpayments1</td>
+                                <td title="NO.Acc">@totalActiveAccountsNum1</td>
+                                <td title="Sum Of OS">@totalActiveOs1</td>
+                                <td title="Sum Of PD">@totalActivePd1</td>
+                                <td title="Payment">@totalActivePayment1</td>
+                                <td title="Total Acc">@totalNumAccounts2</td>
+                                <td title="Total OS">@totalOs2</td>
+                                <td title="Total Depts">@totalDepts</td>
+                                <td title="Total Payment">@totalPayments</td>
+                                <td title="Active%">@{var totalPercent1 = totalActivePayment1 / totalActivePd1; totalPercent1 = Math.Round(totalPercent1 * 100);}@totalPercent1%</td>
+                                <td title="W-of%">@{var totalPercent2 = totalWOpayments1 / totalWOOS1; totalPercent2 = Math.Round(totalPercent2 * 100);} @totalPercent2%</td>
+
+                                @{
+
+                                totalWoAccount1PerBranch += totalWoAccount1;
+                                totalWOpayments1PerBranch += totalWOpayments1;
+                                totalWOpd1PerBranch += totalWOpd1;
+                                totalWOOS1PerBranch += totalWOOS1;
+                                totalActiveAccountsNum1PerBranch += totalActiveAccountsNum1;
+                                totalActivePayment1PerBranch += totalActivePayment1;
+                                totalActivePd1PerBranch += totalActivePd1;
+                                totalActiveOs1PerBranch += totalActiveOs1;
+                                totalNumAccounts1PerBranch += totalNumAccounts2;
+                                totalOs2PerBranch += totalOs2;
+                                totalDeptsPerBranch += totalDepts;
+                                totalPaymentsPerBranch += totalPayments;
+
+                                }
+
+                            </tr>
+                        </table>
+
+                </div>
+                }
+
+                <div style="overflow-x:scroll">
+                    <table cellpadding=" 0" id="Table_@item.Key" border="0" class="table table-striped table-bordered  collapsed">
+
+                        <tr>
+                            <th colspan="2"></th>
+                            <th colspan="4" style="text-align:center;"> W/O</th>
+                            <th colspan="4" style="text-align:center;">Active</th>
+                            <th colspan="4" style="text-align:center;">Total</th>
+                            <th colspan="2"></th>
+                        </tr>
+
+                        <tr>
+                            <th colspan="2"></th>
+
+
+                            <th>NO.Acc</th>
+                            <th>Sum Of OS</th>
+                            <th>Sum Of PD</th>
+                            <th>Payment</th>
+
+                            <th>NO.Acc</th>
+                            <th>Sum Of OS</th>
+                            <th>Sum Of PD</th>
+                            <th>Payment</th>
+
+                            <th>Total Acc</th>
+                            <th>Total OS</th>
+                            <th>Total Depts</th>
+                            <th>Total Payment</th>
+
+                            <th>Active%</th>
+                            <th>W-of%</th>
+
+                        </tr>
+
+                        <tr>
+                            <th colspan="2">Total of @item.Key </th>
+                            <td title="NO.Acc">@totalWoAccount1PerBranch</td>
+                            <td title="Sum Of OS">@totalWOOS1PerBranch</td>
+                            <td title="Sum Of PD">@totalWOpd1PerBranch</td>
+                            <td title="Payment">@totalWOpayments1PerBranch</td>
+
+
+                            <td title="NO.Acc<">@totalActiveAccountsNum1PerBranch</td>
+                            <td title="Sum Of OS">@totalActiveOs1PerBranch</td>
+                            <td title="Sum Of PD">@totalActivePd1PerBranch</td>
+                            <td title="Payment">@totalActivePayment1PerBranch</td>
+                            <td title="Total Acc">@totalNumAccounts1PerBranch</td>
+                            <td title="Total OS">@totalOs2PerBranch</td>
+                            <td title="Total Depts">@totalDeptsPerBranch</td>
+                            <td title="Total Payment">@totalPaymentsPerBranch</td>
+                            <td title="Active%">@{var totalPercent1PerBranch = totalActivePayment1PerBranch / totalActivePd1PerBranch; totalPercent1PerBranch = Math.Round(totalPercent1PerBranch * 100);}@totalPercent1PerBranch%</td>
+                            <td title="W-of%">@{var totalPercent2PerBranch = totalWOpayments1PerBranch / totalWOOS1PerBranch; totalPercent2PerBranch = Math.Round(totalPercent2PerBranch * 100);} @totalPercent2PerBranch%</td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        }
+
+
+        else if (ViewBag.BankReportwarning != null)
+        {
+            <p class="text-warning"><span class="fa fa-warning text-yellow"></span> Collector Report : @ViewBag.CollectorReportwarning</p>
+
+        }
+    }
+</div>

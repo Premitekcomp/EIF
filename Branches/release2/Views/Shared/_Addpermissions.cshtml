@@ -1,0 +1,122 @@
+﻿@model EIF.Models.AddpremissionViewModel
+
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/bootstrap-chosen/chosen.jquery.js"></script>
+<link href="~/Content/assets/css/plugins/bootstrap-chosen/chosen.css" rel="stylesheet" />
+<table cellpadding="0" border="0" class="table table-striped table-bordered" id="Addpermissiontbl">
+    <thead>
+        <tr>
+            <th style="width:25%">Domain type</th>
+            <th style="width:25%">Domain Data </th>
+            <th style="width:20%">Portal Access</th>
+            <th style="width:30%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.permissionslst.Count() > 0 && Model.permissionslst != null)
+        {
+            foreach (var item in Model.permissionslst)
+            {
+                <tr id="row_@item.permissionid">
+                    <td>
+                                    <select class="form-control chosen-select" id="domaintype_@item.permissionid" onchange="changedomaindata(this)">
+                                        @foreach (var typeitem in Model.Domaintypes)
+                                        {
+                                            if (item.DomaintypeId == int.Parse(typeitem.Value))
+                                            {
+                                                <option value="@typeitem.Value" selected>@typeitem.Text</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@typeitem.Value">@typeitem.Text</option>
+                                            }
+                                        }
+                                    </select>
+                    </td>
+                    <td id="domaindatadv_@item.permissionid">
+                                    @if (item.DomaintypeId == 1)
+                                    {
+                                        <select class="form-control chosen-select" id="domaindata_@item.permissionid">
+                                            @foreach (var dataitem in Model.Domaindatausers)
+                                            {
+                                                if (item.DomaindataId == int.Parse(dataitem.Value))
+                                                {
+                                                    <option value="@dataitem.Value" selected>@dataitem.Text</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@dataitem.Value">@dataitem.Text</option>
+                                                }
+                                            }
+                                        </select>
+                                    }
+                                    else if (item.DomaintypeId == 2)
+                                    {
+                                        <select class="form-control chosen-select" id="domaindata_@item.permissionid">
+                                            @foreach (var dataitem in Model.Domaindatagroups)
+                                            {
+                                                if (item.DomaindataId == int.Parse(dataitem.Value))
+                                                {
+                                                    <option value="@dataitem.Value" selected>@dataitem.Text</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@dataitem.Value">@dataitem.Text</option>
+                                                }
+                                            }
+                                        </select>
+                                    }
+                    </td>
+                    <td>
+                                    <select class="form-control chosen-select select2" id="portalaccess_@item.permissionid" multiple="multiple">
+                                        @foreach (var portalitem in Model.portalaccess)
+                                        {
+                                            var portalids = item.portalaccessIds.Split(',').ToList();
+                                            if (portalids.Contains(portalitem.Value))
+                                            {
+                                                 <option value="@portalitem.Value" selected>@portalitem.Text</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@portalitem.Value">@portalitem.Text</option>
+                                            }
+                                        }
+                                    </select>
+                    </td>
+
+                    <td>
+                        <a href="/admin/AddFunction?permissionid=@item.permissionid" class="btn btn-default tooltip-btn"><i class="fa fa-users"></i> Add Function</a>
+                        <a href="javascript:void(0);" index="@item.permissionid" onclick="Editpermisions(this);" class="btn btn-default tooltip-btn"><i class="fa fa-save"></i> Save</a>
+                        <a href="javascript:void(0);" index="@item.permissionid" onclick="Deltepermissions(this);" class="btn btn-default tooltip-btn"><i class="fa fa-trash-o"></i> Delete</a>
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot style="background: #ccc;">
+        <tr>
+            <td>
+                            @Html.DropDownList("domaintype", Model.Domaintypes, new { @id = "domaintype_0", @class = "form-control chosen-select", @onchange = "changedomaindata(this);" })
+            </td>
+            <td id="domaindatadv_0">
+                            @Html.DropDownList("domaindata", Model.Domaindatausers, "choose", new { @id = "domaindata_0", @class = "form-control chosen-select" })
+            </td>
+            <td>
+                            @Html.DropDownList("portalaccess", Model.portalaccess, new { @id = "portalaccess_0", @class = "form-control chosen-select select2", @multiple = "multiple" })
+            </td>
+
+            <td><a href="javascript:void(0);"  onclick="newpermission(this);" class="btn btn-default tooltip-btn"><i class="fa fa-save"></i> Save</a></td>
+
+        </tr>
+    </tfoot>
+
+</table>
+<script>
+    $(document).ready(function () {
+        //$(".chosen-select").chosen();
+        $(".chosen-container").css('width', '100%');
+        $(".chosen-container").css('width', '100%');
+    })
+</script>

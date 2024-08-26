@@ -1,0 +1,68 @@
+﻿
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+
+<table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+    <thead>
+        <tr>
+            <th width="20%">Code</th>
+            <th width="60%">Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (ViewBag.data != null)
+            {
+                IEnumerable<EIF.Models.Config_MembersList> data = ViewBag.data;
+                foreach (var item in data)
+                {
+                    <tr id="row_@item.MemberID">
+                        <td><input type="text" class="form-control" name="Code-@item.MemberID" id="Code-@item.MemberID" value="@item.Code" /> </td>
+                        <td><input type="text" class="form-control" name="Name-@item.MemberID" id="Name-@item.MemberID" value="@item.MemberName" /> </td>
+                        <td>
+                            <a href="javascript:void(0);" onclick="EditMember(@item.MemberID);" class="btn btn-default tooltip-btn"><i class="fa fa-edit"></i> Save</a>
+                            <a href="javascript:void(0);" onclick="DeleteMember(@item.MemberID);" class="btn btn-default tooltip-btn"><i class="fa fa-trash-o"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+            }}
+    </tbody>
+    <tfoot style="background: #ccc;">
+        <tr>
+            <td><input type="text" id="Code" class="form-control" name="Code" /></td>
+            <td><input type="text" id="Name" class="form-control" name="Name" /></td>
+            @*<td>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <input type="text" id="Code" class="form-control" name="Code" />
+                        </div>
+                        <div class="col-lg-9">
+                            
+                        </div>
+                    </div>
+                </div>
+            </td>*@
+
+
+            <td><a href="javascript:void(0);" onclick="NewMember();" class="btn btn-default tooltip-btn"><i class="fa fa-save"></i> Save</a></td>
+
+        </tr>
+    </tfoot>
+
+</table>
+
+
+
+<style>
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>
+

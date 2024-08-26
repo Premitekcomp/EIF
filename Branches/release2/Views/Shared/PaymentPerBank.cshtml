@@ -1,0 +1,35 @@
+﻿
+<div class="warper container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Productivity Of Alex And Cairo Team.
+        </div>
+        <div class="panel-body">
+            @{
+                if (ViewBag.error != null)
+                {
+                    <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Error : @ViewBag.error</p>
+                }}
+
+            <div id="container">
+               
+                @Html.Partial("_BankFilter")
+                @Html.Partial("_BankList")
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/MultiSelect/bootstrap-multiselect.min.css" rel="stylesheet" />
+<script src="~/Scripts/MultiSelect/bootstrap-multiselect.min.js"></script>
+
+
+
+
+
+

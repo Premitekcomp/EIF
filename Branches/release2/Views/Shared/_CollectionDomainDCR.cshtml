@@ -1,0 +1,115 @@
+﻿<div class="panel panel-default">
+    <div class="panel-body">
+        <div role="alert" id="del-box" class="alert alert-danger fade in hide">
+            <h4>Confirm delete</h4>
+            <p>Confirm deleting this recored</p>
+            <p>
+                <input type="hidden" id="del" />
+                <button class="btn btn-danger" type="button" onclick="DeleteDCR();">Yes</button>
+                <button class="btn btn-default" type="button" onclick="Cancel();">No</button>
+            </p>
+        </div>
+        <div id="container">
+            <div class="scrollmenu">
+                <table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl4">
+                    <thead>
+                        <tr>
+                            @if ((ViewBag.AccessRightEdit != null && ViewBag.AccessRightEdit == true) || (ViewBag.AccessRightDelte != null && ViewBag.AccessRightDelte == true))
+                            {
+                                <th></th>
+                            }
+                            <th>Action Maker</th>
+                            <th>Connection Date</th>
+                            <th>Connection Type</th>
+                            <th>Connection Result</th>
+                            <th>PTP Date</th>
+                            <th>PTP Type</th>
+                            <th>PTP Amount</th>
+                            <th>Promise Kept</th>
+                            <th>Kept Amount</th>
+                            <th>Eng. Comment</th>
+                            <th>Arb. Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            if (ViewBag.Data != null)
+                            {
+                                IEnumerable<EIF.Models.PCR_PCRHistoryList> Model = ViewBag.Data;
+                                foreach (var R in Model)
+                                {
+                                    <tr>
+                                       @if ((ViewBag.AccessRightEdit != null && ViewBag.AccessRightEdit == true) || (ViewBag.AccessRightDelte != null && ViewBag.AccessRightDelte == true))
+                                        {
+                                             <td>
+                                                 @if (ViewBag.AccessRightEdit != null && ViewBag.AccessRightEdit == true)
+                                                 {
+                                                     <a style="padding: 6px 12px !important" target="_blank" href="@Url.Action("UpdateDCR", "collection", new { id = R.PCRID })" class="btn btn-default tooltip-btn">Edit</a>
+                                                 }
+                                                 @if (ViewBag.AccessRightDelte != null && ViewBag.AccessRightDelte == true)
+                                                 {
+                                                    <button class="btn btn-default tooltip-btn" onclick="ConfirmRemove(@R.PCRID);">Delete</button> 
+                                                 }
+                                             </td>
+                                        }
+                                        <td>@R.MemberName</td>
+                                        <td>@Convert.ToDateTime(R.ConnectionDate).ToString("dd/MM/yyyy")</td>
+                                        <td>@R.ConnectionTypeTitle</td>
+                                        <td>@R.ConnectionResultTitle</td>
+                                        <td>@Convert.ToDateTime(R.PTPDate).ToString("dd/MM/yyyy")</td>
+                                        <td>@R.PTPTypeTitle</td>
+                                        <td>@R.PTPAmount</td>
+                                        <td>@R.IsPromiseKept</td>
+                                        <td>@R.KeptAmount</td>
+                                        <td>@R.EngComment</td>
+                                        <td>@R.ArabicComment</td>
+
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+
+
+                </table>
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>
+<link href="~/Content/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/Content/assets/js/plugins/datatables/DT_bootstrap.js"></script>
+    <script src="~/Content/assets/js/plugins/datatables/jquery.dataTables-conf.js"></script>
+<script>
+    $('#tbl4').dataTable({
+        "pageLength": 10,
+    });
+    $("#export").removeClass("hide");
+</script>
+<style>
+    div.scrollmenu {
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+        div.scrollmenu a {
+            display: inline-block;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>

@@ -1,0 +1,291 @@
+﻿<span> Select Filter</span>
+
+<select id="filterType1">
+    <option value="1">Details</option>
+    <option value="2">Bank Summary</option>
+</select>
+<select id="filterType">
+    <option value="Year">By Year</option>
+    <option value="Month">By Month</option>
+</select>
+
+<span id="monthFilter" hidden>
+    
+    <span>Select Year </span>
+    <select id="YearsLists" name="YearsLists">
+        <option  value=null>
+            --Select--
+        </option>
+        @if (ViewBag.YearsList != null)
+        {
+           foreach (var item in ViewBag.YearsList)
+            {
+                if (item.Text != null)
+                {
+                    <option value="@item.Value">
+                        @item.Text
+                    </option>
+                }
+            }
+        }
+    </select>
+
+    <span> Select Month </span>
+    @Html.DropDownList("MonthsLists", ViewBag.MonthsLists as List<SelectListItem>, new { multiple = "multiple" })
+</span>
+
+<span id="year-filter">
+    <span>Select Year </span>
+    <select id="YearsList" name="YearsList" required multiple="multiple">
+
+        @if (ViewBag.YearsList != null)
+        {
+
+            foreach (var item in ViewBag.YearsList)
+            {
+                if (item.Text != null)
+                {
+                    <option value="@item.Value">
+                        @item.Text
+                    </option>
+                }
+            }
+        }
+    </select>
+</span>
+
+
+<div style="padding-left:94px;">
+    <select id="filterType2">
+        <option value="1"> By collector Name</option>
+        <option value="3">By Office</option>
+        <option value="2">By case division</option>
+        <option value="4"> By collector Code</option>
+    </select>
+
+<span id="collector-filter" class="type-1">
+    <span> Select Collector
+        <select id="CollectorNamesList" class="js-data-example-ajax" style="width:240px;" multiple="multiple"></select>
+     </span>
+</span>
+
+
+    <span id="collectorCode-filter"  hidden class="type-4">
+        <span>
+            Select Collector Code
+            <select id="CollectorCodesList" class="js-data-example-ajax" style="width:240px;" multiple="multiple"></select>
+        </span>
+    </span>
+
+    <span id="casedivision-filter" hidden class="type-2">
+        <span>
+            Select Case Division
+            <select id="case-division-type">
+                
+                <option value="1">
+                    All
+                </option>
+
+                <option value="2">
+                    Telecaller
+                </option>
+                <option value="3">
+                    Collector
+
+                </option>
+               
+            </select>
+        </span>
+
+    </span>
+    <span id="office-filter" hidden class="type-3">
+        <span>
+            Select Office
+            @Html.DropDownList("OfficesList", ViewBag.OfficesList as List<SelectListItem>, new { multiple = "multiple" })
+        </span>
+
+    </span>
+
+
+    <span> <button id="Apply-btn">Apply</button></span>
+    <span> <button id="export-btn" style="display:none;" onclick="fnExcelReport('collector productivity monthly and yearly')">Export Excel</button></span>
+</div>
+
+<script src="~/Scripts/Custom/ExportExcel.js"></script>
+
+<script>
+    $(document).ready(function () {
+        
+        $('.btn-group').each(function () { $(this).click(function () { $(this).toggleClass("open") }) })
+
+
+
+
+
+
+
+
+        $('#CollectorCodesList').select2({
+            ajax: {
+                dataType: 'json',
+                url: 'GetCollectorCodes',
+                data: function (params) {
+
+                    var query = { name: params.term }
+                    return query;
+                },
+
+                traditional: true,
+                processResults: function (data) {
+                    console.log(data)
+                    console.log(data.items)
+                    return {
+                        results: data
+                    }
+
+                }
+            }
+        });
+       
+   
+
+
+
+
+
+        $('#CollectorNamesList').select2({
+            ajax: {
+                dataType: 'json',
+                url: 'GetCollectorNames',
+                data: function (params) {
+
+                    var query = { name: params.term }
+                    return query;
+                },
+
+                traditional: true,
+                processResults: function (data) {
+                    console.log(data)
+                    console.log(data.items)
+                    return {
+                        results: data
+                    }
+
+                }
+            }
+        });
+       
+    });
+
+    $(function(){
+        $('#YearsList').multiselect({
+            includeSelectAllOption: true,
+            maxHeight: 200,
+
+
+        })
+       
+
+        $('#MonthsLists').multiselect({
+            includeSelectAllOption: true,
+            maxHeight: 200
+        })
+
+        $('#OfficesList').multiselect({
+            includeSelectAllOption: true,
+            maxHeight: 200,
+        })
+
+        $("#filterType").on('change', function () {
+            if ($("#filterType").val() == 'Month') {
+                $("#monthFilter").show();
+                $('#YearsList').multiselect({ multiple: false })
+                $("#YearsList").removeAttr("multiple");
+                delete $('#YearsList').multiselect();
+                $("#year-filter").hide();
+            }
+
+            else {
+                $("#monthFilter").hide();
+                $("#year-filter").show()
+
+            }
+        })
+
+        $("#Apply-btn").click(function () {
+
+            if (($("#filterType").val() != 'Month' && $("#YearsList").val() != null) || (($("#filterType").val() == 'Month') && $("#YearsLists").val() !='null' && $("#MonthsLists").val() != null))
+            {
+
+
+                var data = {}
+                data.type = $("#filterType1").val();
+              if ( $("#YearsList").val()!=null)   {data.years = $("#YearsList").val();}
+
+                if ($("#filterType").val() == 'Month') {
+                    data.months = $("#MonthsLists").val();
+                    data.years = $("#YearsLists").val();
+                }
+                if ($("#filterType2").val()==1 &&$("#CollectorNamesList").val()!=null)
+                {
+                    data.collectorNames = $("#CollectorNamesList").val();
+                }
+
+                if ($("#filterType2").val()==4 &&$("#CollectorCodesList").val()!=null)
+                {
+                    data.collectorCodes = $("#CollectorCodesList").val();
+                }
+
+                if ($("#filterType2").val()==3 && $("#OfficesList").val() != null)
+                {
+                    data.officesId = $("#OfficesList").val();
+                }
+                if ($("#filterType2").val()==2 && $("#case-division-type").val() != null)
+                {
+                    data.caseDivision = $("#case-division-type").val()
+                }
+
+                $.ajax({
+                    beforeSend: function () {ShowProgress()},
+                    type: "get",
+                    url: '@Url.Action("GetReportCollector")',
+                    data: { years: data.years, months: data.months, collectorNames: data.collectorNames, caseDivision: data.caseDivision, officesId: data.officesId, type: data.type, collectorCodes: data.collectorCodes },
+                    traditional: true,
+                    success: function (response) {
+                        HideProgress();
+                        $("#result").html(response);
+                        $("#export-btn").show();
+                    }
+                })
+            }
+        })
+    })
+</script>
+
+
+<script>
+    $("#filterType2").on('change', function () {
+        $("[class^='type-']").hide();
+        $("[class^='type-']").prop('disabled',true);
+        $(".type-" + $("#filterType2").val()).show();
+        $(".type-" + $("#filterType2").val()).prop('disabled', false);;
+    })
+   
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        
+        $('.btn-group').each(function () { $(this).click(function () { $(this).toggleClass("open"); }) })
+
+       
+});
+    </script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Select2/select2.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/MultiSelect/bootstrap-multiselect.min.css" rel="stylesheet" />
+<script src="~/Scripts/MultiSelect/bootstrap-multiselect.min.js"></script>
+<script src="~/Scripts/Select2/select2.min.js"></script>
