@@ -1,0 +1,61 @@
+CREATE TABLE Dom_DailyAccountsPayments(
+ PaymentID bigint not null, 
+ RecordSerial bigint not null,
+ PaymentValue decimal(12,2) null,
+ PaymentDate nvarchar(50) null,
+ DomainID bigint null
+ PRIMARY KEY (PaymentID)
+ FOREIGN KEY (RecordSerial) REFERENCES Dom_DomainsDataExtra(RecordSerial)
+);
+go
+alter table Dom_AccountsPayments
+add  DailyPaymentValue decimal(12,2) null,
+ DailyPaymentDate nvarchar(50) null
+ go
+ALTER proc [dbo].[Dom_Dom_AccountsPaymentsInsert]
+ (@DomainId nvarchar(max), @PKFieldVal nvarchar(max),@PKAliasCol nvarchar(max),@VersionNumber int,@PaymentValue decimal(12,2) , @paymentdate Nvarchar(50),@type int )
+as
+
+          
+declare @SQL nvarchar(max);
+
+
+SET @SQL =   
+     'declare @RecordSerial int;
+	 set @RecordSerial= ( select top 1 [RecordSerial] from [dbo].[Dom_DomainsDataExtra] where [VersionNumber]='+CONVERT( nvarchar(max),@VersionNumber)   +' and '+@PKAliasCol+'='''+@PKFieldVal+ ''''+' and DomainID='+@DomainId+ ') 
+		
+		IF @RecordSerial IS NOT NULL and ' +cONVERT( nvarchar(3),@type) +'=1
+		BEGIN
+	
+		
+			INSERT INTO [dbo].[Dom_AccountsPayments] ([RecordSerial] , [PaymentValue] , [PaymentDate] , [DomainID]) VALUES (  @RecordSerial,'+CONVERT( nvarchar(max),@PaymentValue)+','''+ @paymentdate +''','+@DomainId +')
+						
+			
+		END
+
+		IF @RecordSerial IS NOT NULL  and '+cONVERT( nvarchar(3),@type) +'=2
+
+		begin 
+		INSERT INTO [dbo].[Dom_AccountsPayments] ([RecordSerial] , [DailyPaymentValue] , [DailyPaymentDate] , [DomainID]) VALUES (  @RecordSerial,'+CONVERT( nvarchar(max),@PaymentValue)+','''+ @paymentdate +''','+@DomainId +')
+		end
+	'
+
+	
+	 --select @SQL;
+EXEC sp_executesql @SQL 
+go
+insert into Lup_MonthYear 
+values
+('1-2024'),
+('2-2024'),
+('3-2024'),
+('4-2024'),
+('5-2024'),
+('6-2024'),
+('7-2024'),
+('8-2024'),
+('9-2024'),
+('10-2024'),
+('11-2024'),
+('12-2024')
+go
