@@ -1,0 +1,69 @@
+ ALTER proc [dbo].[Dom_GetDynamicColumn]--'1,2,3,4,5,6,7,8,9,10,11,12'
+ @List varchar(max) , @DomainID int ,@product nvarchar(max) , @domainttype nvarchar(max) , @regions nvarchar(max) , @myinfoonly bit , @cities nvarchar(max) = '0'
+ as
+DECLARE @column varchar(max)
+DECLARE @SQL varchar(max)
+declare @DomainID2 varchar(max)
+declare @procol nvarchar(50)
+declare @domaincol nvarchar(50)
+declare @regioncol nvarchar(50)
+declare @schemaid int 
+declare @citycol  nvarchar(50)
+set @DomainID2=@DomainID;
+if @myinfoonly = 1
+begin
+set @schemaid = (select SchemaID from Dom_DomainList where DomainID = @DomainID)
+set @procol =(select ColumnIndex from Sch_SchemaColumns sc  inner join Sch_Columns  c on sc.CoID = c.CoID  where SchemaID = @schemaid and c.ColumnName = N'product')
+set @domaincol = (select ColumnIndex from Sch_SchemaColumns sc  inner join Sch_Columns  c on sc.CoID = c.CoID  where SchemaID = @schemaid and c.ColumnName =  N'Domain Type' )
+set @regioncol = (select ColumnIndex from Sch_SchemaColumns sc  inner join Sch_Columns  c on sc.CoID = c.CoID  where SchemaID = @schemaid and c.ColumnName = N'Region' )
+if(@cities != '0')
+begin
+set @citycol = (select ColumnIndex from Sch_SchemaColumns sc  inner join Sch_Columns  c on sc.CoID = c.CoID  where SchemaID = @schemaid and c.ColumnName = N'City' )
+end
+
+if(@cities = '0')
+begin
+--set @List='10,11,12,13,'
+SELECT @column = COALESCE( @column + ', ', '') + 
+   CAST(column_name AS varchar(max))
+from information_schema.columns
+where table_name='Dom_DomainDetailsList'
+and ordinal_position in (select * from  SplitDelimiterString(@List,',')) 
+
+SET @SQL='SELECT * FROM (SELECT  '+ @column+',RecordSerial  FROM'+' '+'Dom_DomainDetailsList where [DomainID]='+@DomainID2 + 
+  + ' ' +  ' and '+ ' [Col' + @procol  + ']  IN (select * from SplitDelimiterString('''+@product+''','',''))' + ' and ' +' [Col' + @domaincol + ']  IN (select * from SplitDelimiterString('''+@domainttype+''','',''))'  +
+ ' and [Col' + @regioncol + '] IN (select * from SplitDelimiterString('''+@regions+''','',''))) dl left join (SELECT PaymentValue , PaymentDate , RecordSerial,DailyPaymentValue,DailyPaymentDate FROM Dom_AccountsPayments) ap on ap.RecordSerial = dl.RecordSerial' 
+end
+else
+begin
+--set @List='10,11,12,13,'
+SELECT @column = COALESCE( @column + ', ', '') + 
+   CAST(column_name AS varchar(max))
+from information_schema.columns
+where table_name='Dom_DomainDetailsList'
+and ordinal_position in (select * from  SplitDelimiterString(@List,',')) 
+
+SET @SQL='SELECT * FROM (SELECT  '+ @column+',RecordSerial  FROM'+' '+'Dom_DomainDetailsList where [DomainID]='+@DomainID2 + 
+  + ' ' +  ' and '+ ' [Col' + @procol  + ']  IN (select * from SplitDelimiterString('''+@product+''','',''))' + ' and ' +' [Col' + @domaincol + ']  IN (select * from SplitDelimiterString('''+@domainttype+''','',''))'  +
+ ' and [Col' + @regioncol + '] IN (select * from SplitDelimiterString('''+@regions+''','','')) and [Col'+@citycol+'] IN (select * from SplitDelimiterString('''+@cities+''','',''))) dl left join (SELECT PaymentValue , PaymentDate , RecordSerial,DailyPaymentValue,DailyPaymentDate FROM Dom_AccountsPayments) ap on ap.RecordSerial = dl.RecordSerial' 
+end
+PRINT @SQL
+
+EXEC(@SQL)
+
+end
+else 
+begin
+ SELECT @column = COALESCE(@column + ', ', '') + 
+   CAST(column_name AS varchar(max))
+from information_schema.columns
+where table_name='Dom_DomainDetailsList'
+and ordinal_position in (select * from  SplitDelimiterString(@List,',')) 
+
+SET @SQL='SELECT * FROM  ( SELECT  '+ @column+',RecordSerial FROM'+' '+'Dom_DomainDetailsList where [DomainID]='+@DomainID2 + ') dl left join (SELECT  PaymentValue , PaymentDate , RecordSerial,DailyPaymentValue,DailyPaymentDate  FROM   Dom_AccountsPayments) ap on ap.RecordSerial = dl.RecordSerial '
+PRINT @SQL
+
+EXEC(@SQL)
+
+end
+go

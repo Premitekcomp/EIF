@@ -1,0 +1,56 @@
+
+CREATE TABLE Employees (
+   Id int IDENTITY(1,1) ,
+   Code nvarchar(200),
+    Name nvarchar(200),
+	GroupId tinyint,
+	OfficeId tinyint
+	 PRIMARY KEY (id),
+	 FOREIGN KEY (GroupId) REFERENCES pre_groups(groupid),
+	 FOREIGN KEY (OfficeId) REFERENCES pre_offices(officeid)  
+);
+
+go	   
+		  
+
+alter table  employees 
+	alter column code varchar(200) collate SQL_Latin1_General_CP1_CI_AS
+go
+alter table  employees 
+	alter column name varchar(200) collate SQL_Latin1_General_CP1_CI_AS
+go
+
+	create proc [InsertEmployee]
+ @code nvarchar(200), @name nvarchar(200) ,@Group int,  @Office int 
+		   as
+
+		 
+INSERT INTO Employees
+           
+     VALUES
+          (@code,@name,@Group,@Office)
+
+go
+CREATE NONCLUSTERED INDEx Idx_employee_name
+ON dbo.Employees(name);
+go
+CREATE NONCLUSTERED INDEx Idx_employee_code
+ON dbo.Employees(code);
+go
+CREATE NONCLUSTERED INDEx Idx_employee_group
+ON dbo.Employees(groupid);
+go
+CREATE NONCLUSTERED INDEx Idx_employee_office
+ON dbo.Employees(officeid);
+go
+CREATE proc [dbo].[DeleteEmployee] @code varchar(200)
+as
+delete from employees where code=@code
+return @@rowcount
+go	
+create index idx_recordserial on Dom_AccountsPayments(RecordSerial)
+go
+
+
+
+

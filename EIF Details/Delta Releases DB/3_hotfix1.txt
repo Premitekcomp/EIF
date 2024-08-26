@@ -1,0 +1,13 @@
+ALTER TABLE Dom_DomainBasic
+ADD Address nvarchar(100) null;
+go
+ALTER TABLE Dom_DomainBasic
+ADD Mobile nvarchar(50) null;
+go
+ALTER View [dbo].[Domain_DataScope]
+AS
+select db.* , dt.DomainTypeID , dp.ProductID , dr.RegionID 
+from Dom_DomainBasic db join Domain_DomainType dt on db.DomainID = dt.DomianID join Domain_Product dp on db.DomainID = dp.DomainID
+join Domain_Region dr on db.DomainID = dr.DomainID 
+
+GO
