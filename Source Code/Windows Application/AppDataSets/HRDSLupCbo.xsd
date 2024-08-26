@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HRDSLupCbo" targetNamespace="http://tempuri.org/HRDSLupCbo.xsd" xmlns:mstns="http://tempuri.org/HRDSLupCbo.xsd" xmlns="http://tempuri.org/HRDSLupCbo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DHTSCS" IsAppSettingsProperty="true" Modifier="Assembly" Name="DHTSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.DHTSCS" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSCS" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Bsk_DepartmentListTableAdapter" GeneratorDataComponentClassName="HR_Bsk_DepartmentListTableAdapter" Name="HR_Bsk_DepartmentList" UserDataComponentName="HR_Bsk_DepartmentListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_BasicCollection.dbo.HR_Bsk_DepartmentList" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DepartmentID, DepartmentTitle
+FROM            HR_Bsk_DepartmentList
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DepartmentID" DataSetColumn="DepartmentID" />
+              <Mapping SourceColumn="DepartmentTitle" DataSetColumn="DepartmentTitle" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_EmpInformationTableAdapter" GeneratorDataComponentClassName="HR_EmpInformationTableAdapter" Name="HR_EmpInformation" UserDataComponentName="HR_EmpInformationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Emp_BasicInfo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeeID, EmpNameAR
+FROM            HR_Emp_BasicInfo
+WHERE        (IsActive = 1) AND (IsDeleted = 0)
+ORDER BY EmpNameAR</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeID" DataSetColumn="EmployeeID" />
+              <Mapping SourceColumn="EmpNameAR" DataSetColumn="EmpNameAR" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_DeptListTableAdapter" GeneratorDataComponentClassName="HR_DeptListTableAdapter" Name="HR_DeptList" UserDataComponentName="HR_DeptListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HR_Bsk_DepartmentList.DepartmentID, HR_Bsk_DepartmentList.DepartmentTitle, HR_EmpInformation.EmpID
+FROM            HR_Bsk_DepartmentList INNER JOIN
+                         HR_EmpInformation ON HR_Bsk_DepartmentList.DepartmentID = HR_EmpInformation.DepartmentID
+WHERE        (HR_Bsk_DepartmentList.IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DepartmentID" DataSetColumn="DepartmentID" />
+              <Mapping SourceColumn="DepartmentTitle" DataSetColumn="DepartmentTitle" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Bsk_DepartmentList.DepartmentID, HR_Bsk_DepartmentList.DepartmentTitle, HR_EmpInformation.EmpID
+FROM            HR_Bsk_DepartmentList INNER JOIN
+                         HR_EmpInformation ON HR_Bsk_DepartmentList.DepartmentID = HR_EmpInformation.DepartmentID
+WHERE        (HR_EmpInformation.EmpID = @EmpID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HRDSLupCbo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HRDSLupCbo" msprop:Generator_UserDSName="HRDSLupCbo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HR_Bsk_DepartmentList" msprop:Generator_TableClassName="HR_Bsk_DepartmentListDataTable" msprop:Generator_TableVarName="tableHR_Bsk_DepartmentList" msprop:Generator_RowChangedName="HR_Bsk_DepartmentListRowChanged" msprop:Generator_TablePropName="HR_Bsk_DepartmentList" msprop:Generator_RowDeletingName="HR_Bsk_DepartmentListRowDeleting" msprop:Generator_RowChangingName="HR_Bsk_DepartmentListRowChanging" msprop:Generator_RowEvHandlerName="HR_Bsk_DepartmentListRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Bsk_DepartmentListRowDeleted" msprop:Generator_RowClassName="HR_Bsk_DepartmentListRow" msprop:Generator_UserTableName="HR_Bsk_DepartmentList" msprop:Generator_RowEvArgName="HR_Bsk_DepartmentListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DepartmentID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDepartmentID" msprop:Generator_ColumnPropNameInRow="DepartmentID" msprop:Generator_ColumnPropNameInTable="DepartmentIDColumn" msprop:Generator_UserColumnName="DepartmentID" type="xs:unsignedByte" />
+              <xs:element name="DepartmentTitle" msprop:Generator_ColumnVarNameInTable="columnDepartmentTitle" msprop:Generator_ColumnPropNameInRow="DepartmentTitle" msprop:Generator_ColumnPropNameInTable="DepartmentTitleColumn" msprop:Generator_UserColumnName="DepartmentTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_EmpInformation" msprop:Generator_TableClassName="HR_EmpInformationDataTable" msprop:Generator_TableVarName="tableHR_EmpInformation" msprop:Generator_TablePropName="HR_EmpInformation" msprop:Generator_RowDeletingName="HR_EmpInformationRowDeleting" msprop:Generator_RowChangingName="HR_EmpInformationRowChanging" msprop:Generator_RowEvHandlerName="HR_EmpInformationRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_EmpInformationRowDeleted" msprop:Generator_UserTableName="HR_EmpInformation" msprop:Generator_RowChangedName="HR_EmpInformationRowChanged" msprop:Generator_RowEvArgName="HR_EmpInformationRowChangeEvent" msprop:Generator_RowClassName="HR_EmpInformationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:short" />
+              <xs:element name="EmpNameAR" msprop:Generator_ColumnVarNameInTable="columnEmpNameAR" msprop:Generator_ColumnPropNameInRow="EmpNameAR" msprop:Generator_ColumnPropNameInTable="EmpNameARColumn" msprop:Generator_UserColumnName="EmpNameAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_DeptList" msprop:Generator_TableClassName="HR_DeptListDataTable" msprop:Generator_TableVarName="tableHR_DeptList" msprop:Generator_TablePropName="HR_DeptList" msprop:Generator_RowDeletingName="HR_DeptListRowDeleting" msprop:Generator_RowChangingName="HR_DeptListRowChanging" msprop:Generator_RowEvHandlerName="HR_DeptListRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_DeptListRowDeleted" msprop:Generator_UserTableName="HR_DeptList" msprop:Generator_RowChangedName="HR_DeptListRowChanged" msprop:Generator_RowEvArgName="HR_DeptListRowChangeEvent" msprop:Generator_RowClassName="HR_DeptListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DepartmentID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDepartmentID" msprop:Generator_ColumnPropNameInRow="DepartmentID" msprop:Generator_ColumnPropNameInTable="DepartmentIDColumn" msprop:Generator_UserColumnName="DepartmentID" type="xs:unsignedByte" />
+              <xs:element name="DepartmentTitle" msprop:Generator_ColumnVarNameInTable="columnDepartmentTitle" msprop:Generator_ColumnPropNameInRow="DepartmentTitle" msprop:Generator_ColumnPropNameInTable="DepartmentTitleColumn" msprop:Generator_UserColumnName="DepartmentTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Bsk_DepartmentList" />
+      <xs:field xpath="mstns:DepartmentID" />
+    </xs:unique>
+    <xs:unique name="HR_EmpInformation_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_EmpInformation" />
+      <xs:field xpath="mstns:EmployeeID" />
+    </xs:unique>
+    <xs:unique name="HR_DeptList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_DeptList" />
+      <xs:field xpath="mstns:DepartmentID" />
+      <xs:field xpath="mstns:EmpID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

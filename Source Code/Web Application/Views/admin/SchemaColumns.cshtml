@@ -1,0 +1,23 @@
+﻿@{EIF.Models.Sch_SchemaList data = ViewBag.Data;}
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @data.SchemaName Columns
+
+        </div>
+        <div class="panel-body">
+
+
+            <input type="hidden" id="SchemaID" name="SchemaID" value="@data.SchemaID" />
+          
+            <div id="container">
+
+                @Html.Partial("_AdminSchemaCols")
+            </div>
+           
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Admin.js"></script>

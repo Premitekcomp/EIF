@@ -1,0 +1,98 @@
+﻿@{
+List<EIF.Helper.CollectorwithPayment> Reslts = new List<EIF.Helper.CollectorwithPayment>();
+if (ViewBag.CollectorReport != null)
+{
+    Reslts = ViewBag.CollectorReport;
+}
+}
+<script src="~/Scripts/jquery.canvasjs.min.js"></script>
+
+@using (Html.BeginForm("Chart", "collection", FormMethod.Post, new { @id="frm-chart-data"}))
+{
+    <input type="hidden" name="hfHTML" value="" />
+    <input type="hidden" name="hfChartData" value="" />
+    
+}
+<script>
+
+    var types = { Payment: 'Payment', PastDue: 'PastDue', Balance: 'Balance' }
+
+    var data = [];
+    var dataPoints = [];
+     data =@Html.Raw(Json.Encode(Reslts.GroupBy(c => c.MonthYear).Select(c => new { MonthYear = c.Key, Payment = c.Sum(x => double.Parse(x.Payment)), PastDue = c.Sum(x => double.Parse(x.PastDue)), Balance = c.Sum(x => double.Parse(x.Balance)) })))
+
+    dat=[]
+
+    var value = 0.0;
+    for (var item in types) {
+
+        if (data != null) {
+
+            for (var i = 0; i < data.length; i++) {
+                if (item == 'Payment') { value = data[i].Payment; }
+                else if (item == 'PastDue') { value = data[i].PastDue; }
+                else { value = data[i].Balance;}
+                dataPoints.push({
+                    label: data[i].MonthYear, y:
+               Number(value), x: i
+                });
+
+            }
+
+            var options = {
+                title: {
+                    text: item
+                },
+                data: [
+                {
+                    type: "column",
+                    dataPoints: dataPoints
+                }
+
+                ],
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            display: true
+                        }
+                    }]
+                }
+            };
+
+            $("#chartContainer"+item).CanvasJSChart(options);
+        }
+    }
+</script>
+
+
+<div class="row chart-container">
+    <div class="col">
+        <div id="chartContainerPayment" style=" height:240px;"></div>
+    </div>
+    <div class="col">    <div class="col" id="chartContainerPastDue" style="height: 240px;"></div></div>
+    <div class="col">   <div class="col" id="chartContainerBalance" style="height: 240px;"></div></div>
+</div>
+
+<script>
+    //function exportChart()
+    //{
+    //    var imagesData = [];
+    //    var canvases = $(".chart-container canvas");        
+    //    for (var index = 0; index < canvases.length; index++)
+    //    {
+    //        if(index%2==0)
+    //        {
+    //            imagesData.push (canvases[index].toDataURL("image/jpeg", 1.0));
+    //        }
+    //    }
+    //    var data = imagesData.join('|');
+
+    //    $.ajax({
+    //        url: "Chart",
+    //        data: {
+    //            "hfChartData":data
+    //        }
+           
+    //    });
+    //}
+</script>

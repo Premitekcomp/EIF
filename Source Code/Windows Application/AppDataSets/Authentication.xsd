@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Authentication" targetNamespace="http://tempuri.org/Authentication.xsd" xmlns:mstns="http://tempuri.org/Authentication.xsd" xmlns="http://tempuri.org/Authentication.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSSCS" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSSCS" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSSCS" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Pre_UsersTableAdapter" GeneratorDataComponentClassName="Pre_UsersTableAdapter" Name="Pre_Users" UserDataComponentName="Pre_UsersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_BasicCollection.dbo.Pre_Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        UserID, UserName
+FROM            Pre_Users</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_BasicCollection.dbo.Pre_Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillLoginList" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillLoginList" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillLoginList">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT UserID, UserName FROM Pre_Users WHERE (IsActive = 1) AND (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Authentication" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Authentication" msprop:Generator_UserDSName="Authentication">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Pre_Users" msprop:Generator_TableClassName="Pre_UsersDataTable" msprop:Generator_TableVarName="tablePre_Users" msprop:Generator_RowChangedName="Pre_UsersRowChanged" msprop:Generator_TablePropName="Pre_Users" msprop:Generator_RowDeletingName="Pre_UsersRowDeleting" msprop:Generator_RowChangingName="Pre_UsersRowChanging" msprop:Generator_RowEvHandlerName="Pre_UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="Pre_UsersRowDeleted" msprop:Generator_RowClassName="Pre_UsersRow" msprop:Generator_UserTableName="Pre_Users" msprop:Generator_RowEvArgName="Pre_UsersRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:short" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pre_Users" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

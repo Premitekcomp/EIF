@@ -1,0 +1,121 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+@{EIF.Models.Dom_DomainList data = ViewBag.data;}
+
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<div class="warper container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Domain Data
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="container">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="control-label">Domain Name :  </label> <span>@data.DomainTitle</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="control-label">Domain Version Number :  </label> <span>@data.VersionNumber</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="control-label">Branch : </label><span> @data.BranchTitle</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="control-label">Agency : </label><span> @data.AgencyTitle</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="control-label">Month : </label><span> @data.MonthYear</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="control-label">Domain Type : </label> <span> @data.DomainType</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="control-label">Domain Status : </label> <span> @data.StatusName</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+@using (Ajax.BeginForm("CompareVersionsResult", "collection",
+                                     new AjaxOptions
+                                     {
+                                         HttpMethod = "POST",
+                                         UpdateTargetId = "result",
+                                         InsertionMode = InsertionMode.Replace,
+                                         OnBegin = "ShowProgress();",
+                                         OnComplete = "HideProgress();"
+                                     }))
+{ 
+            <div class="row">
+                <div class="col-lg-4">Primary Key Field </div>
+                <div class="col-lg-4">
+                    <input type="hidden" id="DomainID" name="DomainID" value="@data.DomainID" />
+                    @Html.DropDownList("PK", get.AliasList(Convert.ToInt64(data.DomainID)) as SelectList, "Choose", new
+               {
+                   @class = "form-control",
+               })
+                </div>
+                <div class="col-lg-4">
+                    <button type="submit" class="btn btn-primary">Compare</button>
+                </div>
+            </div>
+}
+            
+        </div>
+    </div>
+
+
+    <div id="result"></div>
+   
+
+</div>
+ 

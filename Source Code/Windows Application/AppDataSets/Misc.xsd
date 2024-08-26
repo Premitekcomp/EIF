@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Misc" targetNamespace="http://tempuri.org/Misc.xsd" xmlns:mstns="http://tempuri.org/Misc.xsd" xmlns="http://tempuri.org/Misc.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSCS" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_NotificationBasicTableAdapter" GeneratorDataComponentClassName="Grid_NotificationBasicTableAdapter" Name="Grid_NotificationBasic" UserDataComponentName="Grid_NotificationBasicTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AOV_Noti_Basic.NotificationID, AOV_Noti_Basic.NotificationName, AOV_Noti_Basic.NotificationDesc, AOV_Noti_Basic.NotificationTitle, AOV_Noti_Basic.FormID, Pre_FormList.FormTitle, AOV_Noti_Basic.ActionID, 
+                         Pre_Actions.ActionTitle, AOV_Noti_Basic.IconID, AOV_Noti_Basic.NotificationMSG, AOV_Noti_Basic.IsDeleted
+FROM            AOV_Noti_Basic INNER JOIN
+                         Pre_FormList ON AOV_Noti_Basic.FormID = Pre_FormList.FormID INNER JOIN
+                         Pre_Actions ON AOV_Noti_Basic.ActionID = Pre_Actions.ActionID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NotificationID" DataSetColumn="NotificationID" />
+              <Mapping SourceColumn="NotificationName" DataSetColumn="NotificationName" />
+              <Mapping SourceColumn="NotificationDesc" DataSetColumn="NotificationDesc" />
+              <Mapping SourceColumn="NotificationTitle" DataSetColumn="NotificationTitle" />
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="FormTitle" DataSetColumn="FormTitle" />
+              <Mapping SourceColumn="ActionID" DataSetColumn="ActionID" />
+              <Mapping SourceColumn="ActionTitle" DataSetColumn="ActionTitle" />
+              <Mapping SourceColumn="IconID" DataSetColumn="IconID" />
+              <Mapping SourceColumn="NotificationMSG" DataSetColumn="NotificationMSG" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_NotificationReciversListTableAdapter" GeneratorDataComponentClassName="Grid_NotificationReciversListTableAdapter" Name="Grid_NotificationReciversList" UserDataComponentName="Grid_NotificationReciversListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AOV_Noti_ReciversList.NotifocationID, AOV_Noti_ReciversList.ReciverID, Pre_Users.DisplayName
+FROM            AOV_Noti_ReciversList INNER JOIN
+                         Pre_Users ON AOV_Noti_ReciversList.ReciverID = Pre_Users.UserID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NotifocationID" DataSetColumn="NotifocationID" />
+              <Mapping SourceColumn="ReciverID" DataSetColumn="ReciverID" />
+              <Mapping SourceColumn="DisplayName" DataSetColumn="DisplayName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GridMyNotificationTableAdapter" GeneratorDataComponentClassName="GridMyNotificationTableAdapter" Name="GridMyNotification" UserDataComponentName="GridMyNotificationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AOV_Noti_ReciversList.RecordSerial, AOV_Noti_ReciversList.NotifocationID, AOV_Noti_Basic.NotificationTitle, AOV_Noti_Basic.NotificationMSG, AOV_Noti_ReciversList.Notified, 
+                         AOV_Noti_ReciversList.ReciverID, AOV_Noti_ReciversList.RCDate, AOV_Noti_ReciversList.IsSeen, AOV_Noti_ReciversList.SeenIn, AOV_Noti_ReciversList.Call2ActionRID, Pre_FormList.TrackViewName, 
+                         CASE WHEN Call2ActionRID = 0 THEN 'Notify' ELSE 'Call to Action' END AS Type, Pre_FormList.KeyFieldName
+FROM            AOV_Noti_ReciversList INNER JOIN
+                         AOV_Noti_Basic ON AOV_Noti_ReciversList.NotifocationID = AOV_Noti_Basic.NotificationID INNER JOIN
+                         Pre_FormList ON AOV_Noti_Basic.FormID = Pre_FormList.FormID
+ORDER BY AOV_Noti_ReciversList.RCDate DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RecordSerial" DataSetColumn="RecordSerial" />
+              <Mapping SourceColumn="NotifocationID" DataSetColumn="NotifocationID" />
+              <Mapping SourceColumn="NotificationTitle" DataSetColumn="NotificationTitle" />
+              <Mapping SourceColumn="NotificationMSG" DataSetColumn="NotificationMSG" />
+              <Mapping SourceColumn="Notified" DataSetColumn="Notified" />
+              <Mapping SourceColumn="ReciverID" DataSetColumn="ReciverID" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="IsSeen" DataSetColumn="IsSeen" />
+              <Mapping SourceColumn="SeenIn" DataSetColumn="SeenIn" />
+              <Mapping SourceColumn="Call2ActionRID" DataSetColumn="Call2ActionRID" />
+              <Mapping SourceColumn="TrackViewName" DataSetColumn="TrackViewName" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="KeyFieldName" DataSetColumn="KeyFieldName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByReciverID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByReciverID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByReciverID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AOV_Noti_ReciversList.RecordSerial, AOV_Noti_ReciversList.NotifocationID, AOV_Noti_Basic.NotificationTitle, AOV_Noti_Basic.NotificationMSG, AOV_Noti_ReciversList.Notified, 
+                         AOV_Noti_ReciversList.ReciverID, AOV_Noti_ReciversList.RCDate, AOV_Noti_ReciversList.IsSeen, AOV_Noti_ReciversList.SeenIn, AOV_Noti_ReciversList.Call2ActionRID, Pre_FormList.TrackViewName, 
+                         CASE WHEN Call2ActionRID = 0 THEN 'Notify' ELSE 'Call to Action' END AS Type, Pre_FormList.KeyFieldName
+FROM            AOV_Noti_ReciversList INNER JOIN
+                         AOV_Noti_Basic ON AOV_Noti_ReciversList.NotifocationID = AOV_Noti_Basic.NotificationID INNER JOIN
+                         Pre_FormList ON AOV_Noti_Basic.FormID = Pre_FormList.FormID
+WHERE        (AOV_Noti_ReciversList.ReciverID = @ReciverID)
+ORDER BY AOV_Noti_ReciversList.RCDate DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ReciverID" ColumnName="ReciverID" DataSourceName="TMS_DataCollection.dbo.AOV_Noti_ReciversList" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@ReciverID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="ReciverID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Misc" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Misc" msprop:Generator_UserDSName="Misc">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Grid_NotificationBasic" msprop:Generator_TableClassName="Grid_NotificationBasicDataTable" msprop:Generator_TableVarName="tableGrid_NotificationBasic" msprop:Generator_RowChangedName="Grid_NotificationBasicRowChanged" msprop:Generator_TablePropName="Grid_NotificationBasic" msprop:Generator_RowDeletingName="Grid_NotificationBasicRowDeleting" msprop:Generator_RowChangingName="Grid_NotificationBasicRowChanging" msprop:Generator_RowEvHandlerName="Grid_NotificationBasicRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_NotificationBasicRowDeleted" msprop:Generator_RowClassName="Grid_NotificationBasicRow" msprop:Generator_UserTableName="Grid_NotificationBasic" msprop:Generator_RowEvArgName="Grid_NotificationBasicRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NotificationID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnNotificationID" msprop:Generator_ColumnPropNameInRow="NotificationID" msprop:Generator_ColumnPropNameInTable="NotificationIDColumn" msprop:Generator_UserColumnName="NotificationID" type="xs:int" />
+              <xs:element name="NotificationName" msprop:Generator_ColumnVarNameInTable="columnNotificationName" msprop:Generator_ColumnPropNameInRow="NotificationName" msprop:Generator_ColumnPropNameInTable="NotificationNameColumn" msprop:Generator_UserColumnName="NotificationName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NotificationDesc" msprop:Generator_ColumnVarNameInTable="columnNotificationDesc" msprop:Generator_ColumnPropNameInRow="NotificationDesc" msprop:Generator_ColumnPropNameInTable="NotificationDescColumn" msprop:Generator_UserColumnName="NotificationDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NotificationTitle" msprop:Generator_ColumnVarNameInTable="columnNotificationTitle" msprop:Generator_ColumnPropNameInRow="NotificationTitle" msprop:Generator_ColumnPropNameInTable="NotificationTitleColumn" msprop:Generator_UserColumnName="NotificationTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:short" minOccurs="0" />
+              <xs:element name="FormTitle" msprop:Generator_ColumnVarNameInTable="columnFormTitle" msprop:Generator_ColumnPropNameInRow="FormTitle" msprop:Generator_ColumnPropNameInTable="FormTitleColumn" msprop:Generator_UserColumnName="FormTitle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActionID" msprop:Generator_ColumnVarNameInTable="columnActionID" msprop:Generator_ColumnPropNameInRow="ActionID" msprop:Generator_ColumnPropNameInTable="ActionIDColumn" msprop:Generator_UserColumnName="ActionID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ActionTitle" msprop:Generator_ColumnVarNameInTable="columnActionTitle" msprop:Generator_ColumnPropNameInRow="ActionTitle" msprop:Generator_ColumnPropNameInTable="ActionTitleColumn" msprop:Generator_UserColumnName="ActionTitle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IconID" msprop:Generator_ColumnVarNameInTable="columnIconID" msprop:Generator_ColumnPropNameInRow="IconID" msprop:Generator_ColumnPropNameInTable="IconIDColumn" msprop:Generator_UserColumnName="IconID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="NotificationMSG" msprop:Generator_ColumnVarNameInTable="columnNotificationMSG" msprop:Generator_ColumnPropNameInRow="NotificationMSG" msprop:Generator_ColumnPropNameInTable="NotificationMSGColumn" msprop:Generator_UserColumnName="NotificationMSG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_NotificationReciversList" msprop:Generator_TableClassName="Grid_NotificationReciversListDataTable" msprop:Generator_TableVarName="tableGrid_NotificationReciversList" msprop:Generator_RowChangedName="Grid_NotificationReciversListRowChanged" msprop:Generator_TablePropName="Grid_NotificationReciversList" msprop:Generator_RowDeletingName="Grid_NotificationReciversListRowDeleting" msprop:Generator_RowChangingName="Grid_NotificationReciversListRowChanging" msprop:Generator_RowEvHandlerName="Grid_NotificationReciversListRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_NotificationReciversListRowDeleted" msprop:Generator_RowClassName="Grid_NotificationReciversListRow" msprop:Generator_UserTableName="Grid_NotificationReciversList" msprop:Generator_RowEvArgName="Grid_NotificationReciversListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NotifocationID" msprop:Generator_ColumnVarNameInTable="columnNotifocationID" msprop:Generator_ColumnPropNameInRow="NotifocationID" msprop:Generator_ColumnPropNameInTable="NotifocationIDColumn" msprop:Generator_UserColumnName="NotifocationID" type="xs:int" />
+              <xs:element name="ReciverID" msprop:Generator_ColumnVarNameInTable="columnReciverID" msprop:Generator_ColumnPropNameInRow="ReciverID" msprop:Generator_ColumnPropNameInTable="ReciverIDColumn" msprop:Generator_UserColumnName="ReciverID" type="xs:short" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GridMyNotification" msprop:Generator_TableClassName="GridMyNotificationDataTable" msprop:Generator_TableVarName="tableGridMyNotification" msprop:Generator_TablePropName="GridMyNotification" msprop:Generator_RowDeletingName="GridMyNotificationRowDeleting" msprop:Generator_RowChangingName="GridMyNotificationRowChanging" msprop:Generator_RowEvHandlerName="GridMyNotificationRowChangeEventHandler" msprop:Generator_RowDeletedName="GridMyNotificationRowDeleted" msprop:Generator_UserTableName="GridMyNotification" msprop:Generator_RowChangedName="GridMyNotificationRowChanged" msprop:Generator_RowEvArgName="GridMyNotificationRowChangeEvent" msprop:Generator_RowClassName="GridMyNotificationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RecordSerial" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRecordSerial" msprop:Generator_ColumnPropNameInRow="RecordSerial" msprop:Generator_ColumnPropNameInTable="RecordSerialColumn" msprop:Generator_UserColumnName="RecordSerial" type="xs:long" />
+              <xs:element name="NotifocationID" msprop:Generator_ColumnVarNameInTable="columnNotifocationID" msprop:Generator_ColumnPropNameInRow="NotifocationID" msprop:Generator_ColumnPropNameInTable="NotifocationIDColumn" msprop:Generator_UserColumnName="NotifocationID" type="xs:int" />
+              <xs:element name="NotificationTitle" msprop:Generator_ColumnVarNameInTable="columnNotificationTitle" msprop:Generator_ColumnPropNameInRow="NotificationTitle" msprop:Generator_ColumnPropNameInTable="NotificationTitleColumn" msprop:Generator_UserColumnName="NotificationTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NotificationMSG" msprop:Generator_ColumnVarNameInTable="columnNotificationMSG" msprop:Generator_ColumnPropNameInRow="NotificationMSG" msprop:Generator_ColumnPropNameInTable="NotificationMSGColumn" msprop:Generator_UserColumnName="NotificationMSG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Notified" msprop:Generator_ColumnVarNameInTable="columnNotified" msprop:Generator_ColumnPropNameInRow="Notified" msprop:Generator_ColumnPropNameInTable="NotifiedColumn" msprop:Generator_UserColumnName="Notified" type="xs:boolean" />
+              <xs:element name="ReciverID" msprop:Generator_ColumnVarNameInTable="columnReciverID" msprop:Generator_ColumnPropNameInRow="ReciverID" msprop:Generator_ColumnPropNameInTable="ReciverIDColumn" msprop:Generator_UserColumnName="ReciverID" type="xs:short" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IsSeen" msprop:Generator_ColumnVarNameInTable="columnIsSeen" msprop:Generator_ColumnPropNameInRow="IsSeen" msprop:Generator_ColumnPropNameInTable="IsSeenColumn" msprop:Generator_UserColumnName="IsSeen" type="xs:boolean" />
+              <xs:element name="SeenIn" msprop:Generator_ColumnVarNameInTable="columnSeenIn" msprop:Generator_ColumnPropNameInRow="SeenIn" msprop:Generator_ColumnPropNameInTable="SeenInColumn" msprop:Generator_UserColumnName="SeenIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Call2ActionRID" msprop:Generator_ColumnVarNameInTable="columnCall2ActionRID" msprop:Generator_ColumnPropNameInRow="Call2ActionRID" msprop:Generator_ColumnPropNameInTable="Call2ActionRIDColumn" msprop:Generator_UserColumnName="Call2ActionRID" type="xs:int" minOccurs="0" />
+              <xs:element name="TrackViewName" msprop:Generator_ColumnVarNameInTable="columnTrackViewName" msprop:Generator_ColumnPropNameInRow="TrackViewName" msprop:Generator_ColumnPropNameInTable="TrackViewNameColumn" msprop:Generator_UserColumnName="TrackViewName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KeyFieldName" msprop:Generator_ColumnVarNameInTable="columnKeyFieldName" msprop:Generator_ColumnPropNameInRow="KeyFieldName" msprop:Generator_ColumnPropNameInTable="KeyFieldNameColumn" msprop:Generator_UserColumnName="KeyFieldName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_NotificationBasic" />
+      <xs:field xpath="mstns:NotificationID" />
+    </xs:unique>
+    <xs:unique name="GridMyNotification_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GridMyNotification" />
+      <xs:field xpath="mstns:RecordSerial" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,401 @@
+﻿ @{  List<EIF.Helper.DomainReoprtbyTeamLeader> Reslts= ViewBag.TeamLeaderReport;
+     
+     
+<div id="result">
+    @{var teamLeaderName = "";
+    if (ViewBag.TeamLeaderReport != null)
+    {
+       
+        var groupResult = Reslts.OrderByDescending(c => c.TeamLeaderName).GroupBy(c => new { c.TeamLeaderName });
+        foreach (var g in groupResult)
+        {
+            var k = g.OrderByDescending(c => c.MonthYear).GroupBy(c => c.MonthYear);
+            var allCountCustomers = 0;
+            var allTotalBalance = 0.0;
+            var allTotalPayment = 0.0;
+            var allCountPayment = 0;
+            var allTotalPastDue = 0.0;
+            var countTeleCollerPer = 0;
+            var countCollectorPer = 0;
+            var allCollectorTotalPaymentPer = 0.0;
+           
+
+            var activePaymentTotal = 0.0;
+            var activePastDueTotal = 0.0;
+            var woPaymentTotal = 0.0;
+            var woBalanceTotal = 0.0;
+
+            var activePaymentTotal1 = 0.0;
+            var activePastDueTotal1 = 0.0;
+            var woPaymentTotal1 = 0.0;
+            var woBalanceTotal1 = 0.0;
+            var y = "";
+
+            <div style="overflow-x:scroll;">
+                <table cellpadding="0" border="0" id="@g.Key.TeamLeaderName" class="table table-striped table-bordered">
+                    @foreach (var item in k)
+                    {
+
+                        var countCustomers = 0;
+                        var totalBalance = 0.0;
+                        var totalPayment = 0.0;
+                        var countPayment = 0;
+                        var totalPastDue = 0.0;
+                        var countCustomersPer = 0;
+                        var totalBalancePer = 0.0;
+                        var totalPaymentPer = 0.0;
+                        var countPaymentPer = 0;
+                        var totalPastDuePer = 0.0;
+                        var countTeleColler = 0;
+                        var countCollector = 0;
+                        var allCollectorTotalPayment = 0.0;
+                        var itemi = int.Parse(item.Key);
+                        var result2 = item.OrderByDescending(c => c.DomainType).GroupBy(c => c.DomainType);
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Title</th>
+                                <th>Domain Type </th>
+                                @if (ViewBag.type == 1)
+                                {
+
+                                    <th>Product</th>}
+                                <th>Bank Name</th>
+                                <th>NUM.Customers</th>
+                                <th>Payment Count</th>
+                                <th>Total Payment</th>
+                                <th>Past Due</th>
+                                <th>Balance</th>
+                                @if (ViewBag.type == 1)
+                                {
+                                <th>Total TeleColler</th>
+                                    <th>Total Collector</th>
+                                    <th> Payment Collectors</th>}
+                                <th>Active%</th>
+                                <th>W/O%</th>
+                            </tr>
+
+
+
+                            @foreach (var item2 in result2)
+                            {
+                                var res = item2.OrderBy(c => c.AgencyTitle).ToList();
+                                totalPastDue = 0;
+                                countCustomers = 0;
+                                totalBalance = 0;
+                                totalPayment = 0;
+                                countPayment = 0;
+
+
+                                for (var i = 0; i < res.Count; i++)
+                                {
+                                    totalPastDue += Convert.ToDouble(res[i].PastDue);
+                                    countCustomers += res[i].CountOfCustomers;
+                                    totalBalance += Convert.ToDouble(res[i].Balance);
+                                    totalPayment += Convert.ToDouble(res[i].Payment);
+                                    teamLeaderName = res[i].TeamLeaderName;
+                                    countPayment += res[i].CountOfPayment;
+                                    var activePercent = 0.0;
+                                    var woPercent = 0.0;
+                                    if (res[i].GroupId == 6) { countTeleColler++; }
+                                    else if (res[i].GroupId != null && res[i].GroupId != 6)
+                                    {
+                                        countCollector++;
+                                    }
+                                    if (res[i].GroupId != null)
+                                    {
+                                        allCollectorTotalPayment += Convert.ToDouble(res[i].Payment);
+                                    }
+                                    <tr>
+
+                                        <td title="Name">@res[i].TeamLeaderName</td>
+                                        <td title="Title">SuperVisor</td>
+                                        <td title="Domain Type">@res[i].DomainType</td>
+                                        @if (ViewBag.type == 1)
+                                        {
+
+                                            <td title="Product">@res[i].Product</td>}
+                                        <td title="Bank Name">@res[i].AgencyTitle</td>
+                                        <td title="NUM.Customers">@res[i].CountOfCustomers</td>
+                                        <td title="Payment Count">@res[i].CountOfPayment</td>
+                                        <td title="Total Payment">@res[i].Payment</td>
+                                        <td title="Past Due">@res[i].PastDue</td>
+                                        <td title="Balance">@res[i].Balance</td>
+                                        @if (ViewBag.type == 1)
+                                        {
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>}
+                                        @if (item2.Key == "Active")
+                                        {
+                                            activePercent = double.Parse(res[i].Payment) / double.Parse(res[i].PastDue); activePercent = activePercent * 100;
+                                        }
+
+                                        else
+                                        { woPercent = double.Parse(res[i].Payment) / double.Parse(res[i].Balance); woPercent = woPercent * 100; }
+
+                                        <td title="Active%"> @Math.Round(activePercent, 2)%</td>
+                                        <td title="W-of%"> @Math.Round(woPercent, 2)%</td>
+
+                                    </tr>
+
+                                }
+
+
+                                var activePercent1 = 0.0; var woPercent1 = 0.0;
+                                if (@item2.Key == "Active")
+                                {
+                                    activePercent1 = totalPayment / totalPastDue; activePercent1 = activePercent1 * 100;
+                                    activePastDueTotal = totalPastDue;
+                                    activePaymentTotal = totalPayment;
+                                }
+
+                                else
+                                {
+                                    woPercent1 = totalPayment / totalBalance; woPercent1 = woPercent1 * 100;
+                                    woBalanceTotal = totalBalance;
+                                    woPaymentTotal = totalPayment;
+
+
+                                }
+                                countCustomersPer += countCustomers;
+                                totalBalancePer += totalBalance;
+                                totalPaymentPer += totalPayment;
+                                countPaymentPer += countPayment;
+                                totalPastDuePer += totalPastDue;
+                                if (ViewBag.type == 1)
+                                {
+                                    <tr>
+                                        <th colspan="5">Total Of @item2.Key</th>
+
+                                        <td title="NUM.Customers">@countCustomers</td>
+                                        <td title="Payment Count">@countPayment</td>
+                                        <td title="Total Payment">@totalPayment</td>
+                                        <td title="Past Due">@totalPastDue</td>
+                                        <td title="Balance">@totalBalance</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+
+                                        <td>@Math.Round(activePercent1, 2) %</td>
+                                        <td>@Math.Round(woPercent1, 2) %</td>
+
+
+                                    </tr>}
+                            }
+                            <tr class="team-name"><td colspan="16"><h2> @{ y = itemi > 12 ? itemi.ToString() : ((enum_Months.eMonths)itemi).ToString();} @y Data For @teamLeaderName</h2></td></tr>
+                        </thead>
+
+                             var activePercent2 = 0.0; var woPercent2 = 0.0;
+
+
+                             activePaymentTotal1 += activePaymentTotal;
+                             activePastDueTotal1 += activePastDueTotal;
+                             woPaymentTotal1 += woPaymentTotal;
+                             woBalanceTotal1 += woBalanceTotal;
+
+                             activePercent2 = activePaymentTotal / activePastDueTotal; activePercent2 = activePercent2 * 100;
+
+                             woPercent2 = woPaymentTotal / woBalanceTotal; woPercent2 = woPercent2 * 100;
+
+
+                             countTeleCollerPer += countTeleColler;
+                             countCollectorPer += countCollector;
+                             allCollectorTotalPaymentPer += allCollectorTotalPayment;
+                             countTeleColler = 0;
+                             countCollector = 0;
+                             allCollectorTotalPayment = 0.0;
+                             allCountCustomers += countCustomersPer;
+                             allTotalBalance += totalBalancePer;
+                             allTotalPayment += totalPaymentPer;
+                             allCountPayment += countPaymentPer;
+                             allTotalPastDue += totalPastDuePer;
+
+                            <tr>
+                                @if (ViewBag.type == 1)
+                                {
+                                <th colspan="5">Total Of @y  </th>}
+                                else
+                                {
+                                <th colspan="4">Total Of @y  </th>}
+                                <td title="NUM.Customers">@countCustomersPer</td>
+                                <td title="Payment Count">@countPaymentPer</td>
+                                <td title="Total Payment">@totalPaymentPer</td>
+                                <td title="Past Due">@totalPastDuePer</td>
+                                <td title="Balance">@totalBalancePer</td>
+                                @if (ViewBag.type == 1)
+                                {
+                                <td title="Total TeleColler">@countTeleColler</td>
+                                    <td title="Total Collector">@countCollector</td>
+                                    <td title="Payment Collectors">@allCollectorTotalPayment</td>}
+
+
+                                <td>@Math.Round(activePercent2, 2)%</td>
+                                <td>@Math.Round(woPercent2)%</td>
+
+                            </tr>
+
+
+                    }
+
+                    <tr>
+                        @if (ViewBag.type == 1)
+                        {
+                            <th colspan="5">Total Of @teamLeaderName </th>
+                        }
+                        else
+                        {
+                            <th colspan="4">Total Of @teamLeaderName </th>
+                        }
+                        <td title="NUM.Customers">@allCountCustomers</td>
+                        <td title="Payment Count">@allCountPayment</td>
+                        <td title="Total Payment">@allTotalPayment</td>
+                        <td title="Past Due">@allTotalPastDue</td>
+                        <td title="Balance">@allTotalBalance</td>
+                        @if (ViewBag.type == 1)
+                        {
+                        <td title="Total TeleColler">@countTeleCollerPer</td>
+                            <td title="Total Collector">@countCollectorPer</td>
+                            <td title="Payment Collectors">@allCollectorTotalPaymentPer</td>}
+                        @{var activePercent3 = activePaymentTotal1 / activePastDueTotal1; activePercent3 = activePercent3 * 100;
+
+
+                        var woPercent3 = woPaymentTotal1 / woBalanceTotal1; woPercent3 = woPercent3 * 100; }
+                        <td>@Math.Round(activePercent3, 2)%</td>
+                        <td>@Math.Round(woPercent3, 2)%</td>
+
+
+                    </tr>
+                </table>
+            </div>
+
+        }
+    }
+    else if (ViewBag.TeamLeaderReportwarning != null)
+    {
+        <p class="text-warning"><span class="fa fa-warning text-yellow"></span> TeamL eader  Report : @ViewBag.TeamLeaderReportwarning</p>
+    }
+    }
+</div>
+
+}
+
+
+
+
+
+
+
+
+
+<script>
+    $('.team-name').each(function () { var t = $(this).parent(t); $(t).prepend(this) })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/Scripts/jquery.canvasjs.min.js"></script>
+
+@*<script>
+    debugger
+    //var data
+    var data = [];
+    var dataPoints = [];
+     data =@Html.Raw(Json.Encode(Reslts))
+
+    dat=[]
+    //console.log(data);
+
+   
+    if (data != null) {
+        debugger
+        for (var i = 0; i < 4; i++) {
+            console.log(data[i].CountOfCustomers)
+            dataPoints.push({
+                label: "test" , y:
+           Number(12),x:i
+            });
+
+        }
+
+        var options = {
+            title: {
+                text: "Supervisor Chart "
+            },
+            data: [
+            {
+                // Change type to "doughnut", "line", "splineArea", etc.
+                type: "column",
+                dataPoints: dataPoints
+            }
+
+            ]
+        };
+       
+        $("#chartContainer").CanvasJSChart(options);
+
+
+
+
+
+
+    }
+
+
+    //dataPoints = [];
+
+
+    //var data = [5, 10, 15];
+    //for (var i = 0; i < data.length; i++) {
+    //    dataPoints.push({
+    //        label: "test" + data[i], y:
+    //  Number(data[i])
+    //    });
+    //}
+
+
+
+
+
+
+
+    //dataPoints = dataPoints;
+    console.log(dataPoints);
+    //window.onload = function () {
+    //    //Better to construct options first and then pass it as a parameter
+    //    var options = {
+    //        title: {
+    //            text: "Supervisor Chart "
+    //        },
+    //        data: [
+    //        {
+    //            // Change type to "doughnut", "line", "splineArea", etc.
+    //            type: "column",
+    //            dataPoints: dataPoints
+    //        }
+
+    //        ]
+    //    };
+    //    console.log("nada")
+    //    $("#chartContainer").CanvasJSChart(options);
+    //}
+</script>*@
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>

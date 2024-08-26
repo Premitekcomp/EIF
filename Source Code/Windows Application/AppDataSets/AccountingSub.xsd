@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AccountingSub" targetNamespace="http://tempuri.org/AccountingSub.xsd" xmlns:mstns="http://tempuri.org/AccountingSub.xsd" xmlns="http://tempuri.org/AccountingSub.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DataCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DataCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSCS" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSCS" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AutomationFormListTableAdapter" GeneratorDataComponentClassName="AutomationFormListTableAdapter" Name="AutomationFormList" UserDataComponentName="AutomationFormListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_FormsGroupLink" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        LinkID, FormID, FormFriendlyTitle AS FormTitle
+FROM            A_Auto_FormsGroupLink</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LinkID" DataSetColumn="LinkID" />
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="FormTitle" DataSetColumn="FormTitle" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="A_Auto_Config_FormFieldsTableAdapter" GeneratorDataComponentClassName="A_Auto_Config_FormFieldsTableAdapter" Name="A_Auto_Config_FormFields" UserDataComponentName="A_Auto_Config_FormFieldsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_Config_FormFields" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FieldID, FieldTitle
+FROM            A_Auto_Config_FormFields</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FieldID" DataSetColumn="FieldID" />
+              <Mapping SourceColumn="FieldTitle" DataSetColumn="FieldTitle" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_Config_FormFields" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFormID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByFormID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByFormID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FieldID, FieldTitle
+FROM            A_Auto_Config_FormFields
+WHERE        (FormID = @FormID) AND (IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FormID" ColumnName="FormID" DataSourceName="EHospital_DataCollection.dbo.A_Auto_Config_FormFields" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@FormID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="FormID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="A_Auto_Config_FormFields1TableAdapter" GeneratorDataComponentClassName="A_Auto_Config_FormFields1TableAdapter" Name="A_Auto_Config_FormFields1" UserDataComponentName="A_Auto_Config_FormFields1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DataCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_Config_FormFields" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        FieldID, FieldTitle
+FROM            A_Auto_Config_FormFields</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FieldID" DataSetColumn="FieldID" />
+              <Mapping SourceColumn="FieldTitle" DataSetColumn="FieldTitle" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DataCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_Config_FormFields" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFormID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByFormID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByFormID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FieldID, FieldTitle FROM A_Auto_Config_FormFields WHERE (FormID = @FormID) AND (IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FormID" ColumnName="FormID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@FormID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="FormID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="A_Auto_EnginCoreViewTableAdapter" GeneratorDataComponentClassName="A_Auto_EnginCoreViewTableAdapter" Name="A_Auto_EnginCoreView" UserDataComponentName="A_Auto_EnginCoreViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_EnginCoreView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RecordID, FormID, DirectionTitle, AccountTitle, SubAccountTitle, ActionID
+FROM            A_Auto_EnginCoreView
+ORDER BY IsDebit DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RecordID" DataSetColumn="RecordID" />
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+              <Mapping SourceColumn="DirectionTitle" DataSetColumn="DirectionTitle" />
+              <Mapping SourceColumn="AccountTitle" DataSetColumn="AccountTitle" />
+              <Mapping SourceColumn="SubAccountTitle" DataSetColumn="SubAccountTitle" />
+              <Mapping SourceColumn="ActionID" DataSetColumn="ActionID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_EnginCoreView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByFormID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByFormID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByFormID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AccountTitle, ActionID, DirectionTitle, FormID, RecordID, SubAccountTitle
+FROM            A_Auto_EnginCoreView
+WHERE        (FormID = @FormID) AND (ActionID = @ActionID)
+ORDER BY IsDebit DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FormID" ColumnName="FormID" DataSourceName="EHospital_DataCollection.dbo.A_Auto_EnginCoreView" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@FormID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="FormID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ActionID" ColumnName="ActionID" DataSourceName="EHospital_DataCollection.dbo.A_Auto_EnginCoreView" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@ActionID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="ActionID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="A_Auto_Config_FormActionsTableAdapter" GeneratorDataComponentClassName="A_Auto_Config_FormActionsTableAdapter" Name="A_Auto_Config_FormActions" UserDataComponentName="A_Auto_Config_FormActionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_Config_FormActions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ActionID, ActionName, FormID
+FROM            A_Auto_Config_FormActions
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ActionID" DataSetColumn="ActionID" />
+              <Mapping SourceColumn="ActionName" DataSetColumn="ActionName" />
+              <Mapping SourceColumn="FormID" DataSetColumn="FormID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_DataCollection.dbo.A_Auto_Config_FormActions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFormID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByFormID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByFormID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ActionID, ActionName, FormID
+FROM            A_Auto_Config_FormActions
+WHERE        (IsDeleted = 0) AND (FormID = @FormID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FormID" ColumnName="FormID" DataSourceName="EHospital_DataCollection.dbo.A_Auto_Config_FormActions" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@FormID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="FormID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AccountingSub" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AccountingSub" msprop:Generator_UserDSName="AccountingSub">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AutomationFormList" msprop:Generator_TableClassName="AutomationFormListDataTable" msprop:Generator_TableVarName="tableAutomationFormList" msprop:Generator_TablePropName="AutomationFormList" msprop:Generator_RowDeletingName="AutomationFormListRowDeleting" msprop:Generator_RowChangingName="AutomationFormListRowChanging" msprop:Generator_RowEvHandlerName="AutomationFormListRowChangeEventHandler" msprop:Generator_RowDeletedName="AutomationFormListRowDeleted" msprop:Generator_UserTableName="AutomationFormList" msprop:Generator_RowChangedName="AutomationFormListRowChanged" msprop:Generator_RowEvArgName="AutomationFormListRowChangeEvent" msprop:Generator_RowClassName="AutomationFormListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LinkID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLinkID" msprop:Generator_ColumnPropNameInRow="LinkID" msprop:Generator_ColumnPropNameInTable="LinkIDColumn" msprop:Generator_UserColumnName="LinkID" type="xs:short" />
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:short" minOccurs="0" />
+              <xs:element name="FormTitle" msprop:Generator_ColumnVarNameInTable="columnFormTitle" msprop:Generator_ColumnPropNameInRow="FormTitle" msprop:Generator_ColumnPropNameInTable="FormTitleColumn" msprop:Generator_UserColumnName="FormTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="A_Auto_Config_FormFields" msprop:Generator_TableClassName="A_Auto_Config_FormFieldsDataTable" msprop:Generator_TableVarName="tableA_Auto_Config_FormFields" msprop:Generator_RowChangedName="A_Auto_Config_FormFieldsRowChanged" msprop:Generator_TablePropName="A_Auto_Config_FormFields" msprop:Generator_RowDeletingName="A_Auto_Config_FormFieldsRowDeleting" msprop:Generator_RowChangingName="A_Auto_Config_FormFieldsRowChanging" msprop:Generator_RowEvHandlerName="A_Auto_Config_FormFieldsRowChangeEventHandler" msprop:Generator_RowDeletedName="A_Auto_Config_FormFieldsRowDeleted" msprop:Generator_RowClassName="A_Auto_Config_FormFieldsRow" msprop:Generator_UserTableName="A_Auto_Config_FormFields" msprop:Generator_RowEvArgName="A_Auto_Config_FormFieldsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FieldID" msprop:Generator_ColumnVarNameInTable="columnFieldID" msprop:Generator_ColumnPropNameInRow="FieldID" msprop:Generator_ColumnPropNameInTable="FieldIDColumn" msprop:Generator_UserColumnName="FieldID" type="xs:int" minOccurs="0" />
+              <xs:element name="FieldTitle" msprop:Generator_ColumnVarNameInTable="columnFieldTitle" msprop:Generator_ColumnPropNameInRow="FieldTitle" msprop:Generator_ColumnPropNameInTable="FieldTitleColumn" msprop:Generator_UserColumnName="FieldTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="A_Auto_Config_FormFields1" msprop:Generator_TableClassName="A_Auto_Config_FormFields1DataTable" msprop:Generator_TableVarName="tableA_Auto_Config_FormFields1" msprop:Generator_RowChangedName="A_Auto_Config_FormFields1RowChanged" msprop:Generator_TablePropName="A_Auto_Config_FormFields1" msprop:Generator_RowDeletingName="A_Auto_Config_FormFields1RowDeleting" msprop:Generator_RowChangingName="A_Auto_Config_FormFields1RowChanging" msprop:Generator_RowEvHandlerName="A_Auto_Config_FormFields1RowChangeEventHandler" msprop:Generator_RowDeletedName="A_Auto_Config_FormFields1RowDeleted" msprop:Generator_RowClassName="A_Auto_Config_FormFields1Row" msprop:Generator_UserTableName="A_Auto_Config_FormFields1" msprop:Generator_RowEvArgName="A_Auto_Config_FormFields1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FieldID" msprop:Generator_ColumnVarNameInTable="columnFieldID" msprop:Generator_ColumnPropNameInRow="FieldID" msprop:Generator_ColumnPropNameInTable="FieldIDColumn" msprop:Generator_UserColumnName="FieldID" type="xs:int" minOccurs="0" />
+              <xs:element name="FieldTitle" msprop:Generator_ColumnVarNameInTable="columnFieldTitle" msprop:Generator_ColumnPropNameInRow="FieldTitle" msprop:Generator_ColumnPropNameInTable="FieldTitleColumn" msprop:Generator_UserColumnName="FieldTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="A_Auto_EnginCoreView" msprop:Generator_TableClassName="A_Auto_EnginCoreViewDataTable" msprop:Generator_TableVarName="tableA_Auto_EnginCoreView" msprop:Generator_RowChangedName="A_Auto_EnginCoreViewRowChanged" msprop:Generator_TablePropName="A_Auto_EnginCoreView" msprop:Generator_RowDeletingName="A_Auto_EnginCoreViewRowDeleting" msprop:Generator_RowChangingName="A_Auto_EnginCoreViewRowChanging" msprop:Generator_RowEvHandlerName="A_Auto_EnginCoreViewRowChangeEventHandler" msprop:Generator_RowDeletedName="A_Auto_EnginCoreViewRowDeleted" msprop:Generator_RowClassName="A_Auto_EnginCoreViewRow" msprop:Generator_UserTableName="A_Auto_EnginCoreView" msprop:Generator_RowEvArgName="A_Auto_EnginCoreViewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RecordID" msprop:Generator_ColumnVarNameInTable="columnRecordID" msprop:Generator_ColumnPropNameInRow="RecordID" msprop:Generator_ColumnPropNameInTable="RecordIDColumn" msprop:Generator_UserColumnName="RecordID" type="xs:int" />
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:short" />
+              <xs:element name="DirectionTitle" msprop:Generator_ColumnVarNameInTable="columnDirectionTitle" msprop:Generator_ColumnPropNameInRow="DirectionTitle" msprop:Generator_ColumnPropNameInTable="DirectionTitleColumn" msprop:Generator_UserColumnName="DirectionTitle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccountTitle" msprop:Generator_ColumnVarNameInTable="columnAccountTitle" msprop:Generator_ColumnPropNameInRow="AccountTitle" msprop:Generator_ColumnPropNameInTable="AccountTitleColumn" msprop:Generator_UserColumnName="AccountTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubAccountTitle" msprop:Generator_ColumnVarNameInTable="columnSubAccountTitle" msprop:Generator_ColumnPropNameInRow="SubAccountTitle" msprop:Generator_ColumnPropNameInTable="SubAccountTitleColumn" msprop:Generator_UserColumnName="SubAccountTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActionID" msprop:Generator_ColumnVarNameInTable="columnActionID" msprop:Generator_ColumnPropNameInRow="ActionID" msprop:Generator_ColumnPropNameInTable="ActionIDColumn" msprop:Generator_UserColumnName="ActionID" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="A_Auto_Config_FormActions" msprop:Generator_TableClassName="A_Auto_Config_FormActionsDataTable" msprop:Generator_TableVarName="tableA_Auto_Config_FormActions" msprop:Generator_TablePropName="A_Auto_Config_FormActions" msprop:Generator_RowDeletingName="A_Auto_Config_FormActionsRowDeleting" msprop:Generator_RowChangingName="A_Auto_Config_FormActionsRowChanging" msprop:Generator_RowEvHandlerName="A_Auto_Config_FormActionsRowChangeEventHandler" msprop:Generator_RowDeletedName="A_Auto_Config_FormActionsRowDeleted" msprop:Generator_UserTableName="A_Auto_Config_FormActions" msprop:Generator_RowChangedName="A_Auto_Config_FormActionsRowChanged" msprop:Generator_RowEvArgName="A_Auto_Config_FormActionsRowChangeEvent" msprop:Generator_RowClassName="A_Auto_Config_FormActionsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ActionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnActionID" msprop:Generator_ColumnPropNameInRow="ActionID" msprop:Generator_ColumnPropNameInTable="ActionIDColumn" msprop:Generator_UserColumnName="ActionID" type="xs:short" />
+              <xs:element name="ActionName" msprop:Generator_ColumnVarNameInTable="columnActionName" msprop:Generator_ColumnPropNameInRow="ActionName" msprop:Generator_ColumnPropNameInTable="ActionNameColumn" msprop:Generator_UserColumnName="ActionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AutomationFormList" />
+      <xs:field xpath="mstns:LinkID" />
+    </xs:unique>
+    <xs:unique name="A_Auto_EnginCoreView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:A_Auto_EnginCoreView" />
+      <xs:field xpath="mstns:RecordID" />
+    </xs:unique>
+    <xs:unique name="A_Auto_Config_FormActions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:A_Auto_Config_FormActions" />
+      <xs:field xpath="mstns:ActionID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

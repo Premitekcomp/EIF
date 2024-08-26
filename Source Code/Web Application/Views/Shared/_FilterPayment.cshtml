@@ -1,0 +1,196 @@
+﻿
+<div><span> Select Filter</span>
+<select id="filterType2">
+    <option value="1">Details</option>
+    <option value="2"> Summary</option>
+    <option value="3"> Bank Summary</option>
+    <option value="4"> Charts</option>
+       
+    </select>
+   
+    <select id="filterType">
+        <option value="Year">By Year</option>
+        <option value="Month">By Month</option>
+    </select>
+
+<span id="monthFilter" hidden>
+
+    <span>Select Year </span>
+    <select id="YearsLists" name="YearsLists" class="YearsLists">
+         <option value=null>
+            --Select--
+        </option>
+        @if (ViewBag.YearsList != null)
+        {
+            foreach (var item in ViewBag.YearsList)
+            {
+                if (item.Text != null)
+                {
+                    <option value="@item.Value">
+                        @item.Text
+                    </option>
+                }
+            }
+        }
+    </select>
+
+    <span> Select Month </span>
+    @Html.DropDownList("MonthsLists", ViewBag.MonthsLists as List<SelectListItem>, new { multiple = "multiple", @class = "MonthsLists" })
+</span>
+
+<span id="year-filter">
+    <span>Select Year </span>
+
+    <select class="YearsList" id="YearsList" name="YearsList" multiple="multiple">
+
+        @if (ViewBag.YearsList != null)
+        {
+
+            foreach (var item in ViewBag.YearsList)
+            {
+                if (item.Text != null)
+                {
+                    <option value="@item.Value">
+                        @item.Text
+                    </option>
+                }
+            }
+        }
+    </select>
+</span>
+    <span id="bank-filter">
+        Select Bank
+
+        @Html.DropDownList("BankLists", ViewBag.banklists as List<SelectListItem>, new { multiple = "multiple" })
+
+    </span>
+
+<span> <button id="Apply-btn">Apply</button></span>
+<span> <button id="export-btn" style="display:none;" onclick="fnExcelReport('Amounts Collected From Alex And Cairo Team')">Export Excel</button></span>
+    </div>
+
+
+<div id="result"></div>
+<script>
+    $(document).ready(function () {
+        $('.btn-group').click(function () { $(this).toggleClass('open'); });
+    })
+</script>
+
+<script>
+$(document).ready(function () {
+    $('#YearsList').multiselect({
+        includeSelectAllOption: true,
+        maxHeight: 200
+    })
+
+    $('#MonthsLists').multiselect({
+        includeSelectAllOption: true,
+       maxHeight: 200
+    })
+
+    $('#BankLists').multiselect({
+        includeSelectAllOption: true,
+        maxHeight: 200,
+        numberDisplayed: 2
+    })
+
+
+    $("#filterType").on('change', function () {
+        if ($('#filterType').val() == 'Month') {
+                $( '#monthFilter').show();
+                $('#year-filter').hide();
+            }
+
+            else {
+                $('#monthFilter').hide();
+                $('#year-filter').show()
+
+            }
+        })
+
+
+
+        $("#Apply-btn").click(function () {
+            if (($("#filterType").val() != 'Month' && $("#YearsList").val() != null) || (($("#filterType").val() == 'Month') && $("#YearsLists").val() != 'null' && $("#MonthsLists").val() != null))
+            {
+                var data = {}
+                data.resultType = $("#filterType2").val();
+                if ($("#YearsList").val() != null) { data.years = $("#YearsList").val(); }
+                if ($("#BankLists").val() != null) { data.bankNames = $("#BankLists").val();}
+                if ($("#filterType").val() == 'Month') {
+                    data.months = $("#MonthsLists").val();
+                    data.years = $("#YearsLists").val();
+                }
+                getAllData(data);
+                getActiveData(data);
+                getWOData(data);
+                
+
+                }                       
+            })
+       
+        
+        function getActiveData(data)
+        {
+            getPaymentData(data, 'active');
+        }
+
+        function getWOData(data) {
+            getPaymentData(data, 'w/o');
+
+        }
+
+        function getAllData(data) {
+            getPaymentData(data, '');
+        }
+
+
+        function getPaymentData( data,domainType)
+        {
+            data.domainType = domainType;
+            var type = data.domainType;
+            $.ajax({
+                beforeSend: function () { ShowProgress() },
+                type: "get",
+                url: '@Url.Action("GetPayment")',
+                data: { years: data.years, months: data.months, type: data.resultType, domainType: data.domainType, bankNames: data.bankNames },
+                traditional: true,
+                success: function (response) {
+                   
+                   
+                    if (type== 'active')
+                    {
+                       
+                        $("#activeDomain").html(response);
+                    }
+                    else if (type == 'w/o')
+                    {
+                       
+                        $("#woDomain").html(response);
+                    }
+                    else
+                    {
+                       
+                        $("#allDomains").html(response);
+                    }
+                    $("#export-btn").show();
+                    window.setTimeout(function () {
+                        HideProgress();
+                    },3000);
+                   
+                }
+            })
+        }
+
+
+    $('.btn-group').each(function () { $(this).click(function () { $(this).toggleClass('open'); }) })
+
+});
+</script>
+
+
+
+
+
+

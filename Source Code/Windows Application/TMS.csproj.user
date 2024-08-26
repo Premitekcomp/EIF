@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS Build Setup\Agial\13-June-Build-1\|C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS Build Setup\Amoma\7-June-Build-1\|C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS Build Setup\Amoma\25-May-Build-1\|C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS Build Setup\DEC\11April-Build1\|C:\Users\M.Roshdey\Documents\Miskasoft\Projects\Systems Updates\TMSUpdate\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory>\\FS-02\KucData\MISKA-UPDATES\|\\ROSHDEYSURFACE\TMSUpdate\</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\;C:\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\</ReferencePath>
+  </PropertyGroup>
+</Project>

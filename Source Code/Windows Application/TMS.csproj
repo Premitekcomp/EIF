@@ -1,0 +1,1503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D514653-881C-4758-95DA-A77E194F0B8B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMS</RootNamespace>
+    <AssemblyName>TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\Work\Share\Miskasoft\Projects\TMS Build Setup\27-12-2017-Build-1\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationVersion>5.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>23CADAFE49339363DD1C67E4697F8B6FC2CB27E0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="ExtendedRichTextBox">
+      <HintPath>..\..\Tips and Tricks\RichTextEditor_CS\RichTextEditor_CS\RichTextEditor\bin\Debug\ExtendedRichTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Guifreaks.Common">
+      <HintPath>D:\Projects\Sample\RibonandBar\Test1\Test1\bin\Debug\Guifreaks.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Guifreaks.NavigationBar">
+      <HintPath>D:\Projects\Sample\RibonandBar\Test1\Test1\bin\Debug\Guifreaks.NavigationBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Guifreaks.NavigationBar.XmlSerializers">
+      <HintPath>D:\Projects\Sample\RibonandBar\Test1\Test1\bin\Debug\Guifreaks.NavigationBar.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WIA">
+      <HintPath>..\..\..\..\..\Downloads\wia-test\obj\x86\Debug\Interop.WIA.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>D:\Projects\Sample\RibonandBar\Test1\Test1\bin\Debug\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\BLL\Date.cs" />
+    <Compile Include="AppCode\BLL\GetWritenRespons.cs" />
+    <Compile Include="AppCode\BLL\Pre_Authentication.cs" />
+    <Compile Include="AppCode\BLL\Pre_SystemLog.cs" />
+    <Compile Include="AppCode\BuildGUIEffects.cs" />
+    <Compile Include="AppCode\DAL\Accounting\AccountsListOperation.cs" />
+    <Compile Include="AppCode\DAL\Accounting\AssessitOperation.cs" />
+    <Compile Include="AppCode\DAL\Accounting\JEAutomation.cs" />
+    <Compile Include="AppCode\DAL\Accounting\JournalOperations.cs" />
+    <Compile Include="AppCode\DAL\AdminWork.cs" />
+    <Compile Include="AppCode\DAL\CollectionDept\CollectorsConfig.cs" />
+    <Compile Include="AppCode\DAL\CollectionDept\DCRReporting.cs" />
+    <Compile Include="AppCode\DAL\CollectionDept\DomainOperations.cs" />
+    <Compile Include="AppCode\DAL\CollectionDept\DomainSchema.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Basics.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_BasicInfo.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_Certificates.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_Contacts.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_Documents.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_Education.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_EmploymentDegree.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_Papers.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_Positions.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Emp_Salary.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_AdministrativeDepartments.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Allowances.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Areas.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_BankList.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Bonus.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Cites.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_ContactsType.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_ContractType.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Countries.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Custody.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Deductions.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Degrees.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_DocumentsTypes.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_EduSections.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_EmplymentGroup.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_ExtendedDataFields.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_ExtendedDataList.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Faculties.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Gender.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_HealthInsuranceTypes.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_MilitaryService.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_MonthIndex.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Nationalities.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Penalties.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Positions.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_QualificationNames.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_QualificationsTypes.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_ReligionList.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_SalaryTypes.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_SocialInssuranceOffices.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_SocialStatus.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Universities.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_VacationTypes.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_Years.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_YearsMonths.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Lup_YearsOfficialVacations.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_PreSalCalculationSheetView.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Rules.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Rul_FixedSalaryPercentages.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Rul_VariableSalaryPercentages.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_SalaryLists.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_SalaryListsMembers.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Allowances.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Attendance.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Bonus.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Custody.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Deductions.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_ExtraTimes.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_LeavePermissions.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Missions.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Penalty.cs" />
+    <Compile Include="AppCode\DAL\HR\HR_Tra_Vacations.cs" />
+    <Compile Include="AppCode\DataValidation.cs" />
+    <Compile Include="AppCode\GlobalEvents.cs" />
+    <Compile Include="AppCode\DBConnectionsPool.cs" />
+    <Compile Include="AppCode\GlobalParamters.cs" />
+    <Compile Include="AppCode\ValidationClass.cs" />
+    <Compile Include="AppDataSetsHR\EmpDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSetsHR\LupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSetsHR\RulDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RulDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSetsHR\TraDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TraDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\Accounting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Accounting.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\AccountingSub.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingSub.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\Authentication.cs">
+      <DependentUpon>Authentication.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppDataSets\Authentication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Authentication.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\ClinicReception.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicReception.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\EIFCollector.cs">
+      <DependentUpon>EIFCollector.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppDataSets\EIFCollector.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EIFCollector.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\EIFCollectorAnalysis.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EIFCollectorAnalysis.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\HRDSLupCbo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRDSLupCbo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\LupComboFill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LupComboFill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\Misc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Misc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppDataSets\Premission.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Premission.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAccountsCostCenterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAccountsCostCenterList.Designer.cs">
+      <DependentUpon>frmAccountsCostCenterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAccountListSub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAccountListSub.Designer.cs">
+      <DependentUpon>frmAccountListSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAccountList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAccountList.Designer.cs">
+      <DependentUpon>frmAccountList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTBasicInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTBasicInfo.Designer.cs">
+      <DependentUpon>frmASTBasicInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTCRUD.Designer.cs">
+      <DependentUpon>frmASTCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTDepSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTDepSheet.Designer.cs">
+      <DependentUpon>frmASTDepSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAutomaticRecordsSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAutomaticRecordsSetting.Designer.cs">
+      <DependentUpon>frmAutomaticRecordsSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmCashListSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmCashListSetting.Designer.cs">
+      <DependentUpon>frmCashListSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmConfigFinCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmConfigFinCenter.Designer.cs">
+      <DependentUpon>frmConfigFinCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmFinCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmFinCenter.Designer.cs">
+      <DependentUpon>frmFinCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmLookUpAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmLookUpAccount.Designer.cs">
+      <DependentUpon>frmLookUpAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmRevisionBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmRevisionBalance.Designer.cs">
+      <DependentUpon>frmRevisionBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmMasterBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmMasterBook.Designer.cs">
+      <DependentUpon>frmMasterBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAssMasterBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmAssMasterBook.Designer.cs">
+      <DependentUpon>frmAssMasterBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmJournalEntryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmJournalEntryList.Designer.cs">
+      <DependentUpon>frmJournalEntryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmSimpleJournalEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmSimpleJournalEntry.Designer.cs">
+      <DependentUpon>frmSimpleJournalEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmContractType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmContractType.designer.cs">
+      <DependentUpon>frmContractType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmDocumentsTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmDocumentsTypes.designer.cs">
+      <DependentUpon>frmDocumentsTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmEmplumentGroupMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmEmplumentGroupMembers.Designer.cs">
+      <DependentUpon>frmEmplumentGroupMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmEmplymentGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmEmplymentGroup.designer.cs">
+      <DependentUpon>frmEmplymentGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmGroupPloicies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmGroupPloicies.Designer.cs">
+      <DependentUpon>frmGroupPloicies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmPositions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmPositions.designer.cs">
+      <DependentUpon>frmPositions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmSalaryTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmSalaryTypes.designer.cs">
+      <DependentUpon>frmSalaryTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmSocialInssuranceOffices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmSocialInssuranceOffices.designer.cs">
+      <DependentUpon>frmSocialInssuranceOffices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmWorkingPlans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmWorkingPlans.Designer.cs">
+      <DependentUpon>frmWorkingPlans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmWorkingTimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmWorkingTimes.Designer.cs">
+      <DependentUpon>frmWorkingTimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmYearsMonths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmYearsMonths.designer.cs">
+      <DependentUpon>frmYearsMonths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmYearsOfficialVacations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmYearsOfficialVacations.designer.cs">
+      <DependentUpon>frmYearsOfficialVacations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmVacationTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmVacationTypes.designer.cs">
+      <DependentUpon>frmVacationTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmAreas.designer.cs">
+      <DependentUpon>frmAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmCites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmCites.designer.cs">
+      <DependentUpon>frmCites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmContactsType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmContactsType.designer.cs">
+      <DependentUpon>frmContactsType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmCountries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmCountries.designer.cs">
+      <DependentUpon>frmCountries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmDegrees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmDegrees.designer.cs">
+      <DependentUpon>frmDegrees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmEduSections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmEduSections.designer.cs">
+      <DependentUpon>frmEduSections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmFaculties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmFaculties.designer.cs">
+      <DependentUpon>frmFaculties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmHealthInsuranceTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\HRItems\frmHealthInsuranceTypes.designer.cs">
+      <DependentUpon>frmHealthInsuranceTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmMilitaryService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmMilitaryService.designer.cs">
+      <DependentUpon>frmMilitaryService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmNationalities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmNationalities.designer.cs">
+      <DependentUpon>frmNationalities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmQualificationNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmQualificationNames.designer.cs">
+      <DependentUpon>frmQualificationNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmQualificationsTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmQualificationsTypes.designer.cs">
+      <DependentUpon>frmQualificationsTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmReligionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmReligionList.designer.cs">
+      <DependentUpon>frmReligionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmSocialStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmSocialStatus.designer.cs">
+      <DependentUpon>frmSocialStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmUniversities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\LupCombo\frmUniversities.designer.cs">
+      <DependentUpon>frmUniversities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmAllowances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmAllowances.designer.cs">
+      <DependentUpon>frmAllowances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmBonus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmBonus.designer.cs">
+      <DependentUpon>frmBonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmCustody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmCustody.designer.cs">
+      <DependentUpon>frmCustody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmDeductions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmDeductions.designer.cs">
+      <DependentUpon>frmDeductions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmPenalites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\Config\HR\Rules\frmPenalites.Designer.cs">
+      <DependentUpon>frmPenalites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\frmUsersNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminWork\frmUsersNew.Designer.cs">
+      <DependentUpon>frmUsersNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmCreateTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmCreateTeam.Designer.cs">
+      <DependentUpon>frmCreateTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDailyVisitInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDailyVisitInsert.Designer.cs">
+      <DependentUpon>frmDailyVisitInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDailyVisitShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDailyVisitShow.Designer.cs">
+      <DependentUpon>frmDailyVisitShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDCRReportCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDCRReportCenter.Designer.cs">
+      <DependentUpon>frmDCRReportCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainCollectorAssign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainCollectorAssign.Designer.cs">
+      <DependentUpon>frmDomainCollectorAssign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainMatchRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainMatchRecords.Designer.cs">
+      <DependentUpon>frmDomainMatchRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsCompareVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsCompareVersion.Designer.cs">
+      <DependentUpon>frmDomainsCompareVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsListAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsListAll.Designer.cs">
+      <DependentUpon>frmDomainsListAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsOperationAppendPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsOperationAppendPayment.Designer.cs">
+      <DependentUpon>frmDomainsOperationAppendPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsOperationImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsOperationImport.Designer.cs">
+      <DependentUpon>frmDomainsOperationImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsOperationNewReferal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmDomainsOperationNewReferal.Designer.cs">
+      <DependentUpon>frmDomainsOperationNewReferal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmOfficeMonthlyTarget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmOfficeMonthlyTarget.Designer.cs">
+      <DependentUpon>frmOfficeMonthlyTarget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmPaymentAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmPaymentAnalysis.Designer.cs">
+      <DependentUpon>frmPaymentAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmSchemaCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmSchemaCreate.Designer.cs">
+      <DependentUpon>frmSchemaCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmUpdateDomainTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Collectors\frmUpdateDomainTeam.Designer.cs">
+      <DependentUpon>frmUpdateDomainTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Collectors\RepExportDCRDaily.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepExportDCRDaily.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppForms\frmEnhancedMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\frmEnhancedMDI.designer.cs">
+      <DependentUpon>frmEnhancedMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmBasicInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmBasicInfo.designer.cs">
+      <DependentUpon>frmBasicInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmBasicInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmBasicInfoEdit.Designer.cs">
+      <DependentUpon>frmBasicInfoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmCertificates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmCertificates.designer.cs">
+      <DependentUpon>frmCertificates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmContacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmContacts.designer.cs">
+      <DependentUpon>frmContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmDocuments.designer.cs">
+      <DependentUpon>frmDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmEducation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmEducation.designer.cs">
+      <DependentUpon>frmEducation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmEmploymentDegree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmEmploymentDegree.designer.cs">
+      <DependentUpon>frmEmploymentDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmExtendedInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmExtendedInfo.designer.cs">
+      <DependentUpon>frmExtendedInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmPositions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmPositions.designer.cs">
+      <DependentUpon>frmPositions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\Emp\frmSalary.designer.cs">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmDelay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmDelay.designer.cs">
+      <DependentUpon>frmDelay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmDelayRulesDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmDelayRulesDetails.designer.cs">
+      <DependentUpon>frmDelayRulesDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmExtraTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmExtraTime.designer.cs">
+      <DependentUpon>frmExtraTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmLeavePermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Rul\frmLeavePermission.designer.cs">
+      <DependentUpon>frmLeavePermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmAllowances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmAllowances.designer.cs">
+      <DependentUpon>frmAllowances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmBonus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmBonus.designer.cs">
+      <DependentUpon>frmBonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmBonusTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmBonusTransaction.Designer.cs">
+      <DependentUpon>frmBonusTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmCustody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmCustody.designer.cs">
+      <DependentUpon>frmCustody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmDeductions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmDeductions.designer.cs">
+      <DependentUpon>frmDeductions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmExtraTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmExtraTime.designer.cs">
+      <DependentUpon>frmExtraTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmLeavePermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmLeavePermissions.designer.cs">
+      <DependentUpon>frmLeavePermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmLoadEmpFPTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmLoadEmpFPTrans.Designer.cs">
+      <DependentUpon>frmLoadEmpFPTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmLoadFPSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmLoadFPSheet.Designer.cs">
+      <DependentUpon>frmLoadFPSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmMissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmMissions.designer.cs">
+      <DependentUpon>frmMissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmPenalty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmPenalty.designer.cs">
+      <DependentUpon>frmPenalty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmPenaltyTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmPenaltyTransactions.Designer.cs">
+      <DependentUpon>frmPenaltyTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmVacation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\HR\HR_Tra\frmVacation.designer.cs">
+      <DependentUpon>frmVacation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Personal\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Personal\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\Personal\frmMyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Personal\frmMyInfo.Designer.cs">
+      <DependentUpon>frmMyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\frmSplashScreen.designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppReports\AccountingRep\frmPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppReports\AccountingRep\frmPreview.Designer.cs">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppReports\AccountingRep\RepEntryDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepEntryDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppReports\AccountingRep\RepEntrySingleRecord.cs">
+      <DependentUpon>RepEntrySingleRecord.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="AppReports\AccountingRep\RepEntryBasicListXLSExport.cs">
+      <DependentUpon>RepEntryBasicListXLSExport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="AppReports\AccountingRep\RepEntryBasicList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepEntryBasicList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppReports\AccountingRep\RepFinCener.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepFinCener.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppReports\frmPrintingPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppReports\frmPrintingPreview.Designer.cs">
+      <DependentUpon>frmPrintingPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppReports\HR\DailyAttendanceByEmp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailyAttendanceByEmp.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppReports\HR\frmHRRepPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppReports\HR\frmHRRepPreview.Designer.cs">
+      <DependentUpon>frmHRRepPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppReports\RepMasterA5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepMasterA5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\Accounting\frmASTGroups.Designer.cs">
+      <DependentUpon>frmASTGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="AppForms\Accounting\frmAccountsCostCenterList.resx">
+      <DependentUpon>frmAccountsCostCenterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmAccountListSub.resx">
+      <DependentUpon>frmAccountListSub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmAccountList.resx">
+      <DependentUpon>frmAccountList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmASTBasicInfo.resx">
+      <DependentUpon>frmASTBasicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmASTCRUD.resx">
+      <DependentUpon>frmASTCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmASTDepSheet.resx">
+      <DependentUpon>frmASTDepSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmAutomaticRecordsSetting.resx">
+      <DependentUpon>frmAutomaticRecordsSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmCashListSetting.resx">
+      <DependentUpon>frmCashListSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmConfigFinCenter.resx">
+      <DependentUpon>frmConfigFinCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmFinCenter.resx">
+      <DependentUpon>frmFinCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmLookUpAccount.resx">
+      <DependentUpon>frmLookUpAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmRevisionBalance.resx">
+      <DependentUpon>frmRevisionBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmMasterBook.resx">
+      <DependentUpon>frmMasterBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmAssMasterBook.resx">
+      <DependentUpon>frmAssMasterBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmJournalEntryList.resx">
+      <DependentUpon>frmJournalEntryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmSimpleJournalEntry.resx">
+      <DependentUpon>frmSimpleJournalEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmContractType.resx">
+      <DependentUpon>frmContractType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmDocumentsTypes.resx">
+      <DependentUpon>frmDocumentsTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmEmplumentGroupMembers.resx">
+      <DependentUpon>frmEmplumentGroupMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmEmplymentGroup.resx">
+      <DependentUpon>frmEmplymentGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmGroupPloicies.resx">
+      <DependentUpon>frmGroupPloicies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmPositions.resx">
+      <DependentUpon>frmPositions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmSalaryTypes.resx">
+      <DependentUpon>frmSalaryTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmSocialInssuranceOffices.resx">
+      <DependentUpon>frmSocialInssuranceOffices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmWorkingPlans.resx">
+      <DependentUpon>frmWorkingPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmWorkingTimes.resx">
+      <DependentUpon>frmWorkingTimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmYearsMonths.resx">
+      <DependentUpon>frmYearsMonths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmYearsOfficialVacations.resx">
+      <DependentUpon>frmYearsOfficialVacations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmVacationTypes.resx">
+      <DependentUpon>frmVacationTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmAreas.resx">
+      <DependentUpon>frmAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmCites.resx">
+      <DependentUpon>frmCites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmContactsType.resx">
+      <DependentUpon>frmContactsType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmCountries.resx">
+      <DependentUpon>frmCountries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmDegrees.resx">
+      <DependentUpon>frmDegrees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmEduSections.resx">
+      <DependentUpon>frmEduSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmFaculties.resx">
+      <DependentUpon>frmFaculties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\HRItems\frmHealthInsuranceTypes.resx">
+      <DependentUpon>frmHealthInsuranceTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmMilitaryService.resx">
+      <DependentUpon>frmMilitaryService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmNationalities.resx">
+      <DependentUpon>frmNationalities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmQualificationNames.resx">
+      <DependentUpon>frmQualificationNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmQualificationsTypes.resx">
+      <DependentUpon>frmQualificationsTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmReligionList.resx">
+      <DependentUpon>frmReligionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmSocialStatus.resx">
+      <DependentUpon>frmSocialStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\LupCombo\frmUniversities.resx">
+      <DependentUpon>frmUniversities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\Rules\frmAllowances.resx">
+      <DependentUpon>frmAllowances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\Rules\frmBonus.resx">
+      <DependentUpon>frmBonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\Rules\frmCustody.resx">
+      <DependentUpon>frmCustody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\Rules\frmDeductions.resx">
+      <DependentUpon>frmDeductions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\Config\HR\Rules\frmPenalites.resx">
+      <DependentUpon>frmPenalites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminWork\frmUsersNew.resx">
+      <DependentUpon>frmUsersNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmCreateTeam.resx">
+      <DependentUpon>frmCreateTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDailyVisitInsert.resx">
+      <DependentUpon>frmDailyVisitInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDailyVisitShow.resx">
+      <DependentUpon>frmDailyVisitShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDCRReportCenter.resx">
+      <DependentUpon>frmDCRReportCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDomainCollectorAssign.resx">
+      <DependentUpon>frmDomainCollectorAssign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDomainMatchRecords.resx">
+      <DependentUpon>frmDomainMatchRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDomainsCompareVersion.resx">
+      <DependentUpon>frmDomainsCompareVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDomainsListAll.resx">
+      <DependentUpon>frmDomainsListAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDomainsOperationAppendPayment.resx">
+      <DependentUpon>frmDomainsOperationAppendPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDomainsOperationImport.resx">
+      <DependentUpon>frmDomainsOperationImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmDomainsOperationNewReferal.resx">
+      <DependentUpon>frmDomainsOperationNewReferal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmOfficeMonthlyTarget.resx">
+      <DependentUpon>frmOfficeMonthlyTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmPaymentAnalysis.resx">
+      <DependentUpon>frmPaymentAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmSchemaCreate.resx">
+      <DependentUpon>frmSchemaCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\frmUpdateDomainTeam.resx">
+      <DependentUpon>frmUpdateDomainTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Collectors\RepExportDCRDaily.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepExportDCRDaily.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\frmEnhancedMDI.resx">
+      <DependentUpon>frmEnhancedMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmBasicInfo.resx">
+      <DependentUpon>frmBasicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmBasicInfoEdit.resx">
+      <DependentUpon>frmBasicInfoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmCertificates.resx">
+      <DependentUpon>frmCertificates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmContacts.resx">
+      <DependentUpon>frmContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmDocuments.resx">
+      <DependentUpon>frmDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmEducation.resx">
+      <DependentUpon>frmEducation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmEmploymentDegree.resx">
+      <DependentUpon>frmEmploymentDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmExtendedInfo.resx">
+      <DependentUpon>frmExtendedInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmPositions.resx">
+      <DependentUpon>frmPositions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\Emp\frmSalary.resx">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Rul\frmDelay.resx">
+      <DependentUpon>frmDelay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Rul\frmDelayRulesDetails.resx">
+      <DependentUpon>frmDelayRulesDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Rul\frmExtraTime.resx">
+      <DependentUpon>frmExtraTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Rul\frmLeavePermission.resx">
+      <DependentUpon>frmLeavePermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmAllowances.resx">
+      <DependentUpon>frmAllowances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmBonus.resx">
+      <DependentUpon>frmBonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmBonusTransaction.resx">
+      <DependentUpon>frmBonusTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmCustody.resx">
+      <DependentUpon>frmCustody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmDeductions.resx">
+      <DependentUpon>frmDeductions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmLeavePermissions.resx">
+      <DependentUpon>frmLeavePermissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmLoadEmpFPTrans.resx">
+      <DependentUpon>frmLoadEmpFPTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmLoadFPSheet.resx">
+      <DependentUpon>frmLoadFPSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmMissions.resx">
+      <DependentUpon>frmMissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmPenalty.resx">
+      <DependentUpon>frmPenalty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmPenaltyTransactions.resx">
+      <DependentUpon>frmPenaltyTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\HR\HR_Tra\frmVacation.resx">
+      <DependentUpon>frmVacation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Personal\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Personal\frmMyInfo.resx">
+      <DependentUpon>frmMyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\AccountingRep\frmPreview.resx">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\AccountingRep\RepEntryDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepEntryDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\AccountingRep\RepEntrySingleRecord.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepEntrySingleRecord.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\AccountingRep\RepEntryBasicListXLSExport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepEntryBasicListXLSExport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\AccountingRep\RepEntryBasicList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepEntryBasicList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\AccountingRep\RepFinCener.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepFinCener.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\frmPrintingPreview.resx">
+      <DependentUpon>frmPrintingPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\HR\DailyAttendanceByEmp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyAttendanceByEmp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\HR\frmHRRepPreview.resx">
+      <DependentUpon>frmHRRepPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppReports\RepMasterA5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepMasterA5.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\Accounting\frmASTGroups.resx">
+      <DependentUpon>frmASTGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="AppDataSetsHR\EmpDataSet.xsc">
+      <DependentUpon>EmpDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSetsHR\EmpDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmpDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSetsHR\EmpDataSet.xss">
+      <DependentUpon>EmpDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSetsHR\LupDataSet.xsc">
+      <DependentUpon>LupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSetsHR\LupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppDataSetsHR\LupDataSet.xss">
+      <DependentUpon>LupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSetsHR\RulDataSet.xsc">
+      <DependentUpon>RulDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSetsHR\RulDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RulDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSetsHR\RulDataSet.xss">
+      <DependentUpon>RulDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSetsHR\TraDataSet.xsc">
+      <DependentUpon>TraDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSetsHR\TraDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TraDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSetsHR\TraDataSet.xss">
+      <DependentUpon>TraDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Accounting.xsc">
+      <DependentUpon>Accounting.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Accounting.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Accounting.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\Accounting.xss">
+      <DependentUpon>Accounting.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\AccountingSub.xsc">
+      <DependentUpon>AccountingSub.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\AccountingSub.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountingSub.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\AccountingSub.xss">
+      <DependentUpon>AccountingSub.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Authentication.xsc">
+      <DependentUpon>Authentication.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Authentication.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Authentication.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\Authentication.xss">
+      <DependentUpon>Authentication.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\ClinicReception.xsc">
+      <DependentUpon>ClinicReception.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\ClinicReception.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClinicReception.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\ClinicReception.xss">
+      <DependentUpon>ClinicReception.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\EIFCollector.xsc">
+      <DependentUpon>EIFCollector.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\EIFCollector.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EIFCollector.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\EIFCollector.xss">
+      <DependentUpon>EIFCollector.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\EIFCollectorAnalysis.xsc">
+      <DependentUpon>EIFCollectorAnalysis.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\EIFCollectorAnalysis.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EIFCollectorAnalysis.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\EIFCollectorAnalysis.xss">
+      <DependentUpon>EIFCollectorAnalysis.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\HRDSLupCbo.xsc">
+      <DependentUpon>HRDSLupCbo.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\HRDSLupCbo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRDSLupCbo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\HRDSLupCbo.xss">
+      <DependentUpon>HRDSLupCbo.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\LupComboFill.xsc">
+      <DependentUpon>LupComboFill.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\LupComboFill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LupComboFill.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\LupComboFill.xss">
+      <DependentUpon>LupComboFill.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Misc.xsc">
+      <DependentUpon>Misc.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Misc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Misc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppDataSets\Misc.xss">
+      <DependentUpon>Misc.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Premission.xsc">
+      <DependentUpon>Premission.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSets\Premission.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Premission.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AppDataSets\Premission.xss">
+      <DependentUpon>Premission.xsd</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TMS_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="ShockwaveFlashObjects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

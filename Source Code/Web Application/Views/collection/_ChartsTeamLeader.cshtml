@@ -1,0 +1,130 @@
+﻿
+
+     @using (Html.BeginForm("Chart", "collection", FormMethod.Post, new { @id = "frm-chart-data" }))
+{ <input type="hidden" name="hfHTML" value="" /> <input type="hidden" name="hfChartData" value="" /> }
+
+    @{
+    List<EIF.Helper.DomainReoprtbyTeamLeader> Reslts = new List<EIF.Helper.DomainReoprtbyTeamLeader>();
+    if (ViewBag.TeamLeaderReport != null)
+    {
+        Reslts = ViewBag.TeamLeaderReport;
+    } 
+
+}
+<script src="~/Scripts/jquery.canvasjs.min.js"></script>
+
+<script>
+    var groupBy = function (xs, key) {
+        return xs.reduce(function (rv, x) {
+            (rv[x[key]] = rv[x[key]] || []).push(x);
+            return rv;
+        }, {});
+    };
+    var types = { Payment: 'Payment', PastDue: 'PastDue', Balance: 'Balance' }
+
+    var data = [];
+    var dataPoints = [];
+    data =@Html.Raw(Json.Encode(Reslts.GroupBy(c => c.MonthYear)))
+ da = [];
+    var data2 = [];
+    for (var index in data) {
+        console.log(data)
+        data2 = groupBy(data[index], 'CollectorName')
+
+        for (item in types) {
+            var index5 = 0;
+            for (var index2 in data2) {
+                index5++;
+                var obj1 = {};
+                obj1.Payment = 0.0;
+                obj1.PastDue = 0.0;
+                obj1.Balance = 0.0;
+                obj1.CollectorName = '';
+                var arr = data2[index2]
+
+                for (var index3 in arr) {
+                    obj1.Payment += parseFloat(arr[index3].Payment);
+                    obj1.Balance += parseFloat(arr[index3].Balance);
+                    obj1.PastDue += parseFloat(arr[index3].PastDue);
+                    obj1.CollectorName = arr[index3].CollectorName;
+
+                }
+
+                var value = 0.0;
+                if (item == 'Payment') { value = obj1.Payment; }
+                else if (item == 'PastDue') { value = obj1.PastDue; }
+                else { value = obj1.Balance; }
+                dataPoints.push({
+                    label: obj1.CollectorName, y:
+               Number(value), x: index5, borderWidth: 1
+                });
+
+                var options = {
+                    title: {
+                        text: item + "Of " + arr[index3].MonthYear
+                    },
+                    data: [
+                    {
+                        type: "column",
+                        dataPoints: dataPoints
+                    }],
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                display: true
+                            }
+                        }]
+                    }
+                };
+
+            }
+
+            if (item == 'Payment') {
+                console.log(index)
+                var str = "chartContainerPayment " + index;
+                var chart1 = new CanvasJS.Chart(str, options);
+                chart1.render();
+                //$("#chartContainerPayment").CanvasJSChart(options);
+            }
+            else if (item == 'PastDue') {
+                var str = "chartContainerPastDue " + index;
+                var chart1 = new CanvasJS.Chart(str, options);
+                chart1.render();
+                //$("#chartContainerPastDue").CanvasJSChart(options);
+                console.log(index)
+            }
+            else {
+                var str = "chartContainerBalance " + index;
+                var chart1 = new CanvasJS.Chart(str, options);
+                chart1.render();
+                //$("#chartContainerBalance").CanvasJSChart(options);
+                console.log(index)
+            }
+
+        }
+        dataPoints = [];
+    }
+
+</script>
+@*<div>
+       <div>
+        <div  id="chartContainerPayment" style="width:30%; height:240px;" ></div>
+           </div>
+       <div>    <div id="chartContainerPastDue" style="width: 30%; height: 240px;"></div></div>
+    <div>   <div id="chartContainerBalance" style="width: 30%; height: 240px;"></div></div>
+       </div>*@
+@{
+    var count = Reslts.GroupBy(c => c.MonthYear);
+    for (var indexx = 0; indexx < count.Count(); indexx++)
+    {
+        <div class="row">
+            <div class="col">
+                <div id="chartContainerPayment @indexx" style=" height:240px;"></div>
+            </div>
+            <div class="col">    <div class="col" id="chartContainerPastDue @indexx" style="height: 240px;"></div></div>
+            <div class="col">   <div class="col" id="chartContainerBalance @indexx" style="height: 240px;"></div></div>
+        </div>
+    }
+}
+
+

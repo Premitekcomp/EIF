@@ -1,0 +1,68 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+@{
+    string DomainIDs = ViewBag.DomainIDs != null ? ViewBag.DomainIDs : "";
+    bool Showmyinfoonly = ViewBag.myinfo != null ? ViewBag.myinfo : false;
+}
+<div class="warper container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading"> DCR Report  </div>
+        <div class="panel-body">
+
+
+            @using (Ajax.BeginForm("GetDCRReportByDomainAndType", "collection",
+                                     new AjaxOptions
+                                     {
+                                         HttpMethod = "POST",
+                                         UpdateTargetId = "result",
+                                         InsertionMode = InsertionMode.Replace,
+                                         OnBegin = "ShowProgress();",
+                                         OnComplete = "HideProgress();"
+                                         
+                                     }))
+            {
+                <div class="row">
+                    <div class="col-lg-1">Filter </div>
+                    <div class="col-lg-3">
+                        @Html.DropDownList("DomainType", get.DomainTypeFromDataBase(null , DomainIDs , Showmyinfoonly) as SelectList,new
+                   {
+                       @class = "form-control",
+                   })
+                    </div>                    
+                    <div class="col-lg-3">
+
+                        <input type="radio" name="IsOpenedDomain" value="true" checked id="chk1" />
+                        Just Opened Domain
+                    </div>
+                    <div class="col-lg-3">
+                 
+                        <input type="radio" name="IsOpenedDomain" value="false" id="chk0" />
+                        All Domains                        
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="submit" class="btn btn-primary">Get</button>
+                    </div>
+                </div>
+            }
+
+            <br /><br />
+            <div class="row form-group">
+                <div class="col-lg-12"><div id="result"></div></div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
+

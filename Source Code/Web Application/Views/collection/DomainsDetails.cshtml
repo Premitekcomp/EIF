@@ -1,0 +1,133 @@
+﻿
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@ViewBag.DomainName Domain Details  - Version(@ViewBag.VersionNumber) </div>
+        <div class="panel-body">
+            <input type="hidden" id="DomainID" value="@ViewBag.DomainID" />
+            <div id="container">
+                
+                <br />
+                <div class="tab-content">
+                    <div id="DomainDetails" class="scrollmenu  ">
+                        @{
+                        if (ViewBag.alias != null)
+                        {
+                            <table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+                                <thead>
+                                    <tr>
+                                        <th>Actions</th>
+                                        @{
+                                      IEnumerable<EIF.Models.Dom_DomainColumnsAlias> alias = ViewBag.alias ;
+
+                                            foreach (var Col in alias)
+                                            {
+                                                <th>@Col.AliasName</th>
+                                            }}
+
+                                        <th>Payment Amount</th>
+                                        <th>Payment Date</th>
+                                        <th>Daily Payment Amount</th>
+                                        <th>Daily Payment Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{//IEnumerable<EIF.Models.Dom_DomainList> data = ViewBag.data;
+                            if (ViewBag.Tbl != null)
+                            {
+                                    List<Dictionary<string, object>> Model = ViewBag.Tbl;
+                                    foreach (var row in Model)
+                                    {
+                                        <tr>
+
+                                            @foreach (var column in row)
+                                            {
+                                                if (column.Key == "RecordSerial")
+                                                {
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                                                Actions <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" role="menu">
+                                                                <li>
+                                                                    <a href="@Url.Action("AccountDCR", "collection", new { id = column.Value, DomainName = ViewBag.DomainName })" target="_blank">Account DCR</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="@Url.Action("AccountVersionsHistory", "collection", new { id = column.Value, DomainName = ViewBag.DomainName })" target="_blank">Version History</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+
+
+                                                }
+                                            }
+
+
+                                            @foreach (var column in row)
+                                            {
+                                                if (column.Key != "RecordSerial" && column.Key != "RecordSerial1" && column.Key != "PaymentValue" && column.Key != "DailyPaymentValue")
+                                                {
+                                                    <td>@column.Value</td>
+                                                }
+                                                else if (column.Key == "PaymentValue")
+                                                {
+                                                     <td> @string.Format("{0:N0}", column.Value)</td>
+                                                }
+                                                else if (column.Key == "DailyPaymentValue")
+                                                {
+                                                     <td> @string.Format("{0:N0}", column.Value)</td>
+                                                }
+                                            }
+                                        </tr>
+                                    }
+                            }
+                                    }
+                                </tbody>
+                            </table>
+
+                        }
+                        }
+                    </div>
+                    <div id="TeamLeaderReport" class="tab-pane fade"></div>
+                    <div id="CollectorReport" class="tab-pane fade"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<link href="~/Content/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/DT_bootstrap.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables-conf.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>
+
+<script>
+    $('#tbl3').dataTable({
+        "pageLength": 10,
+    });
+</script>
+<style>
+    div.scrollmenu {
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+        div.scrollmenu a {
+            display: inline-block;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>

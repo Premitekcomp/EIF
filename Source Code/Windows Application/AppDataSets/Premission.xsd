@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Premission" targetNamespace="http://tempuri.org/Premission.xsd" xmlns:mstns="http://tempuri.org/Premission.xsd" xmlns="http://tempuri.org/Premission.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSCS" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_UserGrouListTableAdapter" GeneratorDataComponentClassName="Grid_UserGrouListTableAdapter" Name="Grid_UserGrouList" UserDataComponentName="Grid_UserGrouListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_Groups.GroupID, Pre_Groups.GroupTitle, Pre_Groups.IsActive, Pre_Groups.IsDeleted, Pre_Groups.IsDeletable, Pre_Groups.RCDate, Pre_Groups.RCBy, Pre_Users.UserName AS CreatedBy, 
+                         Pre_Groups.LADate, Pre_Groups.LABy
+FROM            Pre_Groups LEFT OUTER JOIN
+                         Pre_Users ON Pre_Groups.RCBy = Pre_Users.UserID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="GroupID" DataSetColumn="GroupID" />
+              <Mapping SourceColumn="GroupTitle" DataSetColumn="GroupTitle" />
+              <Mapping SourceColumn="IsActive" DataSetColumn="IsActive" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="CreatedBy" DataSetColumn="CreatedBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAllExsist" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillAllExsist" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillAllExsist">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_Groups.GroupID, Pre_Groups.GroupTitle, Pre_Groups.IsActive, Pre_Groups.IsDeleted, Pre_Groups.IsDeletable, Pre_Groups.RCDate, Pre_Groups.RCBy, Pre_Users.UserName AS CreatedBy, 
+                         Pre_Groups.LADate, Pre_Groups.LABy
+FROM            Pre_Groups LEFT OUTER JOIN
+                         Pre_Users ON Pre_Groups.RCBy = Pre_Users.UserID
+WHERE        (Pre_Groups.IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_EmpInformationTableAdapter" GeneratorDataComponentClassName="HR_EmpInformationTableAdapter" Name="HR_EmpInformation" UserDataComponentName="HR_EmpInformationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_Amoma_DataCollection.dbo.HR_Emp_BasicInfo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeeID, EmpName AS EmpNameAR
+FROM            HR_Emp_BasicInfo
+WHERE        (IsActive = 1) AND (IsDeleted = 0)
+ORDER BY EmpNameAR</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeID" DataSetColumn="EmployeeID" />
+              <Mapping SourceColumn="EmpNameAR" DataSetColumn="EmpNameAR" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Pre_GetUsersOutsideGroupTableAdapter" GeneratorDataComponentClassName="Pre_GetUsersOutsideGroupTableAdapter" Name="Pre_GetUsersOutsideGroup" UserDataComponentName="Pre_GetUsersOutsideGroupTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.Pre_GetUsersOutsideGroup" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByGID" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillByGID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillByGID">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Pre_GetUsersOutsideGroup</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@GroupID" Precision="3" ProviderType="TinyInt" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="DisplayName" DataSetColumn="DisplayName" />
+              <Mapping SourceColumn="GroupID" DataSetColumn="GroupID" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserDisplayNameListTableAdapter" GeneratorDataComponentClassName="UserDisplayNameListTableAdapter" Name="UserDisplayNameList" UserDataComponentName="UserDisplayNameListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.Pre_Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_Users.UserID, Pre_Users.DisplayName, Pre_Users.UserName
+FROM            Pre_Users INNER JOIN
+                         Pre_BranchesPermissions ON Pre_Users.UserID = Pre_BranchesPermissions.UserID
+WHERE        (Pre_Users.IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="DisplayName" DataSetColumn="DisplayName" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.Pre_Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByBranchID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByBranchID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByBranchID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_Users.UserID, Pre_Users.DisplayName, Pre_Users.UserName
+FROM            Pre_Users INNER JOIN
+                         Pre_BranchesPermissions ON Pre_Users.UserID = Pre_BranchesPermissions.UserID
+WHERE        (Pre_Users.IsDeleted = 0) AND (Pre_BranchesPermissions.BranchID = @BranchID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="BranchID" ColumnName="BranchID" DataSourceName="TMS_DataCollection.dbo.Pre_BranchesPermissions" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@BranchID" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="BranchID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_Baha_DataCollection.dbo.Pre_Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNotMe" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNotMe" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByNotMe">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_Users.UserID, Pre_Users.DisplayName, Pre_Users.UserName
+FROM            Pre_Users INNER JOIN
+                         Pre_BranchesPermissions ON Pre_Users.UserID = Pre_BranchesPermissions.UserID
+WHERE        (Pre_Users.IsDeleted = 0) AND (Pre_Users.IsActive = 1) AND (Pre_Users.UserID &lt;&gt; @Me)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Me" ColumnName="UserID" DataSourceName="EHospital_Baha_DataCollection.dbo.Pre_Users" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@Me" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserNameListTableAdapter" GeneratorDataComponentClassName="UserNameListTableAdapter" Name="UserNameList" UserDataComponentName="UserNameListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.Pre_Users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        UserID, UserName
+FROM            Pre_Users
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Clinic_Bsk_DoctorsListTableAdapter" GeneratorDataComponentClassName="Clinic_Bsk_DoctorsListTableAdapter" Name="Clinic_Bsk_DoctorsList" UserDataComponentName="Clinic_Bsk_DoctorsListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.Clinic_Bsk_DoctorsList" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DrID, DrName
+FROM            Clinic_Bsk_DoctorsList
+WHERE        (IsDeleted = 0)
+ORDER BY DrName</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DrID" DataSetColumn="DrID" />
+              <Mapping SourceColumn="DrName" DataSetColumn="DrName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PreUserInfoTableAdapter" GeneratorDataComponentClassName="PreUserInfoTableAdapter" Name="PreUserInfo" UserDataComponentName="PreUserInfoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_Users.UserID, Pre_Users.DisplayName, Pre_Users.UserName, Pre_Users.IsActive, Pre_Users.EmployeeID, HR_Emp_BasicInfo.EmpName, Pre_Users.IsDoctor, Pre_Users.DoctorID, 
+                         Clinic_Bsk_DoctorsList.DrName
+FROM            Pre_Users INNER JOIN
+                         HR_Emp_BasicInfo ON Pre_Users.EmployeeID = HR_Emp_BasicInfo.EmployeeID LEFT OUTER JOIN
+                         Clinic_Bsk_DoctorsList ON Pre_Users.DoctorID = Clinic_Bsk_DoctorsList.DrID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="DisplayName" DataSetColumn="DisplayName" />
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="IsActive" DataSetColumn="IsActive" />
+              <Mapping SourceColumn="EmployeeID" DataSetColumn="EmployeeID" />
+              <Mapping SourceColumn="IsDoctor" DataSetColumn="IsDoctor" />
+              <Mapping SourceColumn="DoctorID" DataSetColumn="DoctorID" />
+              <Mapping SourceColumn="DrName" DataSetColumn="DrName" />
+              <Mapping SourceColumn="EmpName" DataSetColumn="EmpName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Pre_BranchesPermissionsTableAdapter" GeneratorDataComponentClassName="Pre_BranchesPermissionsTableAdapter" Name="Pre_BranchesPermissions" UserDataComponentName="Pre_BranchesPermissionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_BranchesPermissions.RecordID, Pre_BranchesPermissions.BranchID, Pre_BranchesPermissions.UserID, Lup_BranchList.BranchTitle
+FROM            Pre_BranchesPermissions INNER JOIN
+                         Lup_BranchList ON Pre_BranchesPermissions.BranchID = Lup_BranchList.BranchID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RecordID" DataSetColumn="RecordID" />
+              <Mapping SourceColumn="BranchID" DataSetColumn="BranchID" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="BranchTitle" DataSetColumn="BranchTitle" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUserID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByUserID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByUserID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Pre_BranchesPermissions.RecordID, Pre_BranchesPermissions.BranchID, Pre_BranchesPermissions.UserID, Lup_BranchList.BranchTitle
+FROM            Pre_BranchesPermissions INNER JOIN
+                         Lup_BranchList ON Pre_BranchesPermissions.BranchID = Lup_BranchList.BranchID
+WHERE        (Pre_BranchesPermissions.UserID = @UserID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="UserID" ColumnName="UserID" DataSourceName="TMS_DataCollection.dbo.Pre_BranchesPermissions" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@UserID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Pre_GroupsTableAdapter" GeneratorDataComponentClassName="Pre_GroupsTableAdapter" Name="Pre_Groups" UserDataComponentName="Pre_GroupsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EHospital_Agial_DataCollection.dbo.Pre_Groups" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        GroupID, GroupTitle
+FROM            Pre_Groups
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="GroupID" DataSetColumn="GroupID" />
+              <Mapping SourceColumn="GroupTitle" DataSetColumn="GroupTitle" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Premission" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Premission" msprop:Generator_UserDSName="Premission">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Grid_UserGrouList" msprop:Generator_TableClassName="Grid_UserGrouListDataTable" msprop:Generator_TableVarName="tableGrid_UserGrouList" msprop:Generator_TablePropName="Grid_UserGrouList" msprop:Generator_RowDeletingName="Grid_UserGrouListRowDeleting" msprop:Generator_RowChangingName="Grid_UserGrouListRowChanging" msprop:Generator_RowEvHandlerName="Grid_UserGrouListRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_UserGrouListRowDeleted" msprop:Generator_UserTableName="Grid_UserGrouList" msprop:Generator_RowChangedName="Grid_UserGrouListRowChanged" msprop:Generator_RowEvArgName="Grid_UserGrouListRowChangeEvent" msprop:Generator_RowClassName="Grid_UserGrouListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GroupID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:unsignedByte" />
+              <xs:element name="GroupTitle" msprop:Generator_ColumnVarNameInTable="columnGroupTitle" msprop:Generator_ColumnPropNameInRow="GroupTitle" msprop:Generator_ColumnPropNameInTable="GroupTitleColumn" msprop:Generator_UserColumnName="GroupTitle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" />
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:short" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_EmpInformation" msprop:Generator_TableClassName="HR_EmpInformationDataTable" msprop:Generator_TableVarName="tableHR_EmpInformation" msprop:Generator_TablePropName="HR_EmpInformation" msprop:Generator_RowDeletingName="HR_EmpInformationRowDeleting" msprop:Generator_RowChangingName="HR_EmpInformationRowChanging" msprop:Generator_RowEvHandlerName="HR_EmpInformationRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_EmpInformationRowDeleted" msprop:Generator_UserTableName="HR_EmpInformation" msprop:Generator_RowChangedName="HR_EmpInformationRowChanged" msprop:Generator_RowEvArgName="HR_EmpInformationRowChangeEvent" msprop:Generator_RowClassName="HR_EmpInformationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:short" />
+              <xs:element name="EmpNameAR" msprop:Generator_ColumnVarNameInTable="columnEmpNameAR" msprop:Generator_ColumnPropNameInRow="EmpNameAR" msprop:Generator_ColumnPropNameInTable="EmpNameARColumn" msprop:Generator_UserColumnName="EmpNameAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pre_GetUsersOutsideGroup" msprop:Generator_TableClassName="Pre_GetUsersOutsideGroupDataTable" msprop:Generator_TableVarName="tablePre_GetUsersOutsideGroup" msprop:Generator_TablePropName="Pre_GetUsersOutsideGroup" msprop:Generator_RowDeletingName="Pre_GetUsersOutsideGroupRowDeleting" msprop:Generator_RowChangingName="Pre_GetUsersOutsideGroupRowChanging" msprop:Generator_RowEvHandlerName="Pre_GetUsersOutsideGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="Pre_GetUsersOutsideGroupRowDeleted" msprop:Generator_UserTableName="Pre_GetUsersOutsideGroup" msprop:Generator_RowChangedName="Pre_GetUsersOutsideGroupRowChanged" msprop:Generator_RowEvArgName="Pre_GetUsersOutsideGroupRowChangeEvent" msprop:Generator_RowClassName="Pre_GetUsersOutsideGroupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:short" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupID" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserDisplayNameList" msprop:Generator_TableClassName="UserDisplayNameListDataTable" msprop:Generator_TableVarName="tableUserDisplayNameList" msprop:Generator_TablePropName="UserDisplayNameList" msprop:Generator_RowDeletingName="UserDisplayNameListRowDeleting" msprop:Generator_RowChangingName="UserDisplayNameListRowChanging" msprop:Generator_RowEvHandlerName="UserDisplayNameListRowChangeEventHandler" msprop:Generator_RowDeletedName="UserDisplayNameListRowDeleted" msprop:Generator_UserTableName="UserDisplayNameList" msprop:Generator_RowChangedName="UserDisplayNameListRowChanged" msprop:Generator_RowEvArgName="UserDisplayNameListRowChangeEvent" msprop:Generator_RowClassName="UserDisplayNameListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:short" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserNameList" msprop:Generator_TableClassName="UserNameListDataTable" msprop:Generator_TableVarName="tableUserNameList" msprop:Generator_TablePropName="UserNameList" msprop:Generator_RowDeletingName="UserNameListRowDeleting" msprop:Generator_RowChangingName="UserNameListRowChanging" msprop:Generator_RowEvHandlerName="UserNameListRowChangeEventHandler" msprop:Generator_RowDeletedName="UserNameListRowDeleted" msprop:Generator_UserTableName="UserNameList" msprop:Generator_RowChangedName="UserNameListRowChanged" msprop:Generator_RowEvArgName="UserNameListRowChangeEvent" msprop:Generator_RowClassName="UserNameListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:short" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Clinic_Bsk_DoctorsList" msprop:Generator_TableClassName="Clinic_Bsk_DoctorsListDataTable" msprop:Generator_TableVarName="tableClinic_Bsk_DoctorsList" msprop:Generator_TablePropName="Clinic_Bsk_DoctorsList" msprop:Generator_RowDeletingName="Clinic_Bsk_DoctorsListRowDeleting" msprop:Generator_RowChangingName="Clinic_Bsk_DoctorsListRowChanging" msprop:Generator_RowEvHandlerName="Clinic_Bsk_DoctorsListRowChangeEventHandler" msprop:Generator_RowDeletedName="Clinic_Bsk_DoctorsListRowDeleted" msprop:Generator_UserTableName="Clinic_Bsk_DoctorsList" msprop:Generator_RowChangedName="Clinic_Bsk_DoctorsListRowChanged" msprop:Generator_RowEvArgName="Clinic_Bsk_DoctorsListRowChangeEvent" msprop:Generator_RowClassName="Clinic_Bsk_DoctorsListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DrID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDrID" msprop:Generator_ColumnPropNameInRow="DrID" msprop:Generator_ColumnPropNameInTable="DrIDColumn" msprop:Generator_UserColumnName="DrID" type="xs:short" />
+              <xs:element name="DrName" msprop:Generator_ColumnVarNameInTable="columnDrName" msprop:Generator_ColumnPropNameInRow="DrName" msprop:Generator_ColumnPropNameInTable="DrNameColumn" msprop:Generator_UserColumnName="DrName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PreUserInfo" msprop:Generator_TableClassName="PreUserInfoDataTable" msprop:Generator_TableVarName="tablePreUserInfo" msprop:Generator_TablePropName="PreUserInfo" msprop:Generator_RowDeletingName="PreUserInfoRowDeleting" msprop:Generator_RowChangingName="PreUserInfoRowChanging" msprop:Generator_RowEvHandlerName="PreUserInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="PreUserInfoRowDeleted" msprop:Generator_UserTableName="PreUserInfo" msprop:Generator_RowChangedName="PreUserInfoRowChanged" msprop:Generator_RowEvArgName="PreUserInfoRowChangeEvent" msprop:Generator_RowClassName="PreUserInfoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:short" />
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_UserColumnName="IsActive" type="xs:boolean" />
+              <xs:element name="EmployeeID" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:short" minOccurs="0" />
+              <xs:element name="IsDoctor" msprop:Generator_ColumnVarNameInTable="columnIsDoctor" msprop:Generator_ColumnPropNameInRow="IsDoctor" msprop:Generator_ColumnPropNameInTable="IsDoctorColumn" msprop:Generator_UserColumnName="IsDoctor" type="xs:boolean" />
+              <xs:element name="DoctorID" msprop:Generator_ColumnVarNameInTable="columnDoctorID" msprop:Generator_ColumnPropNameInRow="DoctorID" msprop:Generator_ColumnPropNameInTable="DoctorIDColumn" msprop:Generator_UserColumnName="DoctorID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DrName" msprop:Generator_ColumnVarNameInTable="columnDrName" msprop:Generator_ColumnPropNameInRow="DrName" msprop:Generator_ColumnPropNameInTable="DrNameColumn" msprop:Generator_UserColumnName="DrName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpName" msprop:Generator_ColumnVarNameInTable="columnEmpName" msprop:Generator_ColumnPropNameInRow="EmpName" msprop:Generator_ColumnPropNameInTable="EmpNameColumn" msprop:Generator_UserColumnName="EmpName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pre_BranchesPermissions" msprop:Generator_TableClassName="Pre_BranchesPermissionsDataTable" msprop:Generator_TableVarName="tablePre_BranchesPermissions" msprop:Generator_TablePropName="Pre_BranchesPermissions" msprop:Generator_RowDeletingName="Pre_BranchesPermissionsRowDeleting" msprop:Generator_RowChangingName="Pre_BranchesPermissionsRowChanging" msprop:Generator_RowEvHandlerName="Pre_BranchesPermissionsRowChangeEventHandler" msprop:Generator_RowDeletedName="Pre_BranchesPermissionsRowDeleted" msprop:Generator_UserTableName="Pre_BranchesPermissions" msprop:Generator_RowChangedName="Pre_BranchesPermissionsRowChanged" msprop:Generator_RowEvArgName="Pre_BranchesPermissionsRowChangeEvent" msprop:Generator_RowClassName="Pre_BranchesPermissionsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RecordID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRecordID" msprop:Generator_ColumnPropNameInRow="RecordID" msprop:Generator_ColumnPropNameInTable="RecordIDColumn" msprop:Generator_UserColumnName="RecordID" type="xs:short" />
+              <xs:element name="BranchID" msprop:Generator_ColumnVarNameInTable="columnBranchID" msprop:Generator_ColumnPropNameInRow="BranchID" msprop:Generator_ColumnPropNameInTable="BranchIDColumn" msprop:Generator_UserColumnName="BranchID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:short" minOccurs="0" />
+              <xs:element name="BranchTitle" msprop:Generator_ColumnVarNameInTable="columnBranchTitle" msprop:Generator_ColumnPropNameInRow="BranchTitle" msprop:Generator_ColumnPropNameInTable="BranchTitleColumn" msprop:Generator_UserColumnName="BranchTitle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pre_Groups" msprop:Generator_TableClassName="Pre_GroupsDataTable" msprop:Generator_TableVarName="tablePre_Groups" msprop:Generator_TablePropName="Pre_Groups" msprop:Generator_RowDeletingName="Pre_GroupsRowDeleting" msprop:Generator_RowChangingName="Pre_GroupsRowChanging" msprop:Generator_RowEvHandlerName="Pre_GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="Pre_GroupsRowDeleted" msprop:Generator_UserTableName="Pre_Groups" msprop:Generator_RowChangedName="Pre_GroupsRowChanged" msprop:Generator_RowEvArgName="Pre_GroupsRowChangeEvent" msprop:Generator_RowClassName="Pre_GroupsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GroupID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:unsignedByte" />
+              <xs:element name="GroupTitle" msprop:Generator_ColumnVarNameInTable="columnGroupTitle" msprop:Generator_ColumnPropNameInRow="GroupTitle" msprop:Generator_ColumnPropNameInTable="GroupTitleColumn" msprop:Generator_UserColumnName="GroupTitle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_UserGrouList" />
+      <xs:field xpath="mstns:GroupID" />
+    </xs:unique>
+    <xs:unique name="HR_EmpInformation_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_EmpInformation" />
+      <xs:field xpath="mstns:EmployeeID" />
+    </xs:unique>
+    <xs:unique name="Pre_GetUsersOutsideGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pre_GetUsersOutsideGroup" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="UserDisplayNameList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserDisplayNameList" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="UserNameList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserNameList" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="Clinic_Bsk_DoctorsList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Clinic_Bsk_DoctorsList" />
+      <xs:field xpath="mstns:DrID" />
+    </xs:unique>
+    <xs:unique name="PreUserInfo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PreUserInfo" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="Pre_BranchesPermissions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pre_BranchesPermissions" />
+      <xs:field xpath="mstns:RecordID" />
+    </xs:unique>
+    <xs:unique name="Pre_Groups_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pre_Groups" />
+      <xs:field xpath="mstns:GroupID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Pre_BranchesPermissions_Pre_Users" msdata:parent="UserDisplayNameList" msdata:child="Pre_BranchesPermissions" msdata:parentkey="UserID" msdata:childkey="UserID" msprop:Generator_UserChildTable="Pre_BranchesPermissions" msprop:Generator_ChildPropName="GetPre_BranchesPermissionsRows" msprop:Generator_UserRelationName="FK_Pre_BranchesPermissions_Pre_Users" msprop:Generator_ParentPropName="UserDisplayNameListRow" msprop:Generator_RelationVarName="relationFK_Pre_BranchesPermissions_Pre_Users" msprop:Generator_UserParentTable="UserDisplayNameList" />
+      <msdata:Relationship name="FK_Pre_BranchesPermissions_Pre_Users1" msdata:parent="UserNameList" msdata:child="Pre_BranchesPermissions" msdata:parentkey="UserID" msdata:childkey="UserID" msprop:Generator_UserChildTable="Pre_BranchesPermissions" msprop:Generator_ChildPropName="GetPre_BranchesPermissionsRows" msprop:Generator_UserRelationName="FK_Pre_BranchesPermissions_Pre_Users1" msprop:Generator_ParentPropName="UserNameListRow" msprop:Generator_RelationVarName="relationFK_Pre_BranchesPermissions_Pre_Users1" msprop:Generator_UserParentTable="UserNameList" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

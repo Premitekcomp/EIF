@@ -1,0 +1,92 @@
+﻿
+@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+
+<div id="msg">@Html.Partial("_Result")</div>
+<div role="alert" id="del-box" class="alert alert-danger fade in hide">
+    <h4>Confirm delete</h4>
+    <p>Confirm deleting this recored</p>
+    <p>
+        <input type="hidden" id="del" />
+        <button class="btn btn-danger" type="button" onclick="RemoveDCRColumns();">Yes</button>
+        <button class="btn btn-default" type="button" onclick="Cancel();">No</button>
+    </p>
+</div>
+@if (ViewBag.AccessRightAdd != null || ViewBag.AccessRightAdd == true)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">Add New Column</div>
+        <div class="panel-body">
+            <div class="row form-group">
+                <div class="col-lg-4">
+                    @Html.DropDownList("ColID", get.DCRColumnsList(null) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",
+                                                })
+                </div>
+                <div class="col-lg-4">
+                    @Html.TextBox("index","" ,new { @class = "form-control" })
+                    @*@Html.DropDownList("index", get.ColumnIndex(null) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control",// chosen-select
+                                                })*@
+                </div>
+                <div class="col-lg-4">
+                    <input type="button" value="Insert" class="btn btn-primary" onclick="AddDCRColumns();" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <table cellpadding="0" border="0" class="table table-striped table-bordered" id="tbl3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Index</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (ViewBag.AssignedCol != null)
+                    {
+                        IEnumerable<EIF.Models.DCR_Schema_VIEW> Col = ViewBag.AssignedCol;
+                        foreach (var item in Col)
+                        {
+                            <tr>
+                                <td>@item.ColumnName</td>
+                                <td>
+                                    @Html.TextBox("index-"+item.ColumnID, item.ColumnIndex, new { @class = "form-control", @onchange = "UpdateDCRSchemaColumnIndex(" + item.ColumnID + ")" })
+                                    @*@Html.DropDownList("index-" + item.ColumnID, get.ColumnIndex(item.ColumnIndex) as SelectList, new
+                                                {
+                                                    @class = "form-control",// chosen-select
+                                                    @onchange = "UpdateDCRSchemaColumnIndex(" + item.ColumnID + ")"
+                                                })*@
+                                </td>
+                                <td>
+                                    @{
+                            if (ViewBag.AccessRightDelete != null && ViewBag.AccessRightDelete == true)
+                            {
+                                if (item.IsFixed == false)
+                                {
+                                    <input type="button" value="Remove" class="btn btn-primary" onclick="ConfirmRemove(@item.ColumnID);" />
+                                }
+                            }
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

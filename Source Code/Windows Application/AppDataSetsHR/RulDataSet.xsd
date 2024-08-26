@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RulDataSet" targetNamespace="http://tempuri.org/RulDataSet.xsd" xmlns:mstns="http://tempuri.org/RulDataSet.xsd" xmlns="http://tempuri.org/RulDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSCS" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Rul_DelayTableAdapter" GeneratorDataComponentClassName="HR_Rul_DelayTableAdapter" Name="HR_Rul_Delay" UserDataComponentName="HR_Rul_DelayTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Rul_Delay" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DelayRuleNameAr, DelayRuleID, Notes
+FROM            HR_Rul_Delay
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DelayRuleNameAr" DataSetColumn="DelayRuleNameAr" />
+              <Mapping SourceColumn="DelayRuleID" DataSetColumn="DelayRuleID" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Rul_ExtraTimeTableAdapter" GeneratorDataComponentClassName="HR_Rul_ExtraTimeTableAdapter" Name="HR_Rul_ExtraTime" UserDataComponentName="HR_Rul_ExtraTimeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Rul_ExtraTime" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ExtraTimeRuleID, ExtraTimeRuleNameAr, VacationExtraHour, WorkExtraHour, Notes
+FROM            HR_Rul_ExtraTime
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ExtraTimeRuleID" DataSetColumn="ExtraTimeRuleID" />
+              <Mapping SourceColumn="ExtraTimeRuleNameAr" DataSetColumn="ExtraTimeRuleNameAr" />
+              <Mapping SourceColumn="VacationExtraHour" DataSetColumn="VacationExtraHour" />
+              <Mapping SourceColumn="WorkExtraHour" DataSetColumn="WorkExtraHour" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Rul_LeavePermissionTableAdapter" GeneratorDataComponentClassName="HR_Rul_LeavePermissionTableAdapter" Name="HR_Rul_LeavePermission" UserDataComponentName="HR_Rul_LeavePermissionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Rul_LeavePermission" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        LeavePermissionRuleID, LeavePermissionRuleNameAr, MaxHour, MaxCount, Notes
+FROM            HR_Rul_LeavePermission
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LeavePermissionRuleID" DataSetColumn="LeavePermissionRuleID" />
+              <Mapping SourceColumn="LeavePermissionRuleNameAr" DataSetColumn="LeavePermissionRuleNameAr" />
+              <Mapping SourceColumn="MaxHour" DataSetColumn="MaxHour" />
+              <Mapping SourceColumn="MaxCount" DataSetColumn="MaxCount" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Rul_DelayRulesDetailsTableAdapter" GeneratorDataComponentClassName="HR_Rul_DelayRulesDetailsTableAdapter" Name="HR_Rul_DelayRulesDetails" UserDataComponentName="HR_Rul_DelayRulesDetailsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Rul_DelayRulesDetails" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DelayRuleDetailID, DelayRuleID, FromMinute, ToMinute, FirstPenalty
+FROM            HR_Rul_DelayRulesDetails</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DelayRuleDetailID" DataSetColumn="DelayRuleDetailID" />
+              <Mapping SourceColumn="DelayRuleID" DataSetColumn="DelayRuleID" />
+              <Mapping SourceColumn="FromMinute" DataSetColumn="FromMinute" />
+              <Mapping SourceColumn="ToMinute" DataSetColumn="ToMinute" />
+              <Mapping SourceColumn="FirstPenalty" DataSetColumn="FirstPenalty" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Rul_DelayRulesDetails" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DelayRuleDetailID, DelayRuleID, FromMinute, ToMinute, FirstPenalty
+FROM            HR_Rul_DelayRulesDetails
+WHERE        (DelayRuleID = @RID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="RID" ColumnName="DelayRuleID" DataSourceName="TMS_DataCollection.dbo.HR_Rul_DelayRulesDetails" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@RID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DelayRuleID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GridGroupPloicyTableAdapter" GeneratorDataComponentClassName="GridGroupPloicyTableAdapter" Name="GridGroupPloicy" UserDataComponentName="GridGroupPloicyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HR_Lup_EmplymentGroupPolicy.RecordSerial, HR_Lup_EmplymentGroupPolicy.GroupID, HR_Lup_EmplymentGroup.EmpGroupTitleAr, HR_Lup_EmplymentGroupPolicy.DelayRuleID, 
+                         HR_Rul_Delay.DelayRuleNameAr, HR_Lup_EmplymentGroupPolicy.ExtraTimeRuleID, HR_Rul_ExtraTime.ExtraTimeRuleNameAr, HR_Lup_EmplymentGroupPolicy.LeavPermissionRuleID, 
+                         HR_Rul_LeavePermission.LeavePermissionRuleNameAr
+FROM            HR_Lup_EmplymentGroupPolicy INNER JOIN
+                         HR_Lup_EmplymentGroup ON HR_Lup_EmplymentGroupPolicy.GroupID = HR_Lup_EmplymentGroup.EmpGroupID INNER JOIN
+                         HR_Rul_Delay ON HR_Lup_EmplymentGroupPolicy.DelayRuleID = HR_Rul_Delay.DelayRuleID INNER JOIN
+                         HR_Rul_ExtraTime ON HR_Lup_EmplymentGroupPolicy.ExtraTimeRuleID = HR_Rul_ExtraTime.ExtraTimeRuleID INNER JOIN
+                         HR_Rul_LeavePermission ON HR_Lup_EmplymentGroupPolicy.LeavPermissionRuleID = HR_Rul_LeavePermission.LeavePermissionRuleID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RecordSerial" DataSetColumn="RecordSerial" />
+              <Mapping SourceColumn="GroupID" DataSetColumn="GroupID" />
+              <Mapping SourceColumn="EmpGroupTitleAr" DataSetColumn="EmpGroupTitleAr" />
+              <Mapping SourceColumn="DelayRuleID" DataSetColumn="DelayRuleID" />
+              <Mapping SourceColumn="DelayRuleNameAr" DataSetColumn="DelayRuleNameAr" />
+              <Mapping SourceColumn="ExtraTimeRuleID" DataSetColumn="ExtraTimeRuleID" />
+              <Mapping SourceColumn="ExtraTimeRuleNameAr" DataSetColumn="ExtraTimeRuleNameAr" />
+              <Mapping SourceColumn="LeavPermissionRuleID" DataSetColumn="LeavPermissionRuleID" />
+              <Mapping SourceColumn="LeavePermissionRuleNameAr" DataSetColumn="LeavePermissionRuleNameAr" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByGroupID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByGroupID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByGroupID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HR_Lup_EmplymentGroupPolicy.RecordSerial, HR_Lup_EmplymentGroupPolicy.GroupID, HR_Lup_EmplymentGroup.EmpGroupTitleAr, HR_Lup_EmplymentGroupPolicy.DelayRuleID, 
+                         HR_Rul_Delay.DelayRuleNameAr, HR_Lup_EmplymentGroupPolicy.ExtraTimeRuleID, HR_Rul_ExtraTime.ExtraTimeRuleNameAr, HR_Lup_EmplymentGroupPolicy.LeavPermissionRuleID, 
+                         HR_Rul_LeavePermission.LeavePermissionRuleNameAr
+FROM            HR_Lup_EmplymentGroupPolicy INNER JOIN
+                         HR_Lup_EmplymentGroup ON HR_Lup_EmplymentGroupPolicy.GroupID = HR_Lup_EmplymentGroup.EmpGroupID INNER JOIN
+                         HR_Rul_Delay ON HR_Lup_EmplymentGroupPolicy.DelayRuleID = HR_Rul_Delay.DelayRuleID INNER JOIN
+                         HR_Rul_ExtraTime ON HR_Lup_EmplymentGroupPolicy.ExtraTimeRuleID = HR_Rul_ExtraTime.ExtraTimeRuleID INNER JOIN
+                         HR_Rul_LeavePermission ON HR_Lup_EmplymentGroupPolicy.LeavPermissionRuleID = HR_Rul_LeavePermission.LeavePermissionRuleID
+WHERE        (HR_Lup_EmplymentGroupPolicy.GroupID = @GroupID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="GroupID" ColumnName="GroupID" DataSourceName="TMS_DataCollection.dbo.HR_Lup_EmplymentGroupPolicy" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@GroupID" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="GroupID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RulDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RulDataSet" msprop:Generator_UserDSName="RulDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HR_Rul_Delay" msprop:Generator_TableClassName="HR_Rul_DelayDataTable" msprop:Generator_TableVarName="tableHR_Rul_Delay" msprop:Generator_TablePropName="HR_Rul_Delay" msprop:Generator_RowDeletingName="HR_Rul_DelayRowDeleting" msprop:Generator_RowChangingName="HR_Rul_DelayRowChanging" msprop:Generator_RowEvHandlerName="HR_Rul_DelayRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Rul_DelayRowDeleted" msprop:Generator_UserTableName="HR_Rul_Delay" msprop:Generator_RowChangedName="HR_Rul_DelayRowChanged" msprop:Generator_RowEvArgName="HR_Rul_DelayRowChangeEvent" msprop:Generator_RowClassName="HR_Rul_DelayRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DelayRuleNameAr" msprop:Generator_ColumnVarNameInTable="columnDelayRuleNameAr" msprop:Generator_ColumnPropNameInRow="DelayRuleNameAr" msprop:Generator_ColumnPropNameInTable="DelayRuleNameArColumn" msprop:Generator_UserColumnName="DelayRuleNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DelayRuleID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDelayRuleID" msprop:Generator_ColumnPropNameInRow="DelayRuleID" msprop:Generator_ColumnPropNameInTable="DelayRuleIDColumn" msprop:Generator_UserColumnName="DelayRuleID" type="xs:int" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Rul_ExtraTime" msprop:Generator_TableClassName="HR_Rul_ExtraTimeDataTable" msprop:Generator_TableVarName="tableHR_Rul_ExtraTime" msprop:Generator_TablePropName="HR_Rul_ExtraTime" msprop:Generator_RowDeletingName="HR_Rul_ExtraTimeRowDeleting" msprop:Generator_RowChangingName="HR_Rul_ExtraTimeRowChanging" msprop:Generator_RowEvHandlerName="HR_Rul_ExtraTimeRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Rul_ExtraTimeRowDeleted" msprop:Generator_UserTableName="HR_Rul_ExtraTime" msprop:Generator_RowChangedName="HR_Rul_ExtraTimeRowChanged" msprop:Generator_RowEvArgName="HR_Rul_ExtraTimeRowChangeEvent" msprop:Generator_RowClassName="HR_Rul_ExtraTimeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ExtraTimeRuleID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExtraTimeRuleID" msprop:Generator_ColumnPropNameInRow="ExtraTimeRuleID" msprop:Generator_ColumnPropNameInTable="ExtraTimeRuleIDColumn" msprop:Generator_UserColumnName="ExtraTimeRuleID" type="xs:int" />
+              <xs:element name="ExtraTimeRuleNameAr" msprop:Generator_ColumnVarNameInTable="columnExtraTimeRuleNameAr" msprop:Generator_ColumnPropNameInRow="ExtraTimeRuleNameAr" msprop:Generator_ColumnPropNameInTable="ExtraTimeRuleNameArColumn" msprop:Generator_UserColumnName="ExtraTimeRuleNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VacationExtraHour" msprop:Generator_ColumnVarNameInTable="columnVacationExtraHour" msprop:Generator_ColumnPropNameInRow="VacationExtraHour" msprop:Generator_ColumnPropNameInTable="VacationExtraHourColumn" msprop:Generator_UserColumnName="VacationExtraHour" type="xs:duration" minOccurs="0" />
+              <xs:element name="WorkExtraHour" msprop:Generator_ColumnVarNameInTable="columnWorkExtraHour" msprop:Generator_ColumnPropNameInRow="WorkExtraHour" msprop:Generator_ColumnPropNameInTable="WorkExtraHourColumn" msprop:Generator_UserColumnName="WorkExtraHour" type="xs:duration" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Rul_LeavePermission" msprop:Generator_TableClassName="HR_Rul_LeavePermissionDataTable" msprop:Generator_TableVarName="tableHR_Rul_LeavePermission" msprop:Generator_TablePropName="HR_Rul_LeavePermission" msprop:Generator_RowDeletingName="HR_Rul_LeavePermissionRowDeleting" msprop:Generator_RowChangingName="HR_Rul_LeavePermissionRowChanging" msprop:Generator_RowEvHandlerName="HR_Rul_LeavePermissionRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Rul_LeavePermissionRowDeleted" msprop:Generator_UserTableName="HR_Rul_LeavePermission" msprop:Generator_RowChangedName="HR_Rul_LeavePermissionRowChanged" msprop:Generator_RowEvArgName="HR_Rul_LeavePermissionRowChangeEvent" msprop:Generator_RowClassName="HR_Rul_LeavePermissionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LeavePermissionRuleID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLeavePermissionRuleID" msprop:Generator_ColumnPropNameInRow="LeavePermissionRuleID" msprop:Generator_ColumnPropNameInTable="LeavePermissionRuleIDColumn" msprop:Generator_UserColumnName="LeavePermissionRuleID" type="xs:int" />
+              <xs:element name="LeavePermissionRuleNameAr" msprop:Generator_ColumnVarNameInTable="columnLeavePermissionRuleNameAr" msprop:Generator_ColumnPropNameInRow="LeavePermissionRuleNameAr" msprop:Generator_ColumnPropNameInTable="LeavePermissionRuleNameArColumn" msprop:Generator_UserColumnName="LeavePermissionRuleNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaxHour" msprop:Generator_ColumnVarNameInTable="columnMaxHour" msprop:Generator_ColumnPropNameInRow="MaxHour" msprop:Generator_ColumnPropNameInTable="MaxHourColumn" msprop:Generator_UserColumnName="MaxHour" type="xs:duration" minOccurs="0" />
+              <xs:element name="MaxCount" msprop:Generator_ColumnVarNameInTable="columnMaxCount" msprop:Generator_ColumnPropNameInRow="MaxCount" msprop:Generator_ColumnPropNameInTable="MaxCountColumn" msprop:Generator_UserColumnName="MaxCount" type="xs:int" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Rul_DelayRulesDetails" msprop:Generator_TableClassName="HR_Rul_DelayRulesDetailsDataTable" msprop:Generator_TableVarName="tableHR_Rul_DelayRulesDetails" msprop:Generator_RowChangedName="HR_Rul_DelayRulesDetailsRowChanged" msprop:Generator_TablePropName="HR_Rul_DelayRulesDetails" msprop:Generator_RowDeletingName="HR_Rul_DelayRulesDetailsRowDeleting" msprop:Generator_RowChangingName="HR_Rul_DelayRulesDetailsRowChanging" msprop:Generator_RowEvHandlerName="HR_Rul_DelayRulesDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Rul_DelayRulesDetailsRowDeleted" msprop:Generator_RowClassName="HR_Rul_DelayRulesDetailsRow" msprop:Generator_UserTableName="HR_Rul_DelayRulesDetails" msprop:Generator_RowEvArgName="HR_Rul_DelayRulesDetailsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DelayRuleDetailID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDelayRuleDetailID" msprop:Generator_ColumnPropNameInRow="DelayRuleDetailID" msprop:Generator_ColumnPropNameInTable="DelayRuleDetailIDColumn" msprop:Generator_UserColumnName="DelayRuleDetailID" type="xs:int" />
+              <xs:element name="DelayRuleID" msprop:Generator_ColumnVarNameInTable="columnDelayRuleID" msprop:Generator_ColumnPropNameInRow="DelayRuleID" msprop:Generator_ColumnPropNameInTable="DelayRuleIDColumn" msprop:Generator_UserColumnName="DelayRuleID" type="xs:int" minOccurs="0" />
+              <xs:element name="FromMinute" msprop:Generator_ColumnVarNameInTable="columnFromMinute" msprop:Generator_ColumnPropNameInRow="FromMinute" msprop:Generator_ColumnPropNameInTable="FromMinuteColumn" msprop:Generator_UserColumnName="FromMinute" type="xs:int" minOccurs="0" />
+              <xs:element name="ToMinute" msprop:Generator_ColumnVarNameInTable="columnToMinute" msprop:Generator_ColumnPropNameInRow="ToMinute" msprop:Generator_ColumnPropNameInTable="ToMinuteColumn" msprop:Generator_UserColumnName="ToMinute" type="xs:int" minOccurs="0" />
+              <xs:element name="FirstPenalty" msprop:Generator_ColumnVarNameInTable="columnFirstPenalty" msprop:Generator_ColumnPropNameInRow="FirstPenalty" msprop:Generator_ColumnPropNameInTable="FirstPenaltyColumn" msprop:Generator_UserColumnName="FirstPenalty" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GridGroupPloicy" msprop:Generator_TableClassName="GridGroupPloicyDataTable" msprop:Generator_TableVarName="tableGridGroupPloicy" msprop:Generator_TablePropName="GridGroupPloicy" msprop:Generator_RowDeletingName="GridGroupPloicyRowDeleting" msprop:Generator_RowChangingName="GridGroupPloicyRowChanging" msprop:Generator_RowEvHandlerName="GridGroupPloicyRowChangeEventHandler" msprop:Generator_RowDeletedName="GridGroupPloicyRowDeleted" msprop:Generator_UserTableName="GridGroupPloicy" msprop:Generator_RowChangedName="GridGroupPloicyRowChanged" msprop:Generator_RowEvArgName="GridGroupPloicyRowChangeEvent" msprop:Generator_RowClassName="GridGroupPloicyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RecordSerial" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRecordSerial" msprop:Generator_ColumnPropNameInRow="RecordSerial" msprop:Generator_ColumnPropNameInTable="RecordSerialColumn" msprop:Generator_UserColumnName="RecordSerial" type="xs:short" />
+              <xs:element name="GroupID" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EmpGroupTitleAr" msprop:Generator_ColumnVarNameInTable="columnEmpGroupTitleAr" msprop:Generator_ColumnPropNameInRow="EmpGroupTitleAr" msprop:Generator_ColumnPropNameInTable="EmpGroupTitleArColumn" msprop:Generator_UserColumnName="EmpGroupTitleAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DelayRuleID" msprop:Generator_ColumnVarNameInTable="columnDelayRuleID" msprop:Generator_ColumnPropNameInRow="DelayRuleID" msprop:Generator_ColumnPropNameInTable="DelayRuleIDColumn" msprop:Generator_UserColumnName="DelayRuleID" type="xs:int" minOccurs="0" />
+              <xs:element name="DelayRuleNameAr" msprop:Generator_ColumnVarNameInTable="columnDelayRuleNameAr" msprop:Generator_ColumnPropNameInRow="DelayRuleNameAr" msprop:Generator_ColumnPropNameInTable="DelayRuleNameArColumn" msprop:Generator_UserColumnName="DelayRuleNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExtraTimeRuleID" msprop:Generator_ColumnVarNameInTable="columnExtraTimeRuleID" msprop:Generator_ColumnPropNameInRow="ExtraTimeRuleID" msprop:Generator_ColumnPropNameInTable="ExtraTimeRuleIDColumn" msprop:Generator_UserColumnName="ExtraTimeRuleID" type="xs:int" minOccurs="0" />
+              <xs:element name="ExtraTimeRuleNameAr" msprop:Generator_ColumnVarNameInTable="columnExtraTimeRuleNameAr" msprop:Generator_ColumnPropNameInRow="ExtraTimeRuleNameAr" msprop:Generator_ColumnPropNameInTable="ExtraTimeRuleNameArColumn" msprop:Generator_UserColumnName="ExtraTimeRuleNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LeavPermissionRuleID" msprop:Generator_ColumnVarNameInTable="columnLeavPermissionRuleID" msprop:Generator_ColumnPropNameInRow="LeavPermissionRuleID" msprop:Generator_ColumnPropNameInTable="LeavPermissionRuleIDColumn" msprop:Generator_UserColumnName="LeavPermissionRuleID" type="xs:int" minOccurs="0" />
+              <xs:element name="LeavePermissionRuleNameAr" msprop:Generator_ColumnVarNameInTable="columnLeavePermissionRuleNameAr" msprop:Generator_ColumnPropNameInRow="LeavePermissionRuleNameAr" msprop:Generator_ColumnPropNameInTable="LeavePermissionRuleNameArColumn" msprop:Generator_UserColumnName="LeavePermissionRuleNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Rul_Delay" />
+      <xs:field xpath="mstns:DelayRuleID" />
+    </xs:unique>
+    <xs:unique name="HR_Rul_ExtraTime_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Rul_ExtraTime" />
+      <xs:field xpath="mstns:ExtraTimeRuleID" />
+    </xs:unique>
+    <xs:unique name="HR_Rul_LeavePermission_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Rul_LeavePermission" />
+      <xs:field xpath="mstns:LeavePermissionRuleID" />
+    </xs:unique>
+    <xs:unique name="HR_Rul_DelayRulesDetails_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Rul_DelayRulesDetails" />
+      <xs:field xpath="mstns:DelayRuleDetailID" />
+    </xs:unique>
+    <xs:unique name="GridGroupPloicy_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GridGroupPloicy" />
+      <xs:field xpath="mstns:RecordSerial" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_HR_DelayRulesDetails_HR_DelayRules" msdata:parent="HR_Rul_Delay" msdata:child="HR_Rul_DelayRulesDetails" msdata:parentkey="DelayRuleID" msdata:childkey="DelayRuleID" msprop:Generator_UserChildTable="HR_Rul_DelayRulesDetails" msprop:Generator_ChildPropName="GetHR_Rul_DelayRulesDetailsRows" msprop:Generator_UserRelationName="FK_HR_DelayRulesDetails_HR_DelayRules" msprop:Generator_RelationVarName="relationFK_HR_DelayRulesDetails_HR_DelayRules" msprop:Generator_UserParentTable="HR_Rul_Delay" msprop:Generator_ParentPropName="HR_Rul_DelayRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

@@ -1,0 +1,1397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TraDataSet" targetNamespace="http://tempuri.org/TraDataSet.xsd" xmlns:mstns="http://tempuri.org/TraDataSet.xsd" xmlns="http://tempuri.org/TraDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TMSCS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSCS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TMSCS" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FSE_ManagmentModules" IsAppSettingsProperty="true" Modifier="Assembly" Name="FSE_ManagmentModules (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.FSE_ManagmentModules" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_VacationsTableAdapter" GeneratorDataComponentClassName="Grid_Tra_VacationsTableAdapter" Name="Grid_Tra_Vacations" UserDataComponentName="Grid_Tra_VacationsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Vacations.EmployeeVacationID, HR_Tra_Vacations.EmpID, HR_Tra_Vacations.VacationTypeID, HR_Lup_VacationTypes.VacationNameAr, HR_Tra_Vacations.VacationFromDate, 
+                         HR_Tra_Vacations.VacationToDate, HR_Tra_Vacations.VacationLength, HR_Tra_Vacations.Notes, HR_Tra_Vacations.IsApproved, HR_Tra_Vacations.IsDeleted, HR_Tra_Vacations.IsDeletable, 
+                         HR_Tra_Vacations.RCDate, HR_Tra_Vacations.RCBy, HR_Tra_Vacations.LADate, HR_Tra_Vacations.LABy
+FROM            HR_Tra_Vacations INNER JOIN
+                         HR_Lup_VacationTypes ON HR_Tra_Vacations.VacationTypeID = HR_Lup_VacationTypes.VacationtypeID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeVacationID" DataSetColumn="EmployeeVacationID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="VacationTypeID" DataSetColumn="VacationTypeID" />
+              <Mapping SourceColumn="VacationFromDate" DataSetColumn="VacationFromDate" />
+              <Mapping SourceColumn="VacationToDate" DataSetColumn="VacationToDate" />
+              <Mapping SourceColumn="VacationLength" DataSetColumn="VacationLength" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsApproved" DataSetColumn="IsApproved" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+              <Mapping SourceColumn="VacationNameAr" DataSetColumn="VacationNameAr" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Vacations.EmployeeVacationID, HR_Tra_Vacations.EmpID, HR_Tra_Vacations.VacationTypeID, HR_Lup_VacationTypes.VacationNameAr, HR_Tra_Vacations.VacationFromDate, 
+                         HR_Tra_Vacations.VacationToDate, HR_Tra_Vacations.VacationLength, HR_Tra_Vacations.Notes, HR_Tra_Vacations.IsApproved, HR_Tra_Vacations.IsDeleted, HR_Tra_Vacations.IsDeletable, 
+                         HR_Tra_Vacations.RCDate, HR_Tra_Vacations.RCBy, HR_Tra_Vacations.LADate, HR_Tra_Vacations.LABy
+FROM            HR_Tra_Vacations INNER JOIN
+                         HR_Lup_VacationTypes ON HR_Tra_Vacations.VacationTypeID = HR_Lup_VacationTypes.VacationtypeID
+WHERE        (HR_Tra_Vacations.EmpID = @EmpID) AND (HR_Tra_Vacations.IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_PenaltyTableAdapter" GeneratorDataComponentClassName="Grid_Tra_PenaltyTableAdapter" Name="Grid_Tra_Penalty" UserDataComponentName="Grid_Tra_PenaltyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Penalty.EmployeePenaltyID, HR_Tra_Penalty.EmpID, HR_Tra_Penalty.TraDate, HR_Tra_Penalty.PenaltyNameID, HR_Lup_Penalties.PenaltyNameAr, HR_Tra_Penalty.ByDay, HR_Tra_Penalty.ByAmount, 
+                         HR_Tra_Penalty.Value, HR_Tra_Penalty.Notes, HR_Tra_Penalty.IsDeleted, HR_Tra_Penalty.IsDeletable, HR_Tra_Penalty.RCDate, HR_Tra_Penalty.RCBy, HR_Tra_Penalty.LADate, HR_Tra_Penalty.LABy
+FROM            HR_Tra_Penalty INNER JOIN
+                         HR_Lup_Penalties ON HR_Tra_Penalty.PenaltyNameID = HR_Lup_Penalties.PenaltyNameID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeePenaltyID" DataSetColumn="EmployeePenaltyID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="TraDate" DataSetColumn="TraDate" />
+              <Mapping SourceColumn="PenaltyNameID" DataSetColumn="PenaltyNameID" />
+              <Mapping SourceColumn="PenaltyNameAr" DataSetColumn="PenaltyNameAr" />
+              <Mapping SourceColumn="ByDay" DataSetColumn="ByDay" />
+              <Mapping SourceColumn="ByAmount" DataSetColumn="ByAmount" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Penalty.EmployeePenaltyID, HR_Tra_Penalty.EmpID, HR_Tra_Penalty.TraDate, HR_Tra_Penalty.PenaltyNameID, HR_Lup_Penalties.PenaltyNameAr, HR_Tra_Penalty.ByDay, HR_Tra_Penalty.ByAmount, 
+                         HR_Tra_Penalty.Value, HR_Tra_Penalty.Notes, HR_Tra_Penalty.IsDeleted, HR_Tra_Penalty.IsDeletable, HR_Tra_Penalty.RCDate, HR_Tra_Penalty.RCBy, HR_Tra_Penalty.LADate, HR_Tra_Penalty.LABy
+FROM            HR_Tra_Penalty INNER JOIN
+                         HR_Lup_Penalties ON HR_Tra_Penalty.PenaltyNameID = HR_Lup_Penalties.PenaltyNameID
+WHERE        (HR_Tra_Penalty.EmpID = @EmpID) AND (HR_Tra_Penalty.IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Tra_MissionsTableAdapter" GeneratorDataComponentClassName="HR_Tra_MissionsTableAdapter" Name="HR_Tra_Missions" UserDataComponentName="HR_Tra_MissionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EIFHR.dbo.HR_Tra_Missions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        EmployeeMissionID, EmpID, Tra_Date, FromDate, ToDate, Notes, IsDeleted, IsDeletable, RCDate, RCBy, LADate, LABy
+FROM            HR_Tra_Missions</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeMissionID" DataSetColumn="EmployeeMissionID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="FromDate" DataSetColumn="FromDate" />
+              <Mapping SourceColumn="ToDate" DataSetColumn="ToDate" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_Missions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT EmpID, EmployeeMissionID, FromDate, IsDeletable, IsDeleted, LABy, LADate, Notes, RCBy, RCDate, ToDate, Tra_Date FROM HR_Tra_Missions WHERE (EmpID = @EmpID) AND (IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_LeavePermissionTableAdapter" GeneratorDataComponentClassName="Grid_LeavePermissionTableAdapter" Name="Grid_LeavePermission" UserDataComponentName="Grid_LeavePermissionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HR_Tra_LeavePermissions.EmployeeLeavePermissionID, HR_Tra_LeavePermissions.EmpID, HR_Tra_LeavePermissions.Tra_Date, HR_Tra_LeavePermissions.FromTime, HR_Tra_LeavePermissions.ToTime, 
+                         HR_Tra_LeavePermissions.Notes, HR_Tra_LeavePermissions.HourCount, HR_Tra_LeavePermissions.PermissionType, HR_Tra_LeavePermissions.PermissionTypeIndex, HR_Tra_LeavePermissions.IsDeleted, 
+                         HR_Emp_BasicInfo.EmpNameAR
+FROM            HR_Tra_LeavePermissions INNER JOIN
+                         HR_Emp_BasicInfo ON HR_Tra_LeavePermissions.EmpID = HR_Emp_BasicInfo.EmployeeID
+WHERE        (HR_Tra_LeavePermissions.IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeLeavePermissionID" DataSetColumn="EmployeeLeavePermissionID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="FromTime" DataSetColumn="FromTime" />
+              <Mapping SourceColumn="ToTime" DataSetColumn="ToTime" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="HourCount" DataSetColumn="HourCount" />
+              <Mapping SourceColumn="PermissionType" DataSetColumn="PermissionType" />
+              <Mapping SourceColumn="PermissionTypeIndex" DataSetColumn="PermissionTypeIndex" />
+              <Mapping SourceColumn="EmpNameAR" DataSetColumn="EmpNameAR" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HR_Tra_LeavePermissions.EmployeeLeavePermissionID, HR_Tra_LeavePermissions.EmpID, HR_Tra_LeavePermissions.Tra_Date, HR_Tra_LeavePermissions.FromTime, HR_Tra_LeavePermissions.ToTime, 
+                         HR_Tra_LeavePermissions.Notes, HR_Tra_LeavePermissions.IsDeleted, HR_Tra_LeavePermissions.HourCount, HR_Tra_LeavePermissions.PermissionTypeIndex, HR_Tra_LeavePermissions.PermissionType, 
+                         HR_Emp_BasicInfo.EmpNameAR
+FROM            HR_Tra_LeavePermissions INNER JOIN
+                         HR_Emp_BasicInfo ON HR_Tra_LeavePermissions.EmpID = HR_Emp_BasicInfo.EmployeeID
+WHERE        (HR_Tra_LeavePermissions.EmpID = @EmpID) AND (HR_Tra_LeavePermissions.IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="TMS_DataCollection.dbo.HR_Tra_LeavePermissions" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_ExtraTimesTableAdapter" GeneratorDataComponentClassName="Grid_Tra_ExtraTimesTableAdapter" Name="Grid_Tra_ExtraTimes" UserDataComponentName="Grid_Tra_ExtraTimesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EIFHR.dbo.HR_Tra_ExtraTimes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        EmployeeExtraTimeID, EmpID, Tra_Date, Period, Notes, DirectManagerID, Approved, IsDeleted, IsDeletable, RCDate, RCBy, LADate, LABy
+FROM            HR_Tra_ExtraTimes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeExtraTimeID" DataSetColumn="EmployeeExtraTimeID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="Period" DataSetColumn="Period" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="DirectManagerID" DataSetColumn="DirectManagerID" />
+              <Mapping SourceColumn="Approved" DataSetColumn="Approved" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_ExtraTimes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Approved, DirectManagerID, EmpID, EmployeeExtraTimeID, IsDeletable, IsDeleted, LABy, LADate, Notes, Period, RCBy, RCDate, Tra_Date FROM HR_Tra_ExtraTimes WHERE (EmpID = @EmpID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_DeductionsTableAdapter" GeneratorDataComponentClassName="Grid_Tra_DeductionsTableAdapter" Name="Grid_Tra_Deductions" UserDataComponentName="Grid_Tra_DeductionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Deductions.EmployeeDeductionID, HR_Tra_Deductions.EmpID, HR_Tra_Deductions.Tra_Date, HR_Tra_Deductions.DeductionID, HR_Lup_Deductions.DeductionNameAr, HR_Tra_Deductions.IsPercent, 
+                         HR_Tra_Deductions.Value, HR_Tra_Deductions.Notes, HR_Tra_Deductions.IsDeleted, HR_Tra_Deductions.IsDeletable, HR_Tra_Deductions.RCDate, HR_Tra_Deductions.RCBy, HR_Tra_Deductions.LADate, 
+                         HR_Tra_Deductions.LABy
+FROM            HR_Tra_Deductions INNER JOIN
+                         HR_Lup_Deductions ON HR_Tra_Deductions.DeductionID = HR_Lup_Deductions.DeductionID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeDeductionID" DataSetColumn="EmployeeDeductionID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="DeductionID" DataSetColumn="DeductionID" />
+              <Mapping SourceColumn="IsPercent" DataSetColumn="IsPercent" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+              <Mapping SourceColumn="DeductionNameAr" DataSetColumn="DeductionNameAr" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Deductions.EmployeeDeductionID, HR_Tra_Deductions.EmpID, HR_Tra_Deductions.Tra_Date, HR_Tra_Deductions.DeductionID, HR_Lup_Deductions.DeductionNameAr, HR_Tra_Deductions.IsPercent, 
+                         HR_Tra_Deductions.Value, HR_Tra_Deductions.Notes, HR_Tra_Deductions.IsDeleted, HR_Tra_Deductions.IsDeletable, HR_Tra_Deductions.RCDate, HR_Tra_Deductions.RCBy, HR_Tra_Deductions.LADate, 
+                         HR_Tra_Deductions.LABy
+FROM            HR_Tra_Deductions INNER JOIN
+                         HR_Lup_Deductions ON HR_Tra_Deductions.DeductionID = HR_Lup_Deductions.DeductionID
+WHERE        (HR_Tra_Deductions.EmpID = @EmpID) AND (HR_Tra_Deductions.IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_CustodyTableAdapter" GeneratorDataComponentClassName="Grid_Tra_CustodyTableAdapter" Name="Grid_Tra_Custody" UserDataComponentName="Grid_Tra_CustodyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Custody.EmployeeCustodyID, HR_Tra_Custody.EmpID, HR_Tra_Custody.Tra_Date, HR_Tra_Custody.CustodyID, HR_Lup_Custody.CustodyNameAr, HR_Tra_Custody.FromDate, HR_Tra_Custody.ToDate, 
+                         HR_Tra_Custody.Notes, HR_Tra_Custody.IsDeleted, HR_Tra_Custody.IsDeletable, HR_Tra_Custody.RCDate, HR_Tra_Custody.RCBy, HR_Tra_Custody.LADate, HR_Tra_Custody.LABy
+FROM            HR_Tra_Custody INNER JOIN
+                         HR_Lup_Custody ON HR_Tra_Custody.CustodyID = HR_Lup_Custody.CustodyID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeCustodyID" DataSetColumn="EmployeeCustodyID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="CustodyID" DataSetColumn="CustodyID" />
+              <Mapping SourceColumn="FromDate" DataSetColumn="FromDate" />
+              <Mapping SourceColumn="ToDate" DataSetColumn="ToDate" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+              <Mapping SourceColumn="CustodyNameAr" DataSetColumn="CustodyNameAr" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Custody.EmployeeCustodyID, HR_Tra_Custody.EmpID, HR_Tra_Custody.Tra_Date, HR_Tra_Custody.CustodyID, HR_Lup_Custody.CustodyNameAr, HR_Tra_Custody.FromDate, HR_Tra_Custody.ToDate, 
+                         HR_Tra_Custody.Notes, HR_Tra_Custody.IsDeleted, HR_Tra_Custody.IsDeletable, HR_Tra_Custody.RCDate, HR_Tra_Custody.RCBy, HR_Tra_Custody.LADate, HR_Tra_Custody.LABy
+FROM            HR_Tra_Custody INNER JOIN
+                         HR_Lup_Custody ON HR_Tra_Custody.CustodyID = HR_Lup_Custody.CustodyID
+WHERE        (HR_Tra_Custody.EmpID = @EmpID) AND (HR_Tra_Custody.IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_BonusTableAdapter" GeneratorDataComponentClassName="Grid_Tra_BonusTableAdapter" Name="Grid_Tra_Bonus" UserDataComponentName="Grid_Tra_BonusTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Bonus.EmployeeBonusID, HR_Tra_Bonus.EmpID, HR_Tra_Bonus.Tra_Date, HR_Tra_Bonus.BonusID, HR_Lup_Bonus.BonusNameAr, HR_Tra_Bonus.ByDay, HR_Tra_Bonus.ByAmount, 
+                         HR_Tra_Bonus.Value, HR_Tra_Bonus.Notes, HR_Tra_Bonus.IsDeleted, HR_Tra_Bonus.IsDeletable, HR_Tra_Bonus.RCDate, HR_Tra_Bonus.RCBy, HR_Tra_Bonus.LADate, HR_Tra_Bonus.LABy
+FROM            HR_Tra_Bonus INNER JOIN
+                         HR_Lup_Bonus ON HR_Tra_Bonus.BonusID = HR_Lup_Bonus.BonusID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeBonusID" DataSetColumn="EmployeeBonusID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="BonusID" DataSetColumn="BonusID" />
+              <Mapping SourceColumn="ByDay" DataSetColumn="ByDay" />
+              <Mapping SourceColumn="ByAmount" DataSetColumn="ByAmount" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+              <Mapping SourceColumn="BonusNameAr" DataSetColumn="BonusNameAr" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Bonus.EmployeeBonusID, HR_Tra_Bonus.EmpID, HR_Tra_Bonus.Tra_Date, HR_Tra_Bonus.BonusID, HR_Lup_Bonus.BonusNameAr, HR_Tra_Bonus.ByDay, HR_Tra_Bonus.ByAmount, 
+                         HR_Tra_Bonus.Value, HR_Tra_Bonus.Notes, HR_Tra_Bonus.IsDeleted, HR_Tra_Bonus.IsDeletable, HR_Tra_Bonus.RCDate, HR_Tra_Bonus.RCBy, HR_Tra_Bonus.LADate, HR_Tra_Bonus.LABy
+FROM            HR_Tra_Bonus INNER JOIN
+                         HR_Lup_Bonus ON HR_Tra_Bonus.BonusID = HR_Lup_Bonus.BonusID
+WHERE        (HR_Tra_Bonus.EmpID = @EmpID) AND (HR_Tra_Bonus.IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_AttendanceTableAdapter" GeneratorDataComponentClassName="Grid_Tra_AttendanceTableAdapter" Name="Grid_Tra_Attendance" UserDataComponentName="Grid_Tra_AttendanceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="EIFHR.dbo.HR_Tra_Attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        EmployeeAttendanceID, EmpID, AttendanceDate, ExpectedFrom, ExpectedTo, ActualFrom, ActualTo, WorkDay, IsMission, VacationtypeID, IsWorkByHour, ShiftID, Notes, IsDeleted, IsDeletable, RCDate, RCBy, 
+                         LADate, LABy
+FROM            HR_Tra_Attendance</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeAttendanceID" DataSetColumn="EmployeeAttendanceID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="AttendanceDate" DataSetColumn="AttendanceDate" />
+              <Mapping SourceColumn="ExpectedFrom" DataSetColumn="ExpectedFrom" />
+              <Mapping SourceColumn="ExpectedTo" DataSetColumn="ExpectedTo" />
+              <Mapping SourceColumn="ActualFrom" DataSetColumn="ActualFrom" />
+              <Mapping SourceColumn="ActualTo" DataSetColumn="ActualTo" />
+              <Mapping SourceColumn="WorkDay" DataSetColumn="WorkDay" />
+              <Mapping SourceColumn="IsMission" DataSetColumn="IsMission" />
+              <Mapping SourceColumn="VacationtypeID" DataSetColumn="VacationtypeID" />
+              <Mapping SourceColumn="IsWorkByHour" DataSetColumn="IsWorkByHour" />
+              <Mapping SourceColumn="ShiftID" DataSetColumn="ShiftID" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_Attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ActualFrom, ActualTo, AttendanceDate, EmpID, EmployeeAttendanceID, ExpectedFrom, ExpectedTo, IsDeletable, IsDeleted, IsMission, IsWorkByHour, LABy, LADate, Notes, RCBy, RCDate, ShiftID, VacationtypeID, WorkDay FROM HR_Tra_Attendance WHERE (EmpID = @EmpID) AND (IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Grid_Tra_AllowancesTableAdapter" GeneratorDataComponentClassName="Grid_Tra_AllowancesTableAdapter" Name="Grid_Tra_Allowances" UserDataComponentName="Grid_Tra_AllowancesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAll" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Allowances.EmployeeAllowanceID, HR_Tra_Allowances.EmpID, HR_Tra_Allowances.Tra_Date, HR_Tra_Allowances.AllowanceID, HR_Lup_Allowances.AllowanceNameAr, HR_Tra_Allowances.Value, 
+                         HR_Tra_Allowances.IsPercent, HR_Tra_Allowances.Notes, HR_Tra_Allowances.IsDeleted, HR_Tra_Allowances.IsDeletable, HR_Tra_Allowances.RCDate, HR_Tra_Allowances.RCBy, HR_Tra_Allowances.LADate, 
+                         HR_Tra_Allowances.LABy
+FROM            HR_Tra_Allowances INNER JOIN
+                         HR_Lup_Allowances ON HR_Tra_Allowances.AllowanceID = HR_Lup_Allowances.AllowanceID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeAllowanceID" DataSetColumn="EmployeeAllowanceID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="AllowanceID" DataSetColumn="AllowanceID" />
+              <Mapping SourceColumn="AllowanceNameAr" DataSetColumn="AllowanceNameAr" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+              <Mapping SourceColumn="IsPercent" DataSetColumn="IsPercent" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
+              <Mapping SourceColumn="IsDeletable" DataSetColumn="IsDeletable" />
+              <Mapping SourceColumn="RCDate" DataSetColumn="RCDate" />
+              <Mapping SourceColumn="RCBy" DataSetColumn="RCBy" />
+              <Mapping SourceColumn="LADate" DataSetColumn="LADate" />
+              <Mapping SourceColumn="LABy" DataSetColumn="LABy" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        HR_Tra_Allowances.EmployeeAllowanceID, HR_Tra_Allowances.EmpID, HR_Tra_Allowances.Tra_Date, HR_Tra_Allowances.AllowanceID, HR_Lup_Allowances.AllowanceNameAr, HR_Tra_Allowances.Value, 
+                         HR_Tra_Allowances.IsPercent, HR_Tra_Allowances.Notes, HR_Tra_Allowances.IsDeleted, HR_Tra_Allowances.IsDeletable, HR_Tra_Allowances.RCDate, HR_Tra_Allowances.RCBy, HR_Tra_Allowances.LADate, 
+                         HR_Tra_Allowances.LABy
+FROM            HR_Tra_Allowances INNER JOIN
+                         HR_Lup_Allowances ON HR_Tra_Allowances.AllowanceID = HR_Lup_Allowances.AllowanceID
+WHERE        (HR_Tra_Allowances.EmpID = @EmpID) AND (HR_Tra_Allowances.IsDeleted = 0)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Tra_PenalityTransactionViewTableAdapter" GeneratorDataComponentClassName="HR_Tra_PenalityTransactionViewTableAdapter" Name="HR_Tra_PenalityTransactionView" UserDataComponentName="HR_Tra_PenalityTransactionViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeePenaltyID, EmpID, EmpNameAR, ExternalID, EmployeeFPNo, GroupID, EmpGroupTitleAr, TraDate, PenaltyNameID, PenaltyNameAr, ByDay, ByAmount, Value, Notes, CAST(BasicSalary AS Decimal(18, 
+                         2)) AS BasicSalary, CAST(NetValue AS decimal(18, 2)) AS NetValue
+FROM            HR_Tra_PenalityTransactionView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeePenaltyID" DataSetColumn="EmployeePenaltyID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="EmpNameAR" DataSetColumn="EmpNameAR" />
+              <Mapping SourceColumn="ExternalID" DataSetColumn="ExternalID" />
+              <Mapping SourceColumn="EmployeeFPNo" DataSetColumn="EmployeeFPNo" />
+              <Mapping SourceColumn="GroupID" DataSetColumn="GroupID" />
+              <Mapping SourceColumn="EmpGroupTitleAr" DataSetColumn="EmpGroupTitleAr" />
+              <Mapping SourceColumn="TraDate" DataSetColumn="TraDate" />
+              <Mapping SourceColumn="PenaltyNameID" DataSetColumn="PenaltyNameID" />
+              <Mapping SourceColumn="PenaltyNameAr" DataSetColumn="PenaltyNameAr" />
+              <Mapping SourceColumn="ByDay" DataSetColumn="ByDay" />
+              <Mapping SourceColumn="ByAmount" DataSetColumn="ByAmount" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="BasicSalary" DataSetColumn="BasicSalary" />
+              <Mapping SourceColumn="NetValue" DataSetColumn="NetValue" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeePenaltyID, EmpID, EmpNameAR, ExternalID, EmployeeFPNo, GroupID, EmpGroupTitleAr, TraDate, PenaltyNameID, PenaltyNameAr, ByDay, ByAmount, Value, Notes, CAST(BasicSalary AS Decimal(18, 
+                         2)) AS BasicSalary, CAST(NetValue AS decimal(18, 2)) AS NetValue
+FROM            HR_Tra_PenalityTransactionView
+WHERE        (TraDate BETWEEN @StartDate AND @EndDate) AND (EmpID = @EmpID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="TraDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="TraDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="TraDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="TraDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByGroupID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByGroupID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByGroupID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeePenaltyID, EmpID, EmpNameAR, ExternalID, EmployeeFPNo, GroupID, EmpGroupTitleAr, TraDate, PenaltyNameID, PenaltyNameAr, ByDay, ByAmount, Value, Notes, CAST(BasicSalary AS Decimal(18, 
+                         2)) AS BasicSalary, CAST(NetValue AS decimal(18, 2)) AS NetValue
+FROM            HR_Tra_PenalityTransactionView
+WHERE        (GroupID = @GroupID) AND (TraDate BETWEEN @StartDate AND @EndDate)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="GroupID" ColumnName="GroupID" DataSourceName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@GroupID" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="GroupID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="TraDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="TraDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="TraDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_PenalityTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="TraDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Tra_BounceTransactionViewTableAdapter" GeneratorDataComponentClassName="HR_Tra_BounceTransactionViewTableAdapter" Name="HR_Tra_BounceTransactionView" UserDataComponentName="HR_Tra_BounceTransactionViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeeBonusID, EmpID, EmpNameAR, ExternalID, EmployeeFPNo, GroupID, EmpGroupTitleAr, Tra_Date, BonusID, BonusNameAr, ByDay, ByAmount, Value, Notes, CAST(BasicSalary AS decimal(18, 2)) 
+                         AS BasicSalary, CAST(NetValue AS decimal(18, 2)) AS NetValue
+FROM            HR_Tra_BounceTransactionView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeBonusID" DataSetColumn="EmployeeBonusID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="EmpNameAR" DataSetColumn="EmpNameAR" />
+              <Mapping SourceColumn="ExternalID" DataSetColumn="ExternalID" />
+              <Mapping SourceColumn="EmployeeFPNo" DataSetColumn="EmployeeFPNo" />
+              <Mapping SourceColumn="GroupID" DataSetColumn="GroupID" />
+              <Mapping SourceColumn="EmpGroupTitleAr" DataSetColumn="EmpGroupTitleAr" />
+              <Mapping SourceColumn="Tra_Date" DataSetColumn="Tra_Date" />
+              <Mapping SourceColumn="BonusID" DataSetColumn="BonusID" />
+              <Mapping SourceColumn="BonusNameAr" DataSetColumn="BonusNameAr" />
+              <Mapping SourceColumn="ByDay" DataSetColumn="ByDay" />
+              <Mapping SourceColumn="ByAmount" DataSetColumn="ByAmount" />
+              <Mapping SourceColumn="Value" DataSetColumn="Value" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="BasicSalary" DataSetColumn="BasicSalary" />
+              <Mapping SourceColumn="NetValue" DataSetColumn="NetValue" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeeBonusID, EmpID, EmpNameAR, ExternalID, EmployeeFPNo, GroupID, EmpGroupTitleAr, Tra_Date, BonusID, BonusNameAr, ByDay, ByAmount, Value, Notes, CAST(BasicSalary AS decimal(18, 2)) 
+                         AS BasicSalary, CAST(NetValue AS decimal(18, 2)) AS NetValue
+FROM            HR_Tra_BounceTransactionView
+WHERE        (EmpID = @EmpID) AND (Tra_Date BETWEEN @StartDate AND @EndDate)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="Tra_Date" DataSourceName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Tra_Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="Tra_Date" DataSourceName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Tra_Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByGroupID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByGroupID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByGroupID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmployeeBonusID, EmpID, EmpNameAR, ExternalID, EmployeeFPNo, GroupID, EmpGroupTitleAr, Tra_Date, BonusID, BonusNameAr, ByDay, ByAmount, Value, Notes, CAST(BasicSalary AS decimal(18, 2)) 
+                         AS BasicSalary, CAST(NetValue AS decimal(18, 2)) AS NetValue
+FROM            HR_Tra_BounceTransactionView
+WHERE        (Tra_Date BETWEEN @StartDate AND @EndDate) AND (GroupID = @GroupID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StartDate" ColumnName="Tra_Date" DataSourceName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Tra_Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EndDate" ColumnName="Tra_Date" DataSourceName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Tra_Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="GroupID" ColumnName="GroupID" DataSourceName="TMS_DataCollection.dbo.HR_Tra_BounceTransactionView" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@GroupID" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="GroupID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Lup_WorkingTimesTableAdapter" GeneratorDataComponentClassName="HR_Lup_WorkingTimesTableAdapter" Name="HR_Lup_WorkingTimes" UserDataComponentName="HR_Lup_WorkingTimesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Lup_WorkingTimes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        WorkingTimeID, WorkingTimeTitle, StartTime, EndTime
+FROM            HR_Lup_WorkingTimes
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="WorkingTimeID" DataSetColumn="WorkingTimeID" />
+              <Mapping SourceColumn="WorkingTimeTitle" DataSetColumn="WorkingTimeTitle" />
+              <Mapping SourceColumn="StartTime" DataSetColumn="StartTime" />
+              <Mapping SourceColumn="EndTime" DataSetColumn="EndTime" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Lup_WorkingTimes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        WorkingTimeID, WorkingTimeTitle, StartTime, EndTime
+FROM            HR_Lup_WorkingTimes
+WHERE        (IsDeleted = 0) AND (WorkingTimeID = @WTID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="WTID" ColumnName="WorkingTimeID" DataSourceName="TMS_DataCollection.dbo.HR_Lup_WorkingTimes" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@WTID" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="WorkingTimeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Lup_WorkingTimesComboTableAdapter" GeneratorDataComponentClassName="HR_Lup_WorkingTimesComboTableAdapter" Name="HR_Lup_WorkingTimesCombo" UserDataComponentName="HR_Lup_WorkingTimesComboTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Lup_WorkingTimes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        WorkingTimeTitle, WorkingTimeID
+FROM            HR_Lup_WorkingTimes
+WHERE        (IsDeleted = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="WorkingTimeTitle" DataSetColumn="WorkingTimeTitle" />
+              <Mapping SourceColumn="WorkingTimeID" DataSetColumn="WorkingTimeID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Tra_EmpAttendanceViewTableAdapter" GeneratorDataComponentClassName="HR_Tra_EmpAttendanceViewTableAdapter" Name="HR_Tra_EmpAttendanceView" UserDataComponentName="HR_Tra_EmpAttendanceViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HR_Tra_EmpAttendanceView.EmployeeAttendanceID, HR_Tra_EmpAttendanceView.EmpID, HR_Tra_EmpAttendanceView.EmpNameAR, HR_Tra_EmpAttendanceView.EmployeeFPNo, 
+                         HR_Tra_EmpAttendanceView.AttendanceDate, HR_Tra_EmpAttendanceView.ExpectedFrom, HR_Tra_EmpAttendanceView.ActualFrom, HR_Tra_EmpAttendanceView.CInDiff,
+                             (SELECT        FirstPenalty
+                               FROM            HR_Rul_DelayRulesDetails
+                               WHERE        (FromMinute &lt;= HR_Tra_EmpAttendanceView.CInDiff) AND (ToMinute &gt;= HR_Tra_EmpAttendanceView.CInDiff) AND (DelayRuleID = HR_Tra_EmpAttendanceView.DelayRuleID)) AS LatePenality, 
+                         HR_Tra_EmpAttendanceView.ExpectedTo, HR_Tra_EmpAttendanceView.ActualTo, HR_Tra_EmpAttendanceView.COutDiff, HR_Tra_EmpAttendanceView.InMission, HR_Tra_EmpAttendanceView.MissionID, 
+                         HR_Tra_EmpAttendanceView.leavePermission, HR_Tra_EmpAttendanceView.PermissionID, HR_Tra_EmpAttendanceView.InVacation, HR_Tra_EmpAttendanceView.VacationtypeID, 
+                         HR_Tra_LeavePermissions.HourCount, HR_Lup_VacationTypes.VacationNameAr, CONVERT(Int, HR_Tra_EmpAttendanceView.PenalityByDay) AS PenalityByDay, CONVERT(Decimal(8, 2), 
+                         HR_Tra_EmpAttendanceView.PenalityByValue) AS PenalityByValue, CONVERT(Int, HR_Tra_EmpAttendanceView.BouncByDay) AS BouncByDay, CONVERT(Decimal(8, 2), 
+                         HR_Tra_EmpAttendanceView.BounceByValue) AS BounceByValue, HR_Tra_EmpAttendanceView.PenaltyNameAr, HR_Tra_EmpAttendanceView.BonusNameAr, HR_Tra_EmpAttendanceView.DelayRuleID
+FROM            HR_Tra_EmpAttendanceView LEFT OUTER JOIN
+                         HR_Lup_VacationTypes ON HR_Tra_EmpAttendanceView.VacationtypeID = HR_Lup_VacationTypes.VacationtypeID LEFT OUTER JOIN
+                         HR_Tra_LeavePermissions ON HR_Tra_EmpAttendanceView.PermissionID = HR_Tra_LeavePermissions.EmployeeLeavePermissionID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeAttendanceID" DataSetColumn="EmployeeAttendanceID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="EmpNameAR" DataSetColumn="EmpNameAR" />
+              <Mapping SourceColumn="EmployeeFPNo" DataSetColumn="EmployeeFPNo" />
+              <Mapping SourceColumn="AttendanceDate" DataSetColumn="AttendanceDate" />
+              <Mapping SourceColumn="ExpectedFrom" DataSetColumn="ExpectedFrom" />
+              <Mapping SourceColumn="ActualFrom" DataSetColumn="ActualFrom" />
+              <Mapping SourceColumn="CInDiff" DataSetColumn="CInDiff" />
+              <Mapping SourceColumn="ExpectedTo" DataSetColumn="ExpectedTo" />
+              <Mapping SourceColumn="ActualTo" DataSetColumn="ActualTo" />
+              <Mapping SourceColumn="COutDiff" DataSetColumn="COutDiff" />
+              <Mapping SourceColumn="InMission" DataSetColumn="InMission" />
+              <Mapping SourceColumn="MissionID" DataSetColumn="MissionID" />
+              <Mapping SourceColumn="leavePermission" DataSetColumn="leavePermission" />
+              <Mapping SourceColumn="PermissionID" DataSetColumn="PermissionID" />
+              <Mapping SourceColumn="InVacation" DataSetColumn="InVacation" />
+              <Mapping SourceColumn="VacationtypeID" DataSetColumn="VacationtypeID" />
+              <Mapping SourceColumn="HourCount" DataSetColumn="HourCount" />
+              <Mapping SourceColumn="VacationNameAr" DataSetColumn="VacationNameAr" />
+              <Mapping SourceColumn="PenalityByValue" DataSetColumn="PenalityByValue" />
+              <Mapping SourceColumn="BounceByValue" DataSetColumn="BounceByValue" />
+              <Mapping SourceColumn="PenaltyNameAr" DataSetColumn="PenaltyNameAr" />
+              <Mapping SourceColumn="BonusNameAr" DataSetColumn="BonusNameAr" />
+              <Mapping SourceColumn="PenalityByDay" DataSetColumn="PenalityByDay" />
+              <Mapping SourceColumn="BouncByDay" DataSetColumn="BouncByDay" />
+              <Mapping SourceColumn="DelayRuleID" DataSetColumn="DelayRuleID" />
+              <Mapping SourceColumn="LatePenality" DataSetColumn="LatePenality" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByEmpID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByEmpID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        HR_Tra_EmpAttendanceView.EmployeeAttendanceID, HR_Tra_EmpAttendanceView.EmpID, HR_Tra_EmpAttendanceView.EmpNameAR, HR_Tra_EmpAttendanceView.EmployeeFPNo, 
+                         HR_Tra_EmpAttendanceView.AttendanceDate, HR_Tra_EmpAttendanceView.ExpectedFrom, HR_Tra_EmpAttendanceView.ActualFrom, HR_Tra_EmpAttendanceView.CInDiff,
+                             (SELECT        FirstPenalty
+                               FROM            HR_Rul_DelayRulesDetails
+                               WHERE        (FromMinute &lt;= HR_Tra_EmpAttendanceView.CInDiff) AND (ToMinute &gt;= HR_Tra_EmpAttendanceView.CInDiff) AND (DelayRuleID = HR_Tra_EmpAttendanceView.DelayRuleID)) AS LatePenality, 
+                         HR_Tra_EmpAttendanceView.ExpectedTo, HR_Tra_EmpAttendanceView.ActualTo, HR_Tra_EmpAttendanceView.COutDiff, HR_Tra_EmpAttendanceView.InMission, HR_Tra_EmpAttendanceView.MissionID, 
+                         HR_Tra_EmpAttendanceView.leavePermission, HR_Tra_EmpAttendanceView.PermissionID, HR_Tra_EmpAttendanceView.InVacation, HR_Tra_EmpAttendanceView.VacationtypeID, 
+                         HR_Tra_LeavePermissions.HourCount, HR_Lup_VacationTypes.VacationNameAr, CONVERT(Int, HR_Tra_EmpAttendanceView.PenalityByDay) AS PenalityByDay, CONVERT(Decimal(8, 2), 
+                         HR_Tra_EmpAttendanceView.PenalityByValue) AS PenalityByValue, CONVERT(Int, HR_Tra_EmpAttendanceView.BouncByDay) AS BouncByDay, CONVERT(Decimal(8, 2), 
+                         HR_Tra_EmpAttendanceView.BounceByValue) AS BounceByValue, HR_Tra_EmpAttendanceView.PenaltyNameAr, HR_Tra_EmpAttendanceView.BonusNameAr
+FROM            HR_Tra_EmpAttendanceView LEFT OUTER JOIN
+                         HR_Lup_VacationTypes ON HR_Tra_EmpAttendanceView.VacationtypeID = HR_Lup_VacationTypes.VacationtypeID LEFT OUTER JOIN
+                         HR_Tra_LeavePermissions ON HR_Tra_EmpAttendanceView.PermissionID = HR_Tra_LeavePermissions.EmployeeLeavePermissionID
+WHERE        (HR_Tra_EmpAttendanceView.EmpID = @EmpID) AND (HR_Tra_EmpAttendanceView.AttendanceDate BETWEEN @StartDate AND @EndDate)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceView" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="StartDate" ColumnName="AttendanceDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="AttendanceDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="EndDate" ColumnName="AttendanceDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="AttendanceDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HR_Tra_EmpAttendanceTotalsViewTableAdapter" GeneratorDataComponentClassName="HR_Tra_EmpAttendanceTotalsViewTableAdapter" Name="HR_Tra_EmpAttendanceTotalsView" UserDataComponentName="HR_Tra_EmpAttendanceTotalsViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceTotalsView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmpNameAR, EmployeeFPNo, SUM(CInDiff) AS SumMorningLate, SUM(COutDiff) AS SumLeaveLate, SUM(CInDiff + COutDiff) AS TotalMin, SUM(MissionCount) AS SumMission, SUM(PermissionCount) 
+                         AS SumPermission, SUM(HourCount) AS SumHours, SUM(VacationCount) AS SumVacation
+FROM            HR_Tra_EmpAttendanceTotalsView
+GROUP BY EmpNameAR, EmployeeFPNo, EmpID, AttendanceDate</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpNameAR" DataSetColumn="EmpNameAR" />
+              <Mapping SourceColumn="EmployeeFPNo" DataSetColumn="EmployeeFPNo" />
+              <Mapping SourceColumn="SumMorningLate" DataSetColumn="SumMorningLate" />
+              <Mapping SourceColumn="SumLeaveLate" DataSetColumn="SumLeaveLate" />
+              <Mapping SourceColumn="SumMission" DataSetColumn="SumMission" />
+              <Mapping SourceColumn="SumPermission" DataSetColumn="SumPermission" />
+              <Mapping SourceColumn="SumHours" DataSetColumn="SumHours" />
+              <Mapping SourceColumn="SumVacation" DataSetColumn="SumVacation" />
+              <Mapping SourceColumn="TotalMin" DataSetColumn="TotalMin" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSCS (Settings)" DbObjectName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceTotalsView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBySingleRecord" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBySingleRecord" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBySingleRecord">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmpNameAR, EmployeeFPNo, SUM(CInDiff) AS SumMorningLate, SUM(COutDiff) AS SumLeaveLate, SUM(CInDiff + COutDiff) AS TotalMin, SUM(MissionCount) AS SumMission, SUM(PermissionCount) 
+                         AS SumPermission, SUM(HourCount) AS SumHours, SUM(VacationCount) AS SumVacation
+FROM            HR_Tra_EmpAttendanceTotalsView
+WHERE        (EmpID = @EmpID) AND (AttendanceDate BETWEEN @StartDate AND @EndDate)
+GROUP BY EmpNameAR, EmployeeFPNo</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="EmpID" ColumnName="EmpID" DataSourceName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceTotalsView" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@EmpID" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="StartDate" ColumnName="AttendanceDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceTotalsView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@StartDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="AttendanceDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="EndDate" ColumnName="AttendanceDate" DataSourceName="TMS_DataCollection.dbo.HR_Tra_EmpAttendanceTotalsView" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@EndDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="AttendanceDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TraDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TraDataSet" msprop:Generator_UserDSName="TraDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Grid_Tra_Vacations" msprop:Generator_TableClassName="Grid_Tra_VacationsDataTable" msprop:Generator_TableVarName="tableGrid_Tra_Vacations" msprop:Generator_RowChangedName="Grid_Tra_VacationsRowChanged" msprop:Generator_TablePropName="Grid_Tra_Vacations" msprop:Generator_RowDeletingName="Grid_Tra_VacationsRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_VacationsRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_VacationsRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_VacationsRowDeleted" msprop:Generator_RowClassName="Grid_Tra_VacationsRow" msprop:Generator_UserTableName="Grid_Tra_Vacations" msprop:Generator_RowEvArgName="Grid_Tra_VacationsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeVacationID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeVacationID" msprop:Generator_ColumnPropNameInRow="EmployeeVacationID" msprop:Generator_ColumnPropNameInTable="EmployeeVacationIDColumn" msprop:Generator_UserColumnName="EmployeeVacationID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="VacationTypeID" msprop:Generator_ColumnVarNameInTable="columnVacationTypeID" msprop:Generator_ColumnPropNameInRow="VacationTypeID" msprop:Generator_ColumnPropNameInTable="VacationTypeIDColumn" msprop:Generator_UserColumnName="VacationTypeID" type="xs:unsignedByte" />
+              <xs:element name="VacationFromDate" msprop:Generator_ColumnVarNameInTable="columnVacationFromDate" msprop:Generator_ColumnPropNameInRow="VacationFromDate" msprop:Generator_ColumnPropNameInTable="VacationFromDateColumn" msprop:Generator_UserColumnName="VacationFromDate" type="xs:dateTime" />
+              <xs:element name="VacationToDate" msprop:Generator_ColumnVarNameInTable="columnVacationToDate" msprop:Generator_ColumnPropNameInRow="VacationToDate" msprop:Generator_ColumnPropNameInTable="VacationToDateColumn" msprop:Generator_UserColumnName="VacationToDate" type="xs:dateTime" />
+              <xs:element name="VacationLength" msprop:Generator_ColumnVarNameInTable="columnVacationLength" msprop:Generator_ColumnPropNameInRow="VacationLength" msprop:Generator_ColumnPropNameInTable="VacationLengthColumn" msprop:Generator_UserColumnName="VacationLength" type="xs:short" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsApproved" msprop:Generator_ColumnVarNameInTable="columnIsApproved" msprop:Generator_ColumnPropNameInRow="IsApproved" msprop:Generator_ColumnPropNameInTable="IsApprovedColumn" msprop:Generator_UserColumnName="IsApproved" type="xs:boolean" />
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+              <xs:element name="VacationNameAr" msprop:Generator_ColumnVarNameInTable="columnVacationNameAr" msprop:Generator_ColumnPropNameInRow="VacationNameAr" msprop:Generator_ColumnPropNameInTable="VacationNameArColumn" msprop:Generator_UserColumnName="VacationNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_Tra_Penalty" msprop:Generator_TableClassName="Grid_Tra_PenaltyDataTable" msprop:Generator_TableVarName="tableGrid_Tra_Penalty" msprop:Generator_RowChangedName="Grid_Tra_PenaltyRowChanged" msprop:Generator_TablePropName="Grid_Tra_Penalty" msprop:Generator_RowDeletingName="Grid_Tra_PenaltyRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_PenaltyRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_PenaltyRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_PenaltyRowDeleted" msprop:Generator_RowClassName="Grid_Tra_PenaltyRow" msprop:Generator_UserTableName="Grid_Tra_Penalty" msprop:Generator_RowEvArgName="Grid_Tra_PenaltyRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeePenaltyID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeePenaltyID" msprop:Generator_ColumnPropNameInRow="EmployeePenaltyID" msprop:Generator_ColumnPropNameInTable="EmployeePenaltyIDColumn" msprop:Generator_UserColumnName="EmployeePenaltyID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="TraDate" msprop:Generator_ColumnVarNameInTable="columnTraDate" msprop:Generator_ColumnPropNameInRow="TraDate" msprop:Generator_ColumnPropNameInTable="TraDateColumn" msprop:Generator_UserColumnName="TraDate" type="xs:dateTime" />
+              <xs:element name="PenaltyNameID" msprop:Generator_ColumnVarNameInTable="columnPenaltyNameID" msprop:Generator_ColumnPropNameInRow="PenaltyNameID" msprop:Generator_ColumnPropNameInTable="PenaltyNameIDColumn" msprop:Generator_UserColumnName="PenaltyNameID" type="xs:unsignedByte" />
+              <xs:element name="PenaltyNameAr" msprop:Generator_ColumnVarNameInTable="columnPenaltyNameAr" msprop:Generator_ColumnPropNameInRow="PenaltyNameAr" msprop:Generator_ColumnPropNameInTable="PenaltyNameArColumn" msprop:Generator_UserColumnName="PenaltyNameAr">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ByDay" msprop:Generator_ColumnVarNameInTable="columnByDay" msprop:Generator_ColumnPropNameInRow="ByDay" msprop:Generator_ColumnPropNameInTable="ByDayColumn" msprop:Generator_UserColumnName="ByDay" type="xs:decimal" />
+              <xs:element name="ByAmount" msprop:Generator_ColumnVarNameInTable="columnByAmount" msprop:Generator_ColumnPropNameInRow="ByAmount" msprop:Generator_ColumnPropNameInTable="ByAmountColumn" msprop:Generator_UserColumnName="ByAmount" type="xs:decimal" />
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Tra_Missions" msprop:Generator_TableClassName="HR_Tra_MissionsDataTable" msprop:Generator_TableVarName="tableHR_Tra_Missions" msprop:Generator_RowChangedName="HR_Tra_MissionsRowChanged" msprop:Generator_TablePropName="HR_Tra_Missions" msprop:Generator_RowDeletingName="HR_Tra_MissionsRowDeleting" msprop:Generator_RowChangingName="HR_Tra_MissionsRowChanging" msprop:Generator_RowEvHandlerName="HR_Tra_MissionsRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Tra_MissionsRowDeleted" msprop:Generator_RowClassName="HR_Tra_MissionsRow" msprop:Generator_UserTableName="HR_Tra_Missions" msprop:Generator_RowEvArgName="HR_Tra_MissionsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeMissionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeMissionID" msprop:Generator_ColumnPropNameInRow="EmployeeMissionID" msprop:Generator_ColumnPropNameInTable="EmployeeMissionIDColumn" msprop:Generator_UserColumnName="EmployeeMissionID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="FromDate" msprop:Generator_ColumnVarNameInTable="columnFromDate" msprop:Generator_ColumnPropNameInRow="FromDate" msprop:Generator_ColumnPropNameInTable="FromDateColumn" msprop:Generator_UserColumnName="FromDate" type="xs:dateTime" />
+              <xs:element name="ToDate" msprop:Generator_ColumnVarNameInTable="columnToDate" msprop:Generator_ColumnPropNameInRow="ToDate" msprop:Generator_ColumnPropNameInTable="ToDateColumn" msprop:Generator_UserColumnName="ToDate" type="xs:dateTime" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_LeavePermission" msprop:Generator_TableClassName="Grid_LeavePermissionDataTable" msprop:Generator_TableVarName="tableGrid_LeavePermission" msprop:Generator_RowChangedName="Grid_LeavePermissionRowChanged" msprop:Generator_TablePropName="Grid_LeavePermission" msprop:Generator_RowDeletingName="Grid_LeavePermissionRowDeleting" msprop:Generator_RowChangingName="Grid_LeavePermissionRowChanging" msprop:Generator_RowEvHandlerName="Grid_LeavePermissionRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_LeavePermissionRowDeleted" msprop:Generator_RowClassName="Grid_LeavePermissionRow" msprop:Generator_UserTableName="Grid_LeavePermission" msprop:Generator_RowEvArgName="Grid_LeavePermissionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeLeavePermissionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeLeavePermissionID" msprop:Generator_ColumnPropNameInRow="EmployeeLeavePermissionID" msprop:Generator_ColumnPropNameInTable="EmployeeLeavePermissionIDColumn" msprop:Generator_UserColumnName="EmployeeLeavePermissionID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="FromTime" msprop:Generator_ColumnVarNameInTable="columnFromTime" msprop:Generator_ColumnPropNameInRow="FromTime" msprop:Generator_ColumnPropNameInTable="FromTimeColumn" msprop:Generator_UserColumnName="FromTime" type="xs:duration" minOccurs="0" />
+              <xs:element name="ToTime" msprop:Generator_ColumnVarNameInTable="columnToTime" msprop:Generator_ColumnPropNameInRow="ToTime" msprop:Generator_ColumnPropNameInTable="ToTimeColumn" msprop:Generator_UserColumnName="ToTime" type="xs:duration" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="HourCount" msprop:Generator_ColumnVarNameInTable="columnHourCount" msprop:Generator_ColumnPropNameInRow="HourCount" msprop:Generator_ColumnPropNameInTable="HourCountColumn" msprop:Generator_UserColumnName="HourCount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PermissionType" msprop:Generator_ColumnVarNameInTable="columnPermissionType" msprop:Generator_ColumnPropNameInRow="PermissionType" msprop:Generator_ColumnPropNameInTable="PermissionTypeColumn" msprop:Generator_UserColumnName="PermissionType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PermissionTypeIndex" msprop:Generator_ColumnVarNameInTable="columnPermissionTypeIndex" msprop:Generator_ColumnPropNameInRow="PermissionTypeIndex" msprop:Generator_ColumnPropNameInTable="PermissionTypeIndexColumn" msprop:Generator_UserColumnName="PermissionTypeIndex" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="EmpNameAR" msprop:Generator_ColumnVarNameInTable="columnEmpNameAR" msprop:Generator_ColumnPropNameInRow="EmpNameAR" msprop:Generator_ColumnPropNameInTable="EmpNameARColumn" msprop:Generator_UserColumnName="EmpNameAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_Tra_ExtraTimes" msprop:Generator_TableClassName="Grid_Tra_ExtraTimesDataTable" msprop:Generator_TableVarName="tableGrid_Tra_ExtraTimes" msprop:Generator_RowChangedName="Grid_Tra_ExtraTimesRowChanged" msprop:Generator_TablePropName="Grid_Tra_ExtraTimes" msprop:Generator_RowDeletingName="Grid_Tra_ExtraTimesRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_ExtraTimesRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_ExtraTimesRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_ExtraTimesRowDeleted" msprop:Generator_RowClassName="Grid_Tra_ExtraTimesRow" msprop:Generator_UserTableName="Grid_Tra_ExtraTimes" msprop:Generator_RowEvArgName="Grid_Tra_ExtraTimesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeExtraTimeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeExtraTimeID" msprop:Generator_ColumnPropNameInRow="EmployeeExtraTimeID" msprop:Generator_ColumnPropNameInTable="EmployeeExtraTimeIDColumn" msprop:Generator_UserColumnName="EmployeeExtraTimeID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="Period" msprop:Generator_ColumnVarNameInTable="columnPeriod" msprop:Generator_ColumnPropNameInRow="Period" msprop:Generator_ColumnPropNameInTable="PeriodColumn" msprop:Generator_UserColumnName="Period" type="xs:dateTime" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DirectManagerID" msprop:Generator_ColumnVarNameInTable="columnDirectManagerID" msprop:Generator_ColumnPropNameInRow="DirectManagerID" msprop:Generator_ColumnPropNameInTable="DirectManagerIDColumn" msprop:Generator_UserColumnName="DirectManagerID" type="xs:short" />
+              <xs:element name="Approved" msprop:Generator_ColumnVarNameInTable="columnApproved" msprop:Generator_ColumnPropNameInRow="Approved" msprop:Generator_ColumnPropNameInTable="ApprovedColumn" msprop:Generator_UserColumnName="Approved" type="xs:boolean" />
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_Tra_Deductions" msprop:Generator_TableClassName="Grid_Tra_DeductionsDataTable" msprop:Generator_TableVarName="tableGrid_Tra_Deductions" msprop:Generator_RowChangedName="Grid_Tra_DeductionsRowChanged" msprop:Generator_TablePropName="Grid_Tra_Deductions" msprop:Generator_RowDeletingName="Grid_Tra_DeductionsRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_DeductionsRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_DeductionsRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_DeductionsRowDeleted" msprop:Generator_RowClassName="Grid_Tra_DeductionsRow" msprop:Generator_UserTableName="Grid_Tra_Deductions" msprop:Generator_RowEvArgName="Grid_Tra_DeductionsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeDeductionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeDeductionID" msprop:Generator_ColumnPropNameInRow="EmployeeDeductionID" msprop:Generator_ColumnPropNameInTable="EmployeeDeductionIDColumn" msprop:Generator_UserColumnName="EmployeeDeductionID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="DeductionID" msprop:Generator_ColumnVarNameInTable="columnDeductionID" msprop:Generator_ColumnPropNameInRow="DeductionID" msprop:Generator_ColumnPropNameInTable="DeductionIDColumn" msprop:Generator_UserColumnName="DeductionID" type="xs:unsignedByte" />
+              <xs:element name="IsPercent" msprop:Generator_ColumnVarNameInTable="columnIsPercent" msprop:Generator_ColumnPropNameInRow="IsPercent" msprop:Generator_ColumnPropNameInTable="IsPercentColumn" msprop:Generator_UserColumnName="IsPercent" type="xs:boolean" />
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+              <xs:element name="DeductionNameAr" msprop:Generator_ColumnVarNameInTable="columnDeductionNameAr" msprop:Generator_ColumnPropNameInRow="DeductionNameAr" msprop:Generator_ColumnPropNameInTable="DeductionNameArColumn" msprop:Generator_UserColumnName="DeductionNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_Tra_Custody" msprop:Generator_TableClassName="Grid_Tra_CustodyDataTable" msprop:Generator_TableVarName="tableGrid_Tra_Custody" msprop:Generator_RowChangedName="Grid_Tra_CustodyRowChanged" msprop:Generator_TablePropName="Grid_Tra_Custody" msprop:Generator_RowDeletingName="Grid_Tra_CustodyRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_CustodyRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_CustodyRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_CustodyRowDeleted" msprop:Generator_RowClassName="Grid_Tra_CustodyRow" msprop:Generator_UserTableName="Grid_Tra_Custody" msprop:Generator_RowEvArgName="Grid_Tra_CustodyRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeCustodyID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeCustodyID" msprop:Generator_ColumnPropNameInRow="EmployeeCustodyID" msprop:Generator_ColumnPropNameInTable="EmployeeCustodyIDColumn" msprop:Generator_UserColumnName="EmployeeCustodyID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="CustodyID" msprop:Generator_ColumnVarNameInTable="columnCustodyID" msprop:Generator_ColumnPropNameInRow="CustodyID" msprop:Generator_ColumnPropNameInTable="CustodyIDColumn" msprop:Generator_UserColumnName="CustodyID" type="xs:unsignedByte" />
+              <xs:element name="FromDate" msprop:Generator_ColumnVarNameInTable="columnFromDate" msprop:Generator_ColumnPropNameInRow="FromDate" msprop:Generator_ColumnPropNameInTable="FromDateColumn" msprop:Generator_UserColumnName="FromDate" type="xs:dateTime" />
+              <xs:element name="ToDate" msprop:Generator_ColumnVarNameInTable="columnToDate" msprop:Generator_ColumnPropNameInRow="ToDate" msprop:Generator_ColumnPropNameInTable="ToDateColumn" msprop:Generator_UserColumnName="ToDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+              <xs:element name="CustodyNameAr" msprop:Generator_ColumnVarNameInTable="columnCustodyNameAr" msprop:Generator_ColumnPropNameInRow="CustodyNameAr" msprop:Generator_ColumnPropNameInTable="CustodyNameArColumn" msprop:Generator_UserColumnName="CustodyNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_Tra_Bonus" msprop:Generator_TableClassName="Grid_Tra_BonusDataTable" msprop:Generator_TableVarName="tableGrid_Tra_Bonus" msprop:Generator_RowChangedName="Grid_Tra_BonusRowChanged" msprop:Generator_TablePropName="Grid_Tra_Bonus" msprop:Generator_RowDeletingName="Grid_Tra_BonusRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_BonusRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_BonusRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_BonusRowDeleted" msprop:Generator_RowClassName="Grid_Tra_BonusRow" msprop:Generator_UserTableName="Grid_Tra_Bonus" msprop:Generator_RowEvArgName="Grid_Tra_BonusRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeBonusID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeBonusID" msprop:Generator_ColumnPropNameInRow="EmployeeBonusID" msprop:Generator_ColumnPropNameInTable="EmployeeBonusIDColumn" msprop:Generator_UserColumnName="EmployeeBonusID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="BonusID" msprop:Generator_ColumnVarNameInTable="columnBonusID" msprop:Generator_ColumnPropNameInRow="BonusID" msprop:Generator_ColumnPropNameInTable="BonusIDColumn" msprop:Generator_UserColumnName="BonusID" type="xs:unsignedByte" />
+              <xs:element name="ByDay" msprop:Generator_ColumnVarNameInTable="columnByDay" msprop:Generator_ColumnPropNameInRow="ByDay" msprop:Generator_ColumnPropNameInTable="ByDayColumn" msprop:Generator_UserColumnName="ByDay" type="xs:boolean" />
+              <xs:element name="ByAmount" msprop:Generator_ColumnVarNameInTable="columnByAmount" msprop:Generator_ColumnPropNameInRow="ByAmount" msprop:Generator_ColumnPropNameInTable="ByAmountColumn" msprop:Generator_UserColumnName="ByAmount" type="xs:boolean" />
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+              <xs:element name="BonusNameAr" msprop:Generator_ColumnVarNameInTable="columnBonusNameAr" msprop:Generator_ColumnPropNameInRow="BonusNameAr" msprop:Generator_ColumnPropNameInTable="BonusNameArColumn" msprop:Generator_UserColumnName="BonusNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_Tra_Attendance" msprop:Generator_TableClassName="Grid_Tra_AttendanceDataTable" msprop:Generator_TableVarName="tableGrid_Tra_Attendance" msprop:Generator_RowChangedName="Grid_Tra_AttendanceRowChanged" msprop:Generator_TablePropName="Grid_Tra_Attendance" msprop:Generator_RowDeletingName="Grid_Tra_AttendanceRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_AttendanceRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_AttendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_AttendanceRowDeleted" msprop:Generator_RowClassName="Grid_Tra_AttendanceRow" msprop:Generator_UserTableName="Grid_Tra_Attendance" msprop:Generator_RowEvArgName="Grid_Tra_AttendanceRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeAttendanceID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeAttendanceID" msprop:Generator_ColumnPropNameInRow="EmployeeAttendanceID" msprop:Generator_ColumnPropNameInTable="EmployeeAttendanceIDColumn" msprop:Generator_UserColumnName="EmployeeAttendanceID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" minOccurs="0" />
+              <xs:element name="AttendanceDate" msprop:Generator_ColumnVarNameInTable="columnAttendanceDate" msprop:Generator_ColumnPropNameInRow="AttendanceDate" msprop:Generator_ColumnPropNameInTable="AttendanceDateColumn" msprop:Generator_UserColumnName="AttendanceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExpectedFrom" msprop:Generator_ColumnVarNameInTable="columnExpectedFrom" msprop:Generator_ColumnPropNameInRow="ExpectedFrom" msprop:Generator_ColumnPropNameInTable="ExpectedFromColumn" msprop:Generator_UserColumnName="ExpectedFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExpectedTo" msprop:Generator_ColumnVarNameInTable="columnExpectedTo" msprop:Generator_ColumnPropNameInRow="ExpectedTo" msprop:Generator_ColumnPropNameInTable="ExpectedToColumn" msprop:Generator_UserColumnName="ExpectedTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActualFrom" msprop:Generator_ColumnVarNameInTable="columnActualFrom" msprop:Generator_ColumnPropNameInRow="ActualFrom" msprop:Generator_ColumnPropNameInTable="ActualFromColumn" msprop:Generator_UserColumnName="ActualFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActualTo" msprop:Generator_ColumnVarNameInTable="columnActualTo" msprop:Generator_ColumnPropNameInRow="ActualTo" msprop:Generator_ColumnPropNameInTable="ActualToColumn" msprop:Generator_UserColumnName="ActualTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="WorkDay" msprop:Generator_ColumnVarNameInTable="columnWorkDay" msprop:Generator_ColumnPropNameInRow="WorkDay" msprop:Generator_ColumnPropNameInTable="WorkDayColumn" msprop:Generator_UserColumnName="WorkDay" type="xs:boolean" />
+              <xs:element name="IsMission" msprop:Generator_ColumnVarNameInTable="columnIsMission" msprop:Generator_ColumnPropNameInRow="IsMission" msprop:Generator_ColumnPropNameInTable="IsMissionColumn" msprop:Generator_UserColumnName="IsMission" type="xs:boolean" />
+              <xs:element name="VacationtypeID" msprop:Generator_ColumnVarNameInTable="columnVacationtypeID" msprop:Generator_ColumnPropNameInRow="VacationtypeID" msprop:Generator_ColumnPropNameInTable="VacationtypeIDColumn" msprop:Generator_UserColumnName="VacationtypeID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IsWorkByHour" msprop:Generator_ColumnVarNameInTable="columnIsWorkByHour" msprop:Generator_ColumnPropNameInRow="IsWorkByHour" msprop:Generator_ColumnPropNameInTable="IsWorkByHourColumn" msprop:Generator_UserColumnName="IsWorkByHour" type="xs:boolean" />
+              <xs:element name="ShiftID" msprop:Generator_ColumnVarNameInTable="columnShiftID" msprop:Generator_ColumnPropNameInRow="ShiftID" msprop:Generator_ColumnPropNameInTable="ShiftIDColumn" msprop:Generator_UserColumnName="ShiftID" type="xs:int" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grid_Tra_Allowances" msprop:Generator_TableClassName="Grid_Tra_AllowancesDataTable" msprop:Generator_TableVarName="tableGrid_Tra_Allowances" msprop:Generator_RowChangedName="Grid_Tra_AllowancesRowChanged" msprop:Generator_TablePropName="Grid_Tra_Allowances" msprop:Generator_RowDeletingName="Grid_Tra_AllowancesRowDeleting" msprop:Generator_RowChangingName="Grid_Tra_AllowancesRowChanging" msprop:Generator_RowEvHandlerName="Grid_Tra_AllowancesRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_Tra_AllowancesRowDeleted" msprop:Generator_RowClassName="Grid_Tra_AllowancesRow" msprop:Generator_UserTableName="Grid_Tra_Allowances" msprop:Generator_RowEvArgName="Grid_Tra_AllowancesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeAllowanceID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeAllowanceID" msprop:Generator_ColumnPropNameInRow="EmployeeAllowanceID" msprop:Generator_ColumnPropNameInTable="EmployeeAllowanceIDColumn" msprop:Generator_UserColumnName="EmployeeAllowanceID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" minOccurs="0" />
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="AllowanceID" msprop:Generator_ColumnVarNameInTable="columnAllowanceID" msprop:Generator_ColumnPropNameInRow="AllowanceID" msprop:Generator_ColumnPropNameInTable="AllowanceIDColumn" msprop:Generator_UserColumnName="AllowanceID" type="xs:unsignedByte" />
+              <xs:element name="AllowanceNameAr" msprop:Generator_ColumnVarNameInTable="columnAllowanceNameAr" msprop:Generator_ColumnPropNameInRow="AllowanceNameAr" msprop:Generator_ColumnPropNameInTable="AllowanceNameArColumn" msprop:Generator_UserColumnName="AllowanceNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" />
+              <xs:element name="IsPercent" msprop:Generator_ColumnVarNameInTable="columnIsPercent" msprop:Generator_ColumnPropNameInRow="IsPercent" msprop:Generator_ColumnPropNameInTable="IsPercentColumn" msprop:Generator_UserColumnName="IsPercent" type="xs:boolean" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsDeleted" msprop:Generator_ColumnVarNameInTable="columnIsDeleted" msprop:Generator_ColumnPropNameInRow="IsDeleted" msprop:Generator_ColumnPropNameInTable="IsDeletedColumn" msprop:Generator_UserColumnName="IsDeleted" type="xs:boolean" />
+              <xs:element name="IsDeletable" msprop:Generator_ColumnVarNameInTable="columnIsDeletable" msprop:Generator_ColumnPropNameInRow="IsDeletable" msprop:Generator_ColumnPropNameInTable="IsDeletableColumn" msprop:Generator_UserColumnName="IsDeletable" type="xs:boolean" />
+              <xs:element name="RCDate" msprop:Generator_ColumnVarNameInTable="columnRCDate" msprop:Generator_ColumnPropNameInRow="RCDate" msprop:Generator_ColumnPropNameInTable="RCDateColumn" msprop:Generator_UserColumnName="RCDate" type="xs:dateTime" />
+              <xs:element name="RCBy" msprop:Generator_ColumnVarNameInTable="columnRCBy" msprop:Generator_ColumnPropNameInRow="RCBy" msprop:Generator_ColumnPropNameInTable="RCByColumn" msprop:Generator_UserColumnName="RCBy" type="xs:int" minOccurs="0" />
+              <xs:element name="LADate" msprop:Generator_ColumnVarNameInTable="columnLADate" msprop:Generator_ColumnPropNameInRow="LADate" msprop:Generator_ColumnPropNameInTable="LADateColumn" msprop:Generator_UserColumnName="LADate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LABy" msprop:Generator_ColumnVarNameInTable="columnLABy" msprop:Generator_ColumnPropNameInRow="LABy" msprop:Generator_ColumnPropNameInTable="LAByColumn" msprop:Generator_UserColumnName="LABy" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Tra_PenalityTransactionView" msprop:Generator_TableClassName="HR_Tra_PenalityTransactionViewDataTable" msprop:Generator_TableVarName="tableHR_Tra_PenalityTransactionView" msprop:Generator_TablePropName="HR_Tra_PenalityTransactionView" msprop:Generator_RowDeletingName="HR_Tra_PenalityTransactionViewRowDeleting" msprop:Generator_RowChangingName="HR_Tra_PenalityTransactionViewRowChanging" msprop:Generator_RowEvHandlerName="HR_Tra_PenalityTransactionViewRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Tra_PenalityTransactionViewRowDeleted" msprop:Generator_UserTableName="HR_Tra_PenalityTransactionView" msprop:Generator_RowChangedName="HR_Tra_PenalityTransactionViewRowChanged" msprop:Generator_RowEvArgName="HR_Tra_PenalityTransactionViewRowChangeEvent" msprop:Generator_RowClassName="HR_Tra_PenalityTransactionViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeePenaltyID" msprop:Generator_ColumnVarNameInTable="columnEmployeePenaltyID" msprop:Generator_ColumnPropNameInRow="EmployeePenaltyID" msprop:Generator_ColumnPropNameInTable="EmployeePenaltyIDColumn" msprop:Generator_UserColumnName="EmployeePenaltyID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="EmpNameAR" msprop:Generator_ColumnVarNameInTable="columnEmpNameAR" msprop:Generator_ColumnPropNameInRow="EmpNameAR" msprop:Generator_ColumnPropNameInTable="EmpNameARColumn" msprop:Generator_UserColumnName="EmpNameAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExternalID" msprop:Generator_ColumnVarNameInTable="columnExternalID" msprop:Generator_ColumnPropNameInRow="ExternalID" msprop:Generator_ColumnPropNameInTable="ExternalIDColumn" msprop:Generator_UserColumnName="ExternalID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmployeeFPNo" msprop:Generator_ColumnVarNameInTable="columnEmployeeFPNo" msprop:Generator_ColumnPropNameInRow="EmployeeFPNo" msprop:Generator_ColumnPropNameInTable="EmployeeFPNoColumn" msprop:Generator_UserColumnName="EmployeeFPNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupID" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:unsignedByte" />
+              <xs:element name="EmpGroupTitleAr" msprop:Generator_ColumnVarNameInTable="columnEmpGroupTitleAr" msprop:Generator_ColumnPropNameInRow="EmpGroupTitleAr" msprop:Generator_ColumnPropNameInTable="EmpGroupTitleArColumn" msprop:Generator_UserColumnName="EmpGroupTitleAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TraDate" msprop:Generator_ColumnVarNameInTable="columnTraDate" msprop:Generator_ColumnPropNameInRow="TraDate" msprop:Generator_ColumnPropNameInTable="TraDateColumn" msprop:Generator_UserColumnName="TraDate" type="xs:dateTime" />
+              <xs:element name="PenaltyNameID" msprop:Generator_ColumnVarNameInTable="columnPenaltyNameID" msprop:Generator_ColumnPropNameInRow="PenaltyNameID" msprop:Generator_ColumnPropNameInTable="PenaltyNameIDColumn" msprop:Generator_UserColumnName="PenaltyNameID" type="xs:unsignedByte" />
+              <xs:element name="PenaltyNameAr" msprop:Generator_ColumnVarNameInTable="columnPenaltyNameAr" msprop:Generator_ColumnPropNameInRow="PenaltyNameAr" msprop:Generator_ColumnPropNameInTable="PenaltyNameArColumn" msprop:Generator_UserColumnName="PenaltyNameAr">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ByDay" msprop:Generator_ColumnVarNameInTable="columnByDay" msprop:Generator_ColumnPropNameInRow="ByDay" msprop:Generator_ColumnPropNameInTable="ByDayColumn" msprop:Generator_UserColumnName="ByDay" type="xs:boolean" />
+              <xs:element name="ByAmount" msprop:Generator_ColumnVarNameInTable="columnByAmount" msprop:Generator_ColumnPropNameInRow="ByAmount" msprop:Generator_ColumnPropNameInTable="ByAmountColumn" msprop:Generator_UserColumnName="ByAmount" type="xs:boolean" />
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BasicSalary" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBasicSalary" msprop:Generator_ColumnPropNameInRow="BasicSalary" msprop:Generator_ColumnPropNameInTable="BasicSalaryColumn" msprop:Generator_UserColumnName="BasicSalary" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NetValue" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNetValue" msprop:Generator_ColumnPropNameInRow="NetValue" msprop:Generator_ColumnPropNameInTable="NetValueColumn" msprop:Generator_UserColumnName="NetValue" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Tra_BounceTransactionView" msprop:Generator_TableClassName="HR_Tra_BounceTransactionViewDataTable" msprop:Generator_TableVarName="tableHR_Tra_BounceTransactionView" msprop:Generator_TablePropName="HR_Tra_BounceTransactionView" msprop:Generator_RowDeletingName="HR_Tra_BounceTransactionViewRowDeleting" msprop:Generator_RowChangingName="HR_Tra_BounceTransactionViewRowChanging" msprop:Generator_RowEvHandlerName="HR_Tra_BounceTransactionViewRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Tra_BounceTransactionViewRowDeleted" msprop:Generator_UserTableName="HR_Tra_BounceTransactionView" msprop:Generator_RowChangedName="HR_Tra_BounceTransactionViewRowChanged" msprop:Generator_RowEvArgName="HR_Tra_BounceTransactionViewRowChangeEvent" msprop:Generator_RowClassName="HR_Tra_BounceTransactionViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeBonusID" msprop:Generator_ColumnVarNameInTable="columnEmployeeBonusID" msprop:Generator_ColumnPropNameInRow="EmployeeBonusID" msprop:Generator_ColumnPropNameInTable="EmployeeBonusIDColumn" msprop:Generator_UserColumnName="EmployeeBonusID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" />
+              <xs:element name="EmpNameAR" msprop:Generator_ColumnVarNameInTable="columnEmpNameAR" msprop:Generator_ColumnPropNameInRow="EmpNameAR" msprop:Generator_ColumnPropNameInTable="EmpNameARColumn" msprop:Generator_UserColumnName="EmpNameAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExternalID" msprop:Generator_ColumnVarNameInTable="columnExternalID" msprop:Generator_ColumnPropNameInRow="ExternalID" msprop:Generator_ColumnPropNameInTable="ExternalIDColumn" msprop:Generator_UserColumnName="ExternalID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmployeeFPNo" msprop:Generator_ColumnVarNameInTable="columnEmployeeFPNo" msprop:Generator_ColumnPropNameInRow="EmployeeFPNo" msprop:Generator_ColumnPropNameInTable="EmployeeFPNoColumn" msprop:Generator_UserColumnName="EmployeeFPNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupID" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:unsignedByte" />
+              <xs:element name="EmpGroupTitleAr" msprop:Generator_ColumnVarNameInTable="columnEmpGroupTitleAr" msprop:Generator_ColumnPropNameInRow="EmpGroupTitleAr" msprop:Generator_ColumnPropNameInTable="EmpGroupTitleArColumn" msprop:Generator_UserColumnName="EmpGroupTitleAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tra_Date" msprop:Generator_ColumnVarNameInTable="columnTra_Date" msprop:Generator_ColumnPropNameInRow="Tra_Date" msprop:Generator_ColumnPropNameInTable="Tra_DateColumn" msprop:Generator_UserColumnName="Tra_Date" type="xs:dateTime" />
+              <xs:element name="BonusID" msprop:Generator_ColumnVarNameInTable="columnBonusID" msprop:Generator_ColumnPropNameInRow="BonusID" msprop:Generator_ColumnPropNameInTable="BonusIDColumn" msprop:Generator_UserColumnName="BonusID" type="xs:unsignedByte" />
+              <xs:element name="BonusNameAr" msprop:Generator_ColumnVarNameInTable="columnBonusNameAr" msprop:Generator_ColumnPropNameInRow="BonusNameAr" msprop:Generator_ColumnPropNameInTable="BonusNameArColumn" msprop:Generator_UserColumnName="BonusNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ByDay" msprop:Generator_ColumnVarNameInTable="columnByDay" msprop:Generator_ColumnPropNameInRow="ByDay" msprop:Generator_ColumnPropNameInTable="ByDayColumn" msprop:Generator_UserColumnName="ByDay" type="xs:boolean" />
+              <xs:element name="ByAmount" msprop:Generator_ColumnVarNameInTable="columnByAmount" msprop:Generator_ColumnPropNameInRow="ByAmount" msprop:Generator_ColumnPropNameInTable="ByAmountColumn" msprop:Generator_UserColumnName="ByAmount" type="xs:boolean" />
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:decimal" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BasicSalary" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBasicSalary" msprop:Generator_ColumnPropNameInRow="BasicSalary" msprop:Generator_ColumnPropNameInTable="BasicSalaryColumn" msprop:Generator_UserColumnName="BasicSalary" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NetValue" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNetValue" msprop:Generator_ColumnPropNameInRow="NetValue" msprop:Generator_ColumnPropNameInTable="NetValueColumn" msprop:Generator_UserColumnName="NetValue" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Lup_WorkingTimes" msprop:Generator_TableClassName="HR_Lup_WorkingTimesDataTable" msprop:Generator_TableVarName="tableHR_Lup_WorkingTimes" msprop:Generator_RowChangedName="HR_Lup_WorkingTimesRowChanged" msprop:Generator_TablePropName="HR_Lup_WorkingTimes" msprop:Generator_RowDeletingName="HR_Lup_WorkingTimesRowDeleting" msprop:Generator_RowChangingName="HR_Lup_WorkingTimesRowChanging" msprop:Generator_RowEvHandlerName="HR_Lup_WorkingTimesRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Lup_WorkingTimesRowDeleted" msprop:Generator_RowClassName="HR_Lup_WorkingTimesRow" msprop:Generator_UserTableName="HR_Lup_WorkingTimes" msprop:Generator_RowEvArgName="HR_Lup_WorkingTimesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WorkingTimeID" msprop:Generator_ColumnVarNameInTable="columnWorkingTimeID" msprop:Generator_ColumnPropNameInRow="WorkingTimeID" msprop:Generator_ColumnPropNameInTable="WorkingTimeIDColumn" msprop:Generator_UserColumnName="WorkingTimeID" type="xs:unsignedByte" />
+              <xs:element name="WorkingTimeTitle" msprop:Generator_ColumnVarNameInTable="columnWorkingTimeTitle" msprop:Generator_ColumnPropNameInRow="WorkingTimeTitle" msprop:Generator_ColumnPropNameInTable="WorkingTimeTitleColumn" msprop:Generator_UserColumnName="WorkingTimeTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartTime" msprop:Generator_ColumnVarNameInTable="columnStartTime" msprop:Generator_ColumnPropNameInRow="StartTime" msprop:Generator_ColumnPropNameInTable="StartTimeColumn" msprop:Generator_UserColumnName="StartTime" type="xs:duration" minOccurs="0" />
+              <xs:element name="EndTime" msprop:Generator_ColumnVarNameInTable="columnEndTime" msprop:Generator_ColumnPropNameInRow="EndTime" msprop:Generator_ColumnPropNameInTable="EndTimeColumn" msprop:Generator_UserColumnName="EndTime" type="xs:duration" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Lup_WorkingTimesCombo" msprop:Generator_TableClassName="HR_Lup_WorkingTimesComboDataTable" msprop:Generator_TableVarName="tableHR_Lup_WorkingTimesCombo" msprop:Generator_RowChangedName="HR_Lup_WorkingTimesComboRowChanged" msprop:Generator_TablePropName="HR_Lup_WorkingTimesCombo" msprop:Generator_RowDeletingName="HR_Lup_WorkingTimesComboRowDeleting" msprop:Generator_RowChangingName="HR_Lup_WorkingTimesComboRowChanging" msprop:Generator_RowEvHandlerName="HR_Lup_WorkingTimesComboRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Lup_WorkingTimesComboRowDeleted" msprop:Generator_RowClassName="HR_Lup_WorkingTimesComboRow" msprop:Generator_UserTableName="HR_Lup_WorkingTimesCombo" msprop:Generator_RowEvArgName="HR_Lup_WorkingTimesComboRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WorkingTimeTitle" msprop:Generator_ColumnVarNameInTable="columnWorkingTimeTitle" msprop:Generator_ColumnPropNameInRow="WorkingTimeTitle" msprop:Generator_ColumnPropNameInTable="WorkingTimeTitleColumn" msprop:Generator_UserColumnName="WorkingTimeTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkingTimeID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWorkingTimeID" msprop:Generator_ColumnPropNameInRow="WorkingTimeID" msprop:Generator_ColumnPropNameInTable="WorkingTimeIDColumn" msprop:Generator_UserColumnName="WorkingTimeID" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Tra_EmpAttendanceView" msprop:Generator_TableClassName="HR_Tra_EmpAttendanceViewDataTable" msprop:Generator_TableVarName="tableHR_Tra_EmpAttendanceView" msprop:Generator_TablePropName="HR_Tra_EmpAttendanceView" msprop:Generator_RowDeletingName="HR_Tra_EmpAttendanceViewRowDeleting" msprop:Generator_RowChangingName="HR_Tra_EmpAttendanceViewRowChanging" msprop:Generator_RowEvHandlerName="HR_Tra_EmpAttendanceViewRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Tra_EmpAttendanceViewRowDeleted" msprop:Generator_UserTableName="HR_Tra_EmpAttendanceView" msprop:Generator_RowChangedName="HR_Tra_EmpAttendanceViewRowChanged" msprop:Generator_RowEvArgName="HR_Tra_EmpAttendanceViewRowChangeEvent" msprop:Generator_RowClassName="HR_Tra_EmpAttendanceViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeAttendanceID" msprop:Generator_ColumnVarNameInTable="columnEmployeeAttendanceID" msprop:Generator_ColumnPropNameInRow="EmployeeAttendanceID" msprop:Generator_ColumnPropNameInTable="EmployeeAttendanceIDColumn" msprop:Generator_UserColumnName="EmployeeAttendanceID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:short" minOccurs="0" />
+              <xs:element name="EmpNameAR" msprop:Generator_ColumnVarNameInTable="columnEmpNameAR" msprop:Generator_ColumnPropNameInRow="EmpNameAR" msprop:Generator_ColumnPropNameInTable="EmpNameARColumn" msprop:Generator_UserColumnName="EmpNameAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmployeeFPNo" msprop:Generator_ColumnVarNameInTable="columnEmployeeFPNo" msprop:Generator_ColumnPropNameInRow="EmployeeFPNo" msprop:Generator_ColumnPropNameInTable="EmployeeFPNoColumn" msprop:Generator_UserColumnName="EmployeeFPNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AttendanceDate" msprop:Generator_ColumnVarNameInTable="columnAttendanceDate" msprop:Generator_ColumnPropNameInRow="AttendanceDate" msprop:Generator_ColumnPropNameInTable="AttendanceDateColumn" msprop:Generator_UserColumnName="AttendanceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExpectedFrom" msprop:Generator_ColumnVarNameInTable="columnExpectedFrom" msprop:Generator_ColumnPropNameInRow="ExpectedFrom" msprop:Generator_ColumnPropNameInTable="ExpectedFromColumn" msprop:Generator_UserColumnName="ExpectedFrom" type="xs:duration" minOccurs="0" />
+              <xs:element name="ActualFrom" msprop:Generator_ColumnVarNameInTable="columnActualFrom" msprop:Generator_ColumnPropNameInRow="ActualFrom" msprop:Generator_ColumnPropNameInTable="ActualFromColumn" msprop:Generator_UserColumnName="ActualFrom" type="xs:duration" minOccurs="0" />
+              <xs:element name="CInDiff" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCInDiff" msprop:Generator_ColumnPropNameInRow="CInDiff" msprop:Generator_ColumnPropNameInTable="CInDiffColumn" msprop:Generator_UserColumnName="CInDiff" type="xs:int" minOccurs="0" />
+              <xs:element name="ExpectedTo" msprop:Generator_ColumnVarNameInTable="columnExpectedTo" msprop:Generator_ColumnPropNameInRow="ExpectedTo" msprop:Generator_ColumnPropNameInTable="ExpectedToColumn" msprop:Generator_UserColumnName="ExpectedTo" type="xs:duration" minOccurs="0" />
+              <xs:element name="ActualTo" msprop:Generator_ColumnVarNameInTable="columnActualTo" msprop:Generator_ColumnPropNameInRow="ActualTo" msprop:Generator_ColumnPropNameInTable="ActualToColumn" msprop:Generator_UserColumnName="ActualTo" type="xs:duration" minOccurs="0" />
+              <xs:element name="COutDiff" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOutDiff" msprop:Generator_ColumnPropNameInRow="COutDiff" msprop:Generator_ColumnPropNameInTable="COutDiffColumn" msprop:Generator_UserColumnName="COutDiff" type="xs:int" minOccurs="0" />
+              <xs:element name="InMission" msprop:Generator_ColumnVarNameInTable="columnInMission" msprop:Generator_ColumnPropNameInRow="InMission" msprop:Generator_ColumnPropNameInTable="InMissionColumn" msprop:Generator_UserColumnName="InMission" type="xs:boolean" />
+              <xs:element name="MissionID" msprop:Generator_ColumnVarNameInTable="columnMissionID" msprop:Generator_ColumnPropNameInRow="MissionID" msprop:Generator_ColumnPropNameInTable="MissionIDColumn" msprop:Generator_UserColumnName="MissionID" type="xs:int" minOccurs="0" />
+              <xs:element name="leavePermission" msprop:Generator_ColumnVarNameInTable="columnleavePermission" msprop:Generator_ColumnPropNameInRow="leavePermission" msprop:Generator_ColumnPropNameInTable="leavePermissionColumn" msprop:Generator_UserColumnName="leavePermission" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PermissionID" msprop:Generator_ColumnVarNameInTable="columnPermissionID" msprop:Generator_ColumnPropNameInRow="PermissionID" msprop:Generator_ColumnPropNameInTable="PermissionIDColumn" msprop:Generator_UserColumnName="PermissionID" type="xs:int" minOccurs="0" />
+              <xs:element name="InVacation" msprop:Generator_ColumnVarNameInTable="columnInVacation" msprop:Generator_ColumnPropNameInRow="InVacation" msprop:Generator_ColumnPropNameInTable="InVacationColumn" msprop:Generator_UserColumnName="InVacation" type="xs:boolean" />
+              <xs:element name="VacationtypeID" msprop:Generator_ColumnVarNameInTable="columnVacationtypeID" msprop:Generator_ColumnPropNameInRow="VacationtypeID" msprop:Generator_ColumnPropNameInTable="VacationtypeIDColumn" msprop:Generator_UserColumnName="VacationtypeID" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="HourCount" msprop:Generator_ColumnVarNameInTable="columnHourCount" msprop:Generator_ColumnPropNameInRow="HourCount" msprop:Generator_ColumnPropNameInTable="HourCountColumn" msprop:Generator_UserColumnName="HourCount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VacationNameAr" msprop:Generator_ColumnVarNameInTable="columnVacationNameAr" msprop:Generator_ColumnPropNameInRow="VacationNameAr" msprop:Generator_ColumnPropNameInTable="VacationNameArColumn" msprop:Generator_UserColumnName="VacationNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PenalityByValue" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPenalityByValue" msprop:Generator_ColumnPropNameInRow="PenalityByValue" msprop:Generator_ColumnPropNameInTable="PenalityByValueColumn" msprop:Generator_UserColumnName="PenalityByValue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BounceByValue" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBounceByValue" msprop:Generator_ColumnPropNameInRow="BounceByValue" msprop:Generator_ColumnPropNameInTable="BounceByValueColumn" msprop:Generator_UserColumnName="BounceByValue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PenaltyNameAr" msprop:Generator_ColumnVarNameInTable="columnPenaltyNameAr" msprop:Generator_ColumnPropNameInRow="PenaltyNameAr" msprop:Generator_ColumnPropNameInTable="PenaltyNameArColumn" msprop:Generator_UserColumnName="PenaltyNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BonusNameAr" msprop:Generator_ColumnVarNameInTable="columnBonusNameAr" msprop:Generator_ColumnPropNameInRow="BonusNameAr" msprop:Generator_ColumnPropNameInTable="BonusNameArColumn" msprop:Generator_UserColumnName="BonusNameAr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PenalityByDay" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPenalityByDay" msprop:Generator_ColumnPropNameInRow="PenalityByDay" msprop:Generator_ColumnPropNameInTable="PenalityByDayColumn" msprop:Generator_UserColumnName="PenalityByDay" type="xs:int" minOccurs="0" />
+              <xs:element name="BouncByDay" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBouncByDay" msprop:Generator_ColumnPropNameInRow="BouncByDay" msprop:Generator_ColumnPropNameInTable="BouncByDayColumn" msprop:Generator_UserColumnName="BouncByDay" type="xs:int" minOccurs="0" />
+              <xs:element name="DelayRuleID" msprop:Generator_ColumnVarNameInTable="columnDelayRuleID" msprop:Generator_ColumnPropNameInRow="DelayRuleID" msprop:Generator_ColumnPropNameInTable="DelayRuleIDColumn" msprop:Generator_UserColumnName="DelayRuleID" type="xs:int" minOccurs="0" />
+              <xs:element name="LatePenality" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLatePenality" msprop:Generator_ColumnPropNameInRow="LatePenality" msprop:Generator_ColumnPropNameInTable="LatePenalityColumn" msprop:Generator_UserColumnName="LatePenality" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HR_Tra_EmpAttendanceTotalsView" msprop:Generator_TableClassName="HR_Tra_EmpAttendanceTotalsViewDataTable" msprop:Generator_TableVarName="tableHR_Tra_EmpAttendanceTotalsView" msprop:Generator_RowChangedName="HR_Tra_EmpAttendanceTotalsViewRowChanged" msprop:Generator_TablePropName="HR_Tra_EmpAttendanceTotalsView" msprop:Generator_RowDeletingName="HR_Tra_EmpAttendanceTotalsViewRowDeleting" msprop:Generator_RowChangingName="HR_Tra_EmpAttendanceTotalsViewRowChanging" msprop:Generator_RowEvHandlerName="HR_Tra_EmpAttendanceTotalsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="HR_Tra_EmpAttendanceTotalsViewRowDeleted" msprop:Generator_RowClassName="HR_Tra_EmpAttendanceTotalsViewRow" msprop:Generator_UserTableName="HR_Tra_EmpAttendanceTotalsView" msprop:Generator_RowEvArgName="HR_Tra_EmpAttendanceTotalsViewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpNameAR" msprop:Generator_ColumnVarNameInTable="columnEmpNameAR" msprop:Generator_ColumnPropNameInRow="EmpNameAR" msprop:Generator_ColumnPropNameInTable="EmpNameARColumn" msprop:Generator_UserColumnName="EmpNameAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmployeeFPNo" msprop:Generator_ColumnVarNameInTable="columnEmployeeFPNo" msprop:Generator_ColumnPropNameInRow="EmployeeFPNo" msprop:Generator_ColumnPropNameInTable="EmployeeFPNoColumn" msprop:Generator_UserColumnName="EmployeeFPNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SumMorningLate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumMorningLate" msprop:Generator_ColumnPropNameInRow="SumMorningLate" msprop:Generator_ColumnPropNameInTable="SumMorningLateColumn" msprop:Generator_UserColumnName="SumMorningLate" type="xs:int" minOccurs="0" />
+              <xs:element name="SumLeaveLate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumLeaveLate" msprop:Generator_ColumnPropNameInRow="SumLeaveLate" msprop:Generator_ColumnPropNameInTable="SumLeaveLateColumn" msprop:Generator_UserColumnName="SumLeaveLate" type="xs:int" minOccurs="0" />
+              <xs:element name="SumMission" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumMission" msprop:Generator_ColumnPropNameInRow="SumMission" msprop:Generator_ColumnPropNameInTable="SumMissionColumn" msprop:Generator_UserColumnName="SumMission" type="xs:int" minOccurs="0" />
+              <xs:element name="SumPermission" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumPermission" msprop:Generator_ColumnPropNameInRow="SumPermission" msprop:Generator_ColumnPropNameInTable="SumPermissionColumn" msprop:Generator_UserColumnName="SumPermission" type="xs:int" minOccurs="0" />
+              <xs:element name="SumHours" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumHours" msprop:Generator_ColumnPropNameInRow="SumHours" msprop:Generator_ColumnPropNameInTable="SumHoursColumn" msprop:Generator_UserColumnName="SumHours" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SumVacation" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumVacation" msprop:Generator_ColumnPropNameInRow="SumVacation" msprop:Generator_ColumnPropNameInTable="SumVacationColumn" msprop:Generator_UserColumnName="SumVacation" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalMin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalMin" msprop:Generator_ColumnPropNameInRow="TotalMin" msprop:Generator_ColumnPropNameInTable="TotalMinColumn" msprop:Generator_UserColumnName="TotalMin" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_Vacations" />
+      <xs:field xpath="mstns:EmployeeVacationID" />
+    </xs:unique>
+    <xs:unique name="Grid_Tra_Penalty_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_Penalty" />
+      <xs:field xpath="mstns:EmployeePenaltyID" />
+    </xs:unique>
+    <xs:unique name="HR_Tra_Missions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Tra_Missions" />
+      <xs:field xpath="mstns:EmployeeMissionID" />
+    </xs:unique>
+    <xs:unique name="Grid_LeavePermission_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_LeavePermission" />
+      <xs:field xpath="mstns:EmployeeLeavePermissionID" />
+    </xs:unique>
+    <xs:unique name="Grid_Tra_ExtraTimes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_ExtraTimes" />
+      <xs:field xpath="mstns:EmployeeExtraTimeID" />
+    </xs:unique>
+    <xs:unique name="Grid_Tra_Deductions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_Deductions" />
+      <xs:field xpath="mstns:EmployeeDeductionID" />
+    </xs:unique>
+    <xs:unique name="Grid_Tra_Custody_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_Custody" />
+      <xs:field xpath="mstns:EmployeeCustodyID" />
+    </xs:unique>
+    <xs:unique name="Grid_Tra_Bonus_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_Bonus" />
+      <xs:field xpath="mstns:EmployeeBonusID" />
+    </xs:unique>
+    <xs:unique name="Grid_Tra_Attendance_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_Attendance" />
+      <xs:field xpath="mstns:EmployeeAttendanceID" />
+    </xs:unique>
+    <xs:unique name="Grid_Tra_Allowances_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grid_Tra_Allowances" />
+      <xs:field xpath="mstns:EmployeeAllowanceID" />
+    </xs:unique>
+    <xs:unique name="HR_Tra_PenalityTransactionView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Tra_PenalityTransactionView" />
+      <xs:field xpath="mstns:EmployeePenaltyID" />
+    </xs:unique>
+    <xs:unique name="HR_Tra_BounceTransactionView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Tra_BounceTransactionView" />
+      <xs:field xpath="mstns:EmployeeBonusID" />
+    </xs:unique>
+    <xs:unique name="HR_Lup_WorkingTimes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Lup_WorkingTimes" />
+      <xs:field xpath="mstns:WorkingTimeID" />
+    </xs:unique>
+    <xs:unique name="HR_Lup_WorkingTimesCombo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Lup_WorkingTimesCombo" />
+      <xs:field xpath="mstns:WorkingTimeID" />
+    </xs:unique>
+    <xs:unique name="HR_Tra_EmpAttendanceView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HR_Tra_EmpAttendanceView" />
+      <xs:field xpath="mstns:EmployeeAttendanceID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

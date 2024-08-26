@@ -1,0 +1,229 @@
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\TMS.exe
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\TMS.exe.config
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\TMS.exe.manifest
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\TMS.application
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\ExtendedRichTextBox.dll
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\ExtendedRichTextBox.pdb
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\ExtendedRichTextBox.xml
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmAccountsCostCenterList.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmAccountListSub.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmAccountList.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmASTBasicInfo.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmASTCRUD.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmASTDepSheet.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmAutomaticRecordsSetting.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmCashListSetting.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmConfigFinCenter.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmFinCenter.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmLookUpAccount.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmRevisionBalance.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmMasterBook.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmAssMasterBook.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmJournalEntryList.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmSimpleJournalEntry.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmContractType.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmDocumentsTypes.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmEmplumentGroupMembers.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmEmplymentGroup.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmGroupPloicies.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmPositions.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmSalaryTypes.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmSocialInssuranceOffices.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmWorkingPlans.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmWorkingTimes.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmYearsMonths.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmYearsOfficialVacations.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmVacationTypes.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmAreas.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmCites.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmContactsType.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmCountries.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmDegrees.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmEduSections.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmFaculties.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmHealthInsuranceTypes.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmMilitaryService.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmNationalities.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmQualificationNames.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmQualificationsTypes.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmReligionList.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmSocialStatus.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmUniversities.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmAllowances.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmBonus.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmCustody.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmDeductions.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmPenalites.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.AdminWork.frmUsersNew.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmCreateTeam.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDailyVisitInsert.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDailyVisitShow.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDCRReportCenter.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDomainCollectorAssign.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDomainMatchRecords.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDomainsCompareVersion.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDomainsListAll.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDomainsOperationAppendPayment.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDomainsOperationImport.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmDomainsOperationNewReferal.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmOfficeMonthlyTarget.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmPaymentAnalysis.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmSchemaCreate.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Collectors.frmUpdateDomainTeam.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.frmEnhancedMDI.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.frmLogin.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmBasicInfo.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmBasicInfoEdit.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmCertificates.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmContacts.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmDocuments.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmEducation.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmEmploymentDegree.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmExtendedInfo.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmPositions.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.Emp.frmSalary.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Rul.frmDelay.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Rul.frmDelayRulesDetails.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Rul.frmExtraTime.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Rul.frmLeavePermission.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmAllowances.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmBonus.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmBonusTransaction.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmCustody.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmDeductions.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmLeavePermissions.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmLoadEmpFPTrans.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmLoadFPSheet.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmMissions.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmPenalty.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmPenaltyTransactions.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.HR.HR_Tra.frmVacation.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Personal.frmChangePassword.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Personal.frmMyInfo.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.frmSplashScreen.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppReports.AccountingRep.frmPreview.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppReports.frmPrintingPreview.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppReports.HR.frmHRRepPreview.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.AppForms.Accounting.frmASTGroups.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.Properties.Resources.resources
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.csproj.GenerateResource.Cache
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.exe.manifest
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.application
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.exe
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.pdb
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\bin\Debug\TMS.pdb
+C:\Users\M.Roshdey\Documents\Miskasoft\Projects\TMS\TMS\obj\Debug\TMS.csprojResolveAssemblyReference.cache
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\bin\Debug\TMS.exe.config
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\bin\Debug\TMS.exe.manifest
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\bin\Debug\TMS.application
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\bin\Debug\TMS.exe
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\bin\Debug\TMS.pdb
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\bin\Debug\ExtendedRichTextBox.pdb
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\bin\Debug\ExtendedRichTextBox.xml
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.csprojResolveAssemblyReference.cache
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmAccountsCostCenterList.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmAccountListSub.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmAccountList.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmASTBasicInfo.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmASTCRUD.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmASTDepSheet.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmAutomaticRecordsSetting.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmCashListSetting.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmConfigFinCenter.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmFinCenter.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmLookUpAccount.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmRevisionBalance.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmMasterBook.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmAssMasterBook.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmJournalEntryList.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmSimpleJournalEntry.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmContractType.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmDocumentsTypes.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmEmplumentGroupMembers.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmEmplymentGroup.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmGroupPloicies.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmPositions.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmSalaryTypes.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmSocialInssuranceOffices.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmWorkingPlans.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmWorkingTimes.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmYearsMonths.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmYearsOfficialVacations.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmVacationTypes.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmAreas.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmCites.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmContactsType.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmCountries.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmDegrees.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmEduSections.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmFaculties.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.HRItems.frmHealthInsuranceTypes.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmMilitaryService.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmNationalities.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmQualificationNames.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmQualificationsTypes.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmReligionList.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmSocialStatus.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.LupCombo.frmUniversities.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmAllowances.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmBonus.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmCustody.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmDeductions.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.Config.HR.Rules.frmPenalites.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.AdminWork.frmUsersNew.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmCreateTeam.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDailyVisitInsert.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDailyVisitShow.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDCRReportCenter.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDomainCollectorAssign.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDomainMatchRecords.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDomainsCompareVersion.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDomainsListAll.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDomainsOperationAppendPayment.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDomainsOperationImport.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmDomainsOperationNewReferal.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmOfficeMonthlyTarget.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmPaymentAnalysis.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmSchemaCreate.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Collectors.frmUpdateDomainTeam.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.frmEnhancedMDI.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.frmLogin.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmBasicInfo.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmBasicInfoEdit.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmCertificates.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmContacts.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmDocuments.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmEducation.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmEmploymentDegree.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmExtendedInfo.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmPositions.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.Emp.frmSalary.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Rul.frmDelay.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Rul.frmDelayRulesDetails.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Rul.frmExtraTime.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Rul.frmLeavePermission.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmAllowances.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmBonus.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmBonusTransaction.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmCustody.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmDeductions.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmLeavePermissions.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmLoadEmpFPTrans.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmLoadFPSheet.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmMissions.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmPenalty.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmPenaltyTransactions.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.HR.HR_Tra.frmVacation.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Personal.frmChangePassword.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Personal.frmMyInfo.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.frmSplashScreen.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppReports.AccountingRep.frmPreview.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppReports.frmPrintingPreview.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppReports.HR.frmHRRepPreview.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.AppForms.Accounting.frmASTGroups.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.Properties.Resources.resources
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.csproj.GenerateResource.Cache
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.exe.manifest
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.application
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.exe
+E:\Work\Premitek SVN\eiflaw\Source Code\Windows Application\obj\Debug\TMS.pdb
