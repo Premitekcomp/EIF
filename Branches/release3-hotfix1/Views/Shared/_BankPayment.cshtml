@@ -1,0 +1,220 @@
+﻿<div id="result">
+    @{
+        var totalWoAccount1 = 0;
+        var totalWOpayments1 = 0.0;
+        var totalWOpd1 = 0.0;
+        var totalWOOS1 = 0.0;
+        var totalActiveAccountsNum1 = 0;
+        var totalActivePayment1 = 0.0;
+        var totalActivePd1 = 0.0;
+        var totalActiveOs1 = 0.0;
+        var totalNumAccounts1 = 0;
+        var totalActivePayment2 = 0.0;
+        var totalActivePd2 = 0.0;
+        var totalActiveOS2 = 0.0;
+        var totalNumAccounts2 = 0;
+        var totalActivePaymet2 = 0.0;
+        var totalActivePD2 = 0.0;
+        var totalActive2 = 0.0;
+
+
+        if (ViewBag.BankReport != null)
+        {
+            List<EIF.Helper.PaymentPerBank> result1 = ViewBag.BankReport;
+            var result = result1.OrderByDescending(c => c.MonthYear).GroupBy(c => c.MonthYear);
+
+
+            foreach (var item in result)
+            {
+                totalWoAccount1 = 0;
+                totalWOpayments1 = 0.0;
+                totalWOpd1 = 0.0;
+                totalWOOS1 = 0.0;
+                totalActiveAccountsNum1 = 0;
+                totalActivePayment1 = 0.0;
+                totalActivePd1 = 0.0;
+                totalActiveOs1 = 0.0;
+                totalNumAccounts1 = 0;
+                totalActivePayment2 = 0.0;
+                totalActivePd2 = 0.0;
+                totalActiveOS2 = 0.0;
+                totalNumAccounts2 = 0;
+                totalActivePaymet2 = 0.0;
+                totalActivePD2 = 0.0;
+                totalActive2 = 0.0;
+
+                var y = int.Parse(item.Key) > 12 ? item.Key.ToString() : ((enum_Months.eMonths)int.Parse(item.Key)).ToString();
+                var results2 = item.GroupBy(c => new { c.TeamLeaderName, c.AgencyTitle }).Select(g => new
+                {
+                    teamleaderkey = g.Key.TeamLeaderName,
+                    bankKey = g.Key.AgencyTitle,
+                    teamActivePastDue = g.Sum(x => double.Parse(x.ActivePD)),
+                    teamActivePayment = g.Sum(x => double.Parse(x.ActivePayment)),
+                    teamActiveOs = g.Sum(x => double.Parse(x.ActiveOs)),
+                    teamWOPastDue = g.Sum(x => double.Parse(x.WOPD)),
+                    teamWOPayment = g.Sum(x => double.Parse(x.WOPayment)),
+                    teamWOOs = g.Sum(x => double.Parse(x.WOOs)),
+                    result = g.ToList()
+                });
+                <div style="overflow-x:scroll">
+                    <table cellpadding=" 0" border="0" class="table table-striped table-bordered  collapsed" id="tbl3_@item.Key">
+                        <thead>
+                            <tr> <th colspan="22"> <h3> @y Data</h3></th></tr>
+                            <tr>
+                                @if (ViewBag.type == 1)
+                                {
+                                    <th colspan="3"></th>}
+                                else
+                                {
+                                    <th colspan="2"></th>
+                                }
+
+                                <th colspan="4" style="text-align:center;"> W/O</th>
+                                <th colspan="4" style="text-align:center;">Active</th>
+                                <th colspan="4" style="text-align:center;">Total</th>
+                                <th colspan="2" style="text-align:center;">Active</th>
+                                <th>W/O</th>
+                                <th>Total</th>
+                                @if (ViewBag.type == 1)
+                                {
+                                    <th>Active</th>
+                                    <th>W/O</th>
+                                    <th>Total</th>
+                                }
+                            </tr>
+
+                            <tr>
+                                <th>Banks</th>
+                                @if (ViewBag.type == 1)
+                                {
+                                <th>Collectors</th>}
+                                <th> Team Leaders</th>
+
+                                <th> NUM.Acc</th>
+                                <th>Sum Of Payment </th>
+                                <th>Sum Of PD</th>
+                                <th>Sum Of OS</th>
+
+                                <th>NUM.Acc</th>
+                                <th>Sum Of Payment </th>
+                                <th>Sum Of PD</th>
+                                <th>Sum Of OS</th>
+
+                                <th>NUM.ACC</th>
+                                <th> Total Sum Of Payment </th>
+                                <th> Total Sum Of PD</th>
+                                <th> Total Sum Of OS</th>
+
+                                <th> %OS</th>
+                                <th> %PD</th>
+
+                                <th> %OS</th>
+
+                                <th> %OS</th>
+                                @if (ViewBag.type == 1)
+                                {
+                                    <th> % Active</th>
+                                    <th> % W/O</th>
+                                    <th>% Total</th>}
+
+                            </tr>
+                        </thead>
+
+                        @foreach (var item4 in results2.ToList())
+                        {
+                            foreach (var item3 in item4.result.OrderBy(c => c.AgencyTitle).OrderBy(c => c.TeamLeaderName).OrderBy(c => c.CollectorName))
+                            {
+
+                                <tr>
+                                    <td title="Banks">@item3.AgencyTitle</td>
+                                    @if (ViewBag.type == 1)
+                                    {
+                                    <td title="Collectors">@item3.CollectorName</td>}
+                                    <td title="Team Leaders">@item3.TeamLeaderName</td>
+                                    <td title="NUM.Acc">@item3.WONumberOfAccounts</td>
+                                    <td title="Sum Of Payment">@item3.WOPayment</td>
+                                    <td title="Sum Of PD">@item3.WOPD</td>
+                                    <td title="Sum Of OS">@item3.WOOs</td>
+
+                                    <td title="NUM.Acc">@item3.ActiveNumberOfAccounts</td>
+                                    <td title="Sum Of Payment">@item3.ActivePayment</td>
+                                    <td title="Sum Of PD">@item3.ActivePD</td>
+                                    <td title="Sum Of OS">@item3.ActiveOs</td>
+
+
+
+                                    <td title="NUM.ACC">@{var totalNumAccounts = item3.ActiveNumberOfAccounts + item3.WONumberOfAccounts;}@totalNumAccounts</td>
+                                    <td title="Total Sum Of Payment">@{var totalActivePayment = double.Parse(item3.ActivePayment) + double.Parse(item3.WOPayment);}@totalActivePayment</td>
+                                    <td title="Total Sum Of PD">@{var totalActivePd = double.Parse(item3.ActivePD) + double.Parse(item3.WOPD);}@totalActivePd</td>
+                                    <td title="Total Sum Of OS">@{var totalActive = double.Parse(item3.ActiveOs) + double.Parse(item3.WOOs);}@totalActive</td>
+
+
+                                    <td title="%OS">@{var activePdPercent = double.Parse(item3.ActivePayment) / double.Parse(item3.ActivePD);}@Math.Round(activePdPercent * 100, 2)%</td>
+                                    <td title="%PD">@{var activeOsPercent = double.Parse(item3.ActivePayment) / double.Parse(item3.ActiveOs);}@Math.Round(activeOsPercent * 100, 2)%</td>
+
+                                    <td title="%OS">@{ var osPercent = double.Parse(item3.WOPayment) / double.Parse(item3.WOOs);}@Math.Round(osPercent * 100, 2)%</td>
+                                    <td title="%OS">@{ var totalPercent1 = (double.Parse(item3.WOPayment) + double.Parse(item3.ActivePayment)) / (double.Parse(item3.ActiveOs) + double.Parse(item3.WOOs));}@Math.Round(totalPercent1 * 100, 2)%</td>
+                                    @if (ViewBag.type == 1)
+                                    {
+                                        <td title="% Active">@{var activePercent = double.Parse(item3.ActivePayment) / item4.teamActivePayment;}@Math.Round(activeOsPercent * 100, 2)%</td>
+                                        <td title=" % W/O">@{var paymentPercent = double.Parse(item3.WOPayment) / item4.teamWOPayment;}@Math.Round(paymentPercent * 100, 2)%</td>
+                                        <td title="% Total">@{var totalPercent = (double.Parse(item3.WOPayment) + double.Parse(item3.ActivePayment)) / (item4.teamWOPayment + item4.teamActivePayment);} @Math.Round(totalPercent * 100, 2)%</td>}
+                                    @{
+                                    totalWoAccount1 += item3.WONumberOfAccounts;
+                                    totalWOpayments1 += double.Parse(item3.WOPayment);
+                                    totalWOpd1 += double.Parse(item3.WOPD);
+                                    totalWOOS1 += double.Parse(item3.WOOs);
+
+                                    totalActiveAccountsNum1 += item3.ActiveNumberOfAccounts;
+                                    totalActivePayment1 += double.Parse(item3.ActivePayment);
+                                    totalActivePd1 += double.Parse(item3.ActivePD);
+                                    totalActiveOs1 += double.Parse(item3.ActiveOs);
+                                    totalNumAccounts1 += totalNumAccounts;
+                                    totalActivePayment2 += totalActivePayment;
+                                    totalActivePd2 += totalActivePd;
+                                    totalActive2 += totalActive;
+
+                                    }
+
+                                </tr>
+                            }
+                        }
+                        <tr>
+                            @if (ViewBag.type == 1)
+                            {
+                            <th colspan="3">Total of @y </th>}
+                            else
+                            {
+                            <th colspan="2">Total of @y </th>}
+
+                            <td title="NUM.Acc">@totalWoAccount1</td>
+                            <td title="Sum Of Payment">@totalWOpayments1</td>
+                            <td title="Sum Of PD">@totalWOpd1</td>
+                            <td title="Sum Of OS">@totalWOOS1</td>
+                            <td title="NUM.Acc">@totalActiveAccountsNum1</td>
+                            <td title="Sum Of Payment">@totalActivePayment1</td>
+                            <td title="Sum Of PD">@totalActivePd1</td>
+                            <td title="Sum Of OS">@totalActiveOs1</td>
+                            <td title="NUM.ACC">@totalNumAccounts1</td>
+                            <td title="Total Sum Of Payment">@totalActivePayment2</td>
+                            <td title="Total Sum Of PD">@totalActivePd2</td>
+                            <td title="Total Sum Of OS">@totalActive2</td>
+                            <td title="%OS">@{var total5 = totalActivePayment1 / totalActivePd1;}@Math.Round(total5 * 100, 2)%</td>
+                            <td title="%PD">@{var totalPercent7 = totalActivePayment1 / @totalActiveOs1;}@Math.Round(totalPercent7 * 100, 2)%</td>
+                            <td title="%OS">@{var totalPercent8 = totalWOpayments1 / @totalWOOS1;}@Math.Round(totalPercent8 * 100, 2)%</td>
+                            <td title="%OS">@{var total3 = (totalActivePayment1 + totalWOpayments1) / (totalWOOS1 + totalActiveOs1);}@Math.Round(total3 * 100, 2)%</td>
+                        </tr>
+                    </table>
+                </div>
+            }
+        }
+
+
+        else if (ViewBag.BankReportwarning != null)
+        {
+            <p class="text-warning"><span class="fa fa-warning text-yellow"></span> Bank Report : @ViewBag.BankReportwarning</p>
+
+        }
+    }
+</div>
+

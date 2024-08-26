@@ -1,0 +1,145 @@
+﻿<div id="result">
+    @{ var totalPaymentAmount = 0.0;
+       var totalLegalAmount = 0.0;
+       var totalUnLegaAmount=0.0;
+       ViewBag.type=1;
+       
+        if (ViewBag.LegalPayment != null)
+        {
+            List<EIF.Helper.LegalPayment> Results = ViewBag.LegalPayment;
+
+            var results2 = Results.OrderByDescending(c => c.MonthYear).GroupBy(c=>c.MonthYear);
+            foreach (var item1 in results2.ToList())
+            {
+                 
+               
+         var y = int.Parse(item1.Key) > 12 ? item1.Key.ToString() : ((enum_Months.eMonths)int.Parse(item1.Key)).ToString();
+                <table cellpadding="0" border="0" id="LegalTable_@item1.Key" class="table table-striped table-bordered">
+                            <tr ><th colspan="8"><h3> @y Data</h3></th></tr>               
+                            <tr>
+                                <th class="col-sm-1">Bank</th>
+                             @if (ViewBag.type == 1)  {<th class="col-sm-1">Branch </th>}
+                                <th class="col-sm-2"> Team Leader</th>
+                                <th class="col-sm-2">All Payment Amount</th>
+                                <th class="col-sm-1">Legal Payment Amount</th>
+                                <th class="col-sm-1">UnLegal Payment Payment Amount</th>                                
+                                <th class="col-sm-2">% Legal payment from All Payment</th>
+                                <th class="col-sm-2">% UnLegal payment from All Payment</th>
+                            </tr>
+                        <tbody>
+                            @foreach (var item in item1.ToList())
+                            {
+                            var legalPayment = (double.Parse(item.LegalPaymentAmount) / double.Parse(item.PaymentAmount))*100;
+                            var unLegalPayment = (double.Parse(item.UnLegalPayment) / double.Parse(item.PaymentAmount)) * 100;            
+                                <tr>
+                                    <td class="col-sm-1">@item.AgencyTitle</td>
+                                   @if (ViewBag.type == 1)  {<td class="col-sm-1">@item.BranchName</td>}
+                                    <td class="col-sm-2">@item.TeamLeaderName</td>
+                                    <td class="col-sm-2">@item.PaymentAmount</td> 
+                                    <td class="col-sm-1">@item.LegalPaymentAmount</td>
+                                    <td class="col-sm-1">@item.UnLegalPayment</td>
+                                    <td class="col-sm-2">@legalPayment %</td>  
+                                    <td class="col-sm-2">@unLegalPayment %</td>                                                                                                      
+                               </tr>
+                totalLegalAmount += double.Parse(item.LegalPaymentAmount);
+                totalPaymentAmount += double.Parse(item.PaymentAmount);
+                totalUnLegaAmount += double.Parse(item.UnLegalPayment);              
+                            }
+                                                                       
+                        </tbody>
+
+                </table>
+            }
+
+
+
+            <table cellpadding="0" border="0" id="TotalLegalTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+
+                        @if (ViewBag.type == 1)
+                        {
+                        <th colspan="5" class="col-sm-4"> </th>}
+                        else
+                        {
+                        <th colspan="6" class="col-sm-3"> </th>}
+                        <th class="col-sm-2">All Payment Amount</th>
+                        <th class="col-sm-1">Legal Payment Amount</th>
+                        <th class="col-sm-1">UnLegal Payment Amount</th>
+                        <th class="col-sm-2">% Legal payment from All Payment</th>
+                        <th class="col-sm-2">% UnLegal payment from All Payment</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+
+                        @if (ViewBag.type == 1)
+                        {
+                        <td colspan="5" class="col-sm-4"><h3>Total</h3> </td>}
+                        else
+                        {
+                        <td colspan="6" class="col-sm-3"><h3>Total</h3> </td>
+
+                        }
+                        <td class="col-sm-2">@totalPaymentAmount</td>
+                        <td class="col-sm-1"> @totalLegalAmount </td>
+                        <td class="col-sm-1"> @totalUnLegaAmount </td>
+                        @{ var totalLegalPayment = (totalLegalAmount / totalPaymentAmount) * 100;}
+                        @{ var totalUnLegalPayment = (totalUnLegaAmount / totalPaymentAmount) * 100;}
+                        <td class="col-sm-2">@totalLegalPayment%</td>
+                        <td class="col-sm-2">@totalUnLegalPayment%</td>
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+      
+        @*<script>
+            var data = [5, 10, 15];
+            var dataPoints = [];
+            
+            for (var i = 0; i < data.length; i++) {
+                alert(data[i])
+                dataPoints.push({
+                    label: "er" + data[i], y:
+              Number(data[i])
+                });
+            }
+                //Better to construct options first and then pass it as a parameter
+                var options = {
+                    title: {
+                        text: "Column Chart in jQuery CanvasJS"
+                    },
+
+                    data: [
+                    {
+                        // Change type to "doughnut", "line", "splineArea", etc.
+                        type: "column",
+
+
+                        dataPoints:dataPoints
+
+
+                    }
+                    ]
+
+                };
+
+                $("#chartContainer").CanvasJSChart(options);
+              
+
+</script>*@
+
+        }
+
+        else if (ViewBag.LegalPaymentWarning != null)
+        {
+            <p class="text-warning"><span class="fa fa-warning text-yellow"></span> Legal Payment Report : @ViewBag.LegalPaymentWarning</p>
+        }
+    }
+</div>
+@*<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="~/Content/assets/js/charts/jquery.canvasjs.min.js"></script>*@
+

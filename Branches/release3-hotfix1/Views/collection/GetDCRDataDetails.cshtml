@@ -1,0 +1,89 @@
+﻿
+<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">@ViewBag.DomainName DCR Details  </div>
+        <div class="panel-body">
+            <input type="hidden" id="DomainID" value="@ViewBag.DomainID" />
+            <div id="container">
+                <div class="">
+                    <div id="DCRDomainDetails" class="scrollmenu" >
+                        @{
+                            if (ViewBag.alias != null)
+                            {
+                                <table cellpadding="0" border="0" class="table table-striped table-bordered" id="DCRTable">
+                                    <thead>
+                                        <tr>
+                                            @{
+                                IEnumerable<EIF.Models.DCR_Column_Alias> alias = ViewBag.alias;
+
+                                foreach (var Col in alias)
+                                {
+                                    <th>@Col.AliasName</th>
+                                }}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                if (ViewBag.Tbl != null)
+                                {
+                                    List<Dictionary<string, object>> Model = ViewBag.Tbl;
+                                    foreach (var row in Model)
+                                    {
+                                        <tr>
+                                            @foreach (var column in row)
+                                            {
+                                                if(!string.IsNullOrEmpty(column.Key))
+                                                { 
+                                                    <td>@column.Value</td>
+                                                }
+                                            }
+                                        </tr>
+                                    }
+                                }
+                                        }
+                                    </tbody>
+                                </table>
+
+                            }
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<link href="~/Content/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/DT_bootstrap.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables-conf.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>
+<script>
+    $('#DCRTable').dataTable({
+        "pageLength": 10,
+    });
+</script>
+<style>
+    div.scrollmenu {
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+        div.scrollmenu a {
+            display: inline-block;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+    .col-sm-2 {
+        width: 100px !important;
+    }
+
+    .col-sm-3 {
+        width: 200px !important;
+    }
+</style>

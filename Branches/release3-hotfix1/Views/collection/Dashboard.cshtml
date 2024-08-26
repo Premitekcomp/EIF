@@ -1,0 +1,88 @@
+﻿@{EIF.Helper.collection.Get get = new EIF.Helper.collection.Get();}
+@{
+    bool myinfo = ViewBag.myinfo != null ? ViewBag.myinfo : false;
+    string BranchIDs = ViewBag.BranchIDs != null ? ViewBag.BranchIDs : "";
+    string BankIDs = ViewBag.BankIDs != null ? ViewBag.BankIDs : "";
+}
+ <div class="warper container-fluid">
+
+    <div class="row">
+        
+            <div class="col-md-6">
+                
+                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Contacts</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label>Bank</label>
+                                    @Html.DropDownList("AgencyID", get.AgencyList(null, null , BankIDs , myinfo) as SelectList, "Choose", new
+                                       {
+                                           @class = "form-control  chosen-select",
+                                       })
+                                </div>
+                                <div class="col-md-5">
+                                    <label>Branches</label>
+                                    @Html.DropDownList("BranchID", get.AllBrunchList(null, null , BranchIDs , myinfo) as SelectList, "Choose", new
+                                       {
+                                           @class = "form-control  chosen-select",
+                                       })
+                                </div>
+                                <div class="col-md-2"><br /><button type="button" onclick="ContactCount();" class="btn btn-primary">Get</button></div>
+                            </div>
+                            <br /><br />
+                            <div class="row">
+                                <div id="Contacts-pie-chart" style="height:250px;"></div>
+                            </div>                            
+                        </div>
+                    </div>
+                
+                
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Finance</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label>Bank</label>
+                                @Html.DropDownList("AgencyID2", get.AgencyList(null, null , BankIDs , myinfo) as SelectList, "Choose", new
+                                       {
+                                           @class = "form-control  chosen-select",
+                                       })
+                            </div>
+                            <div class="col-md-5">
+                                <label>Branches</label>
+                                @Html.DropDownList("BranchID2", get.AllBrunchList(null, null , BranchIDs , myinfo) as SelectList, "Choose", new
+                                       {
+                                           @class = "form-control  chosen-select",
+                                       })
+                            </div>
+                            <div class="col-md-2"><br /><button type="button" onclick="FinanceSum();" class="btn btn-primary">Get</button></div>
+                        </div>
+                        <br /><br />
+                        <div class="row">
+                            <div id="Finance-pie-chart" style="height:250px;"></div>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+     
+
+
+
+</div>
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Content/assets/js/plugins/DevExpressChartJS/dx.chartjs.js"></script>
+<script src="~/Content/assets/js/plugins/DevExpressChartJS/demo-charts.js"></script>
+<script src="~/Scripts/Custom/CollectionDashboard.js"></script>
+<script src="~/Content/assets/circle-progress.js"></script>
+<script src="~/Content/assets/examples.js"></script>

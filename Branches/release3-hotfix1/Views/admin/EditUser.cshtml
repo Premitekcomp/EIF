@@ -1,0 +1,297 @@
+﻿@{EIF.Helper.Get get = new EIF.Helper.Get();}
+<!-- JQuery  -->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/assets/js/plugins/underscore/underscore-min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Content/assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
+<div class="warper container-fluid">
+    @using (Ajax.BeginForm("EditUser", "admin",
+                                     new AjaxOptions
+                                     {
+                                         //AllowCache = false,
+                                         HttpMethod = "POST",
+                                         UpdateTargetId = "msg",
+                                         InsertionMode = InsertionMode.Replace,
+                                         OnBegin = "ShowProgress();",
+                                         OnComplete = "HideProgress();"
+
+                                     }))
+    {
+        if (ViewBag.UserData!=null)
+        {
+            EIF.Models.Pre_UsersView usr = ViewBag.UserData;
+             <div class="panel panel-default">
+            <div class="panel-heading">
+                Login Information
+            </div>
+            <div class="panel-body">
+                <div id="msg"></div>
+                <div id="container">
+                    <table style="width:100%">
+                        <tbody>
+                            <tr>
+                                <td style="width:50%">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label class="control-label">Display Name </label>
+                                                <input type="text" id="Title" class="form-control" value="@usr.DisplayName" name="DisplayName" placeholder="Enter Display Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width:50%">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <br />
+                                                <center>
+                                                    <span class="btn btn-success fileinput-button" style="width:200px">
+                                                        <i class="glyphicon glyphicon-plus"></i>
+                                                        <span>Upload Image</span>
+                                                        <input type="file" name="files[]" id="file">
+                                                    </span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:50%">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label class="control-label">User Name </label>
+                                                <input type="text" id="Title" class="form-control" value="@usr.UserName" name="Name" placeholder="Enter UserName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td rowspan="3" style="width:50%">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <center>
+                                                    <img style="background-color:lightgray" class="list_size" id="img" src="data:image/jpg;base64,@{if (usr.ProfileImage != null){ @Html.Raw(Convert.ToBase64String((byte[])usr.ProfileImage));
+                                              }}" />
+                                                </center>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:50%">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label class="control-label">Brunch </label>
+                                                @Html.DropDownList("BrunchID", get.AllBrunchListMuti(0, @usr.BranchIDs) as MultiSelectList, "", new
+                                                {
+                                                    @class = "form-control select2 chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width:50%"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:50%">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label class="control-label">Group</label>
+                                                @Html.DropDownList("GroupID", get.GroupsList(0, Convert.ToInt16(@usr.GroupID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                })
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width:50%"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:50%">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label class="control-label">Office</label>
+                                                @Html.DropDownList("OfficeId", get.OfficesList(0, Convert.ToInt16(@usr.OfficeId)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                })
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="width:50%"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+
+             @*<div class="panel panel-default">
+            <div class="panel-heading">
+                Data Scope
+            </div>
+            <div class="panel-body">
+                <div id="container">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="control-label">Brunch</label>
+                                @Html.DropDownList("BrunchID", get.AllBrunchListMuti(0, @usr.BranchIDs) as MultiSelectList, "", new
+                                                {
+                                                    @class = "form-control select2 chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="control-label">Bank</label>
+                                @Html.DropDownList("BankID", get.AgencyList(0, @usr.BankIDs) as MultiSelectList, "", new
+                                                {
+                                                    @class = "form-control select2 chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="control-label">Products</label>
+                                @Html.DropDownList("ProductID", get.ProductLst(0, @usr.ProductIDs) as MultiSelectList, "", new
+                                                {
+                                                    @class = "form-control select2 chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="control-label">Domain Type</label>
+                                @Html.DropDownList("TypeID", get.DomainType(@usr.TypeIDs) as MultiSelectList, "", new
+                                                {
+                                                    @class = "form-control select2 chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="control-label">Region</label>
+                                @Html.DropDownList("RegionID", get.Region(@usr.RegionIDs) as MultiSelectList, "", new
+                                                {
+                                                    @class = "form-control select2 chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="control-label">Group</label>
+                                @Html.DropDownList("GroupID", get.GroupsList(0, Convert.ToInt16(@usr.GroupID)) as SelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                })
+                            </div>
+                        </div>
+                    </div>*@
+
+                    @*<div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="control-label">Portal Access </label>
+                                @{if (usr.SectionIDs!=null)
+                                  {
+                                      string[] X = Convert.ToString(usr.SectionIDs).Split(',');  
+                                      @Html.DropDownList("SectionID", get.SectionsList(0, X) as MultiSelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                                  }
+                                  else
+                                  {
+                                      @Html.DropDownList("SectionID", get.SectionsList(0, null) as MultiSelectList, "Choose", new
+                                                {
+                                                    @class = "form-control chosen-select",
+                                                    @multiple = "multiple"
+                                                })
+                                  }
+                                    }
+                                
+                            </div>
+                        </div>
+                    </div>*@
+                @*</div>
+            </div>
+        </div>*@
+
+             <hr class="dotted">
+
+             <div class="form-group">
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+
+                </div>
+            </div>
+        </div>
+            <input type="hidden" id="img-val" name="img-val" />
+            <input type="hidden" id="id" name="id" value="@usr.UserID" />
+
+        }
+        else
+        {
+            <h2>This User Is Not Exist</h2>
+        }
+       
+    }
+</div>
+<script>
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img').attr('src', e.target.result);
+                final = e.target.result;
+                final = final.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+                $("#img-val").val(final);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+
+        }
+    }
+
+    $("#file").change(function () {
+        readURL(this);
+    });
+
+</script>

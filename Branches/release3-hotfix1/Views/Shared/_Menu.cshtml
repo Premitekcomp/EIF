@@ -1,0 +1,70 @@
+﻿
+@model IEnumerable<Design_MenuBasic>
+@using EIF.Models
+@helper RenderSideMenus(IEnumerable<Design_MenuBasic> Menus)
+{
+    foreach (Design_MenuBasic Mnu in Menus)
+    {
+        @RenderMenu(Mnu);
+    }
+}
+
+
+@helper RenderMenu(Design_MenuBasic Mnu)
+{
+    if (Session["AllowwdMenuNames"] != null)
+    {
+        var menus = (IEnumerable<string>)Session["AllowwdMenuNames"];
+        if (Mnu.DirectURL == null)
+        {  
+            if (menus.Contains(Mnu.MenuTitle))
+            {
+                 <li class="has-submenu">
+            <a href="javascript:void(0);" target="_blank">
+                <i class="@Mnu.IconClass"></i><span class="nav-label">@Mnu.MenuTitle</span>
+            </a>
+            <ul class="list-unstyled">
+
+                @foreach (var itm in (from q in Mnu.Design_MenuItems
+                                     where q.IsDeleted == false 
+                                     select q).ToList().OrderBy(q => q.DisplayID))
+                {
+                    <li>@Renderitems(itm)</li>
+                }
+            </ul>
+        </li>
+            }
+        }
+        else
+        {
+            int sectionid = Session["SectionID"] != null ? int.Parse(Session["SectionID"].ToString()) : 0;
+            if ((Mnu.MenuTitle == "Welcome" && sectionid != 1) || menus.Contains(Mnu.MenuTitle))
+            {
+                <li><a href="~/@Mnu.DirectURL"><i class="@Mnu.IconClass"></i><span class="nav-label">@Mnu.MenuTitle</span></a></li>     
+            }    
+        }    
+    }
+    
+
+}
+@helper Renderitems(Design_MenuItems Itm)
+{
+        var screens = (IEnumerable<string>) Session["AllowedScreens"];
+        if (screens.Contains(Itm.MenuItemName))
+        {
+            <li>
+    
+                <a  href="~/@Itm.ControllerName/@Itm.ActionName">
+                    <i class="@Itm.IconClass"></i>
+                    @Itm.MenuItemName
+                </a>
+         
+         </li>
+        }
+
+}
+
+
+@RenderSideMenus(Model)
+  <!-- sidebar menu: : style can be found in sidebar.less -->
+

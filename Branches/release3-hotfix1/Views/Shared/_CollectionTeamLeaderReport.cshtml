@@ -1,0 +1,72 @@
+﻿@{
+    if (ViewBag.TeamLeaderReport != null)
+    {
+        List<EIF.Helper.DomainReoprtbyTeamLeader> Res = ViewBag.TeamLeaderReport;
+        <table class="table no-margn">
+            <thead>
+                <tr>
+                    <th>Team Leader Name</th>
+                    <th>Domain Type </th>
+                    <th>Product</th>
+                    <th>Count Of Customers</th>
+                    <th>Count Of Payment</th>
+                    <th>Total Payment</th>
+                    <th>Past Due</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+
+        for (var i = 0; i < Res.Count(); i++)
+        {
+            if (i != 0 && Res[i].TeamLeaderName == Res[i - 1].TeamLeaderName && Res[i].DomainType == Res[i - 1].DomainType)
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>@Res[i].Product</td>
+                    <td>@Res[i].CountOfCustomers</td>
+                    <td>@Res[i].CountOfPayment</td>
+                    <td>@Res[i].Payment</td>
+                    <td>@Res[i].Balance</td>
+                    <td>@Res[i].PastDue</td>
+                </tr>
+            }
+            else if (i != 0 && Res[i].TeamLeaderName == Res[i - 1].TeamLeaderName && Res[i].DomainType != Res[i - 1].DomainType)
+            {
+                <tr>
+                    <td></td>
+                    <td>@Res[i].DomainType</td>
+                    <td>@Res[i].Product</td>
+                    <td>@Res[i].CountOfCustomers</td>
+                    <td>@Res[i].CountOfPayment</td>
+                    <td>@Res[i].Payment</td>
+                    <td>@Res[i].Balance</td>
+                    <td>@Res[i].PastDue</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@Res[i].TeamLeaderName</td>
+                    <td>@Res[i].DomainType</td>
+                    <td>@Res[i].Product</td>
+                    <td>@Res[i].CountOfCustomers</td>
+                    <td>@Res[i].CountOfPayment</td>
+                    <td>@Res[i].Payment</td>
+                    <td>@Res[i].Balance</td>
+                    <td>@Res[i].PastDue</td>
+                </tr>
+            }
+        }
+                }
+            </tbody>
+        </table>
+    }
+    else if (ViewBag.TeamLeaderReportwarning != null)
+    {
+        <p class="text-warning"><span class="fa fa-warning text-yellow"></span> Team Leader Report : @ViewBag.TeamLeaderReportwarning</p>
+    }
+
+}

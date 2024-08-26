@@ -1,0 +1,37 @@
+﻿<div class="warper container-fluid">
+
+    <div class="panel panel-default">
+        <div class="panel-heading" id="ReportTitle">
+            Clients percentage have Lawsuits And Not have.
+        </div>
+        <div class="panel-body">
+            @{
+                if (ViewBag.error != null)
+                {
+                    <p class="text-danger"><span class="fa fa-times-circle text-red"></span>Error : @ViewBag.error</p>
+                }}
+            <div id="container">
+                @Html.Partial("_Filter")
+                @Html.Partial("_LegalPayment")
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/Custom/PublicConfig.js"></script>
+<script src="~/Scripts/Custom/Collection.js"></script>
+
+
+
+<script>
+    $(function () {
+        $('.btn-group').each(function () { $(this).click(function () { $(this).toggleClass('open'); }) })
+    })
+    
+    $("#Apply-btn").click(function () {
+
+        getFilterdResult('/collection/GetLegalPaymentPerBank')
+    })
+</script>
